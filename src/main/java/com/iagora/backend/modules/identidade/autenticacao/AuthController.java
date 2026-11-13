@@ -1,8 +1,8 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
+import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 
 @RestController
 @RequestMapping("/user")
@@ -37,5 +37,27 @@ public class AuthController {
   @ResponseStatus(HttpStatus.NO_CONTENT)
   public void apagarUsuario(@PathVariable Integer id) {
     authService.apagarUsuario(id);
+  }
+
+  @SomenteProprietario
+  @PatchMapping("/{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void atualizarEmail(
+    @PathVariable Integer id,
+    @RequestBody MudarEmailRequest request
+  ) {
+    authService.mudarEmail(id, request);
+  }
+
+  @PostMapping("/reset-password")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void redefinirSenha(@RequestBody MudarSenhaRequest request) {
+    authService.redefinirSenha(request);
+  }
+
+  @PostMapping ("/forgot-password")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void esqueciSenha(@RequestBody TokenResetRequest request) {
+    authService.esqueciSenha(request);
   }
 }
