@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.security.JwtService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -9,11 +10,13 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
   private final UserRepository userRepository;
+  private final JwtService jwtService;
   private final BCryptPasswordEncoder passwordEncoder =
     new BCryptPasswordEncoder();
 
-  public AuthService(UserRepository userRepository) {
+  public AuthService(UserRepository userRepository, JwtService jwtService) {
     this.userRepository = userRepository;
+    this.jwtService = jwtService;
   }
 
   public AuthResponse cadastrar(CadastroRequest request) {
@@ -35,7 +38,7 @@ public class AuthService {
     return new AuthResponse(user.getId(), user.getEmail(), user.getTipo());
   }
 
-  public AuthResponse logar(LoginRequest request) {
+  public LoginResponse logar(LoginRequest request) {
     User user = userRepository
       .findByEmail(request.email())
       .orElseThrow(() ->
@@ -57,6 +60,36 @@ public class AuthService {
       );
     }
 
+    String token = jwtService.gerarToken(user.getId());
+
+    return new LoginResponse(
+      user.getId(),
+      user.getEmail(),
+      user.getTipo(),
+      token
+    );
+  }
+
+  public AuthResponse buscarPorId(Integer id) {
+    User user = userRepository
+      .findById(id)
+      .orElseThrow(() ->
+        new RegraNegocioException(
+          "Usuário não encontrado",
+          HttpStatus.NOT_FOUND
+        )
+      );
+
     return new AuthResponse(user.getId(), user.getEmail(), user.getTipo());
+  }
+
+  public void apagarUsuario(Integer id) {
+    User user = userRepository
+      .findById(id)
+      .orElseThrow(() ->
+        new RegraNegocioException("Usuário não encontrad", HttpStatus.NOT_FOUND)
+      );
+
+    userRepository.delete(user);
   }
 }
