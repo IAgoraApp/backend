@@ -33,7 +33,6 @@ build/
 .vscode/
 
 .git
-.github
 .vscode
 .idea
 target

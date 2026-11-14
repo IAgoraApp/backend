@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 public class SecurityConfig {
@@ -17,8 +18,12 @@ public class SecurityConfig {
   private boolean jwtEnabled;
 
   @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http)
+  public SecurityFilterChain securityFilterChain(
+    HttpSecurity http,
+    CorsConfigurationSource corsConfigurationSource
+  )
     throws Exception {
+    http.cors(cors -> cors.configurationSource(corsConfigurationSource));
     http.csrf(csrf -> csrf.disable());
 
     http.authorizeHttpRequests(auth -> {
@@ -28,6 +33,7 @@ public class SecurityConfig {
             "/user/register",
             "/user/login",
             "/api/docs",
+            "/",
             "/api/health",
             "/api/docs/**",
             "/api/swagger-ui/**",

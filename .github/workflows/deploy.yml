@@ -1,0 +1,66 @@
+
+name: Deploy Azure
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iagora-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configurar SSH
+        env:
+          SSH_KEY: ${{ secrets.AZURE_SSH_KEY }}
+          AZURE_HOST: ${{ secrets.AZURE_HOST }}
+          AZURE_KNOWN_HOSTS: ${{ secrets.AZURE_KNOWN_HOSTS }}
+        run: |
+          set -e
+
+          test -n "$SSH_KEY"
+          test -n "$AZURE_HOST"
+          test -n "$AZURE_KNOWN_HOSTS"
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          printf '%s\n' "$AZURE_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Atualizar backend na Azure
+        env:
+          AZURE_HOST: ${{ secrets.AZURE_HOST }}
+          AZURE_USER: ${{ secrets.AZURE_USER }}
+        run: |
+          ssh -T \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            "$AZURE_USER@$AZURE_HOST" 'bash -se' <<'EOF'
+          set -e
+
+          cd /opt/iagora/backend
+
+          git fetch origin main
+          git checkout main
+          git pull --ff-only origin main
+
+          cd /opt/iagora
+
+          docker compose up -d --build --no-deps backend
+
+          docker compose ps
+          EOF
