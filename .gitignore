@@ -38,3 +38,4 @@ build/
 target
 .env
 *.log
+env.sh
