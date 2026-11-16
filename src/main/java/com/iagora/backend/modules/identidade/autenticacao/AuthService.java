@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.casa.casa.CasaService;
 import com.iagora.backend.modules.identidade.perfil.PerfilService;
 import com.iagora.backend.modules.identidade.resetSenha.EmailService;
 import com.iagora.backend.modules.identidade.resetSenha.TokenReset;
@@ -22,19 +23,22 @@ public class AuthService {
   private final TokenResetService tokenResetService;
   private final EmailService emailService;
   private final PerfilService perfilService;
+  private final CasaService casaService;
 
   public AuthService(
     UserRepository userRepository,
     JwtService jwtService,
     TokenResetService tokenResetService,
     EmailService emailService,
-    PerfilService perfilService
+    PerfilService perfilService,
+    CasaService casaService
   ) {
     this.userRepository = userRepository;
     this.jwtService = jwtService;
     this.tokenResetService = tokenResetService;
     this.emailService = emailService;
     this.perfilService = perfilService;
+    this.casaService = casaService;
   }
 
   @Transactional
@@ -56,6 +60,7 @@ public class AuthService {
 
     if (Integer.valueOf(1).equals(user.getTipo())) {
       perfilService.criar(user);
+      casaService.criar(user);
     }
 
     return new AuthResponse(user.getId(), user.getEmail(), user.getTipo());
@@ -117,6 +122,7 @@ public class AuthService {
         )
       );
 
+    casaService.apagarPorUserId(id);
     perfilService.apagarPorUserId(id);
     userRepository.delete(user);
   }
