@@ -30,4 +30,10 @@ public class MethodSecurityConfig {
     @PreAuthorize("@perfilService.buscarPorId(#p0).userId().toString() == authentication.name")
     public @interface SomenteProprietarioPerfil {
     }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@casaService.buscarPorId(#p0).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioCasa {
+    }
 }
