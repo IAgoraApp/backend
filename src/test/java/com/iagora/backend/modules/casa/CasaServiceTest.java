@@ -1,6 +1,9 @@
 package com.iagora.backend.modules.casa;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.casa.limpeza.comodo.ComodoRepository;
+import com.iagora.backend.modules.casa.limpeza.limpeza.LimpezaRepository;
+import com.iagora.backend.modules.casa.limpeza.execucaoLimpeza.ExecucaoLimpezaRepository;
 import com.iagora.backend.modules.casa.casa.Casa;
 import com.iagora.backend.modules.casa.casa.CasaRepository;
 import com.iagora.backend.modules.casa.casa.CasaRequest;
@@ -32,7 +35,8 @@ class CasaServiceTest {
     casaRepository = mock(CasaRepository.class);
     enderecoService = mock(EnderecoService.class);
     casaService = new CasaService(casaRepository, enderecoService, mock(ComprasRepository.class),
-      mock(CompraItemRepository.class), mock(EstoqueItemRepository.class));
+      mock(CompraItemRepository.class), mock(EstoqueItemRepository.class), mock(ComodoRepository.class),
+      mock(LimpezaRepository.class), mock(ExecucaoLimpezaRepository.class));
     user = mock(User.class);
     when(user.getId()).thenReturn(1);
   }

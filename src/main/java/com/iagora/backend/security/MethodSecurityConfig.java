@@ -72,4 +72,22 @@ public class MethodSecurityConfig {
     @PreAuthorize("@receitaService.podeLer(#p0, authentication != null ? authentication.name : null)")
     public @interface PodeLerReceita {
     }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@casaService.buscarPorId(@comodoService.buscarPorId(#p0).casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioComodo {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("#p0.comodoId() == null || @casaService.buscarPorId(@comodoService.buscarPorId(#p0.comodoId()).casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioComodoRequest {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@casaService.buscarPorId(@comodoService.buscarPorId(@limpezaService.buscarPorId(#p0).comodoId()).casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioLimpeza {
+    }
 }
