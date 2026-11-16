@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
 import com.iagora.backend.modules.casa.casa.CasaService;
+import com.iagora.backend.modules.casa.cozinha.receita.ReceitaService;
 import com.iagora.backend.modules.identidade.perfil.PerfilService;
 import com.iagora.backend.modules.identidade.resetSenha.EmailService;
 import com.iagora.backend.modules.identidade.resetSenha.TokenResetService;
@@ -24,7 +25,7 @@ class AuthServiceTest {
     perfilService = mock(PerfilService.class);
     casaService = mock(CasaService.class);
     authService = new AuthService(userRepository, mock(JwtService.class),
-      mock(TokenResetService.class), mock(EmailService.class), perfilService, casaService);
+      mock(TokenResetService.class), mock(EmailService.class), perfilService, casaService, mock(ReceitaService.class));
   }
 
   @Test
@@ -44,7 +45,7 @@ class AuthServiceTest {
 
     authService.cadastrar(new CadastroRequest("empresa@example.com", "senha", 2));
 
-    verifyNoInteractions(perfilService, casaService);
+    verifyNoInteractions(perfilService, casaService, mock(ReceitaService.class));
   }
 
   @Test

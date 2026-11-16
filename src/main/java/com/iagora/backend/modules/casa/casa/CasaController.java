@@ -1,11 +1,13 @@
 package com.iagora.backend.modules.casa.casa;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietarioCasa;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Casas", description = "Consulta e atualização das casas dos usuários.")
 @RestController
 @RequestMapping("/casas")
 public class CasaController {
