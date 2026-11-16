@@ -4,9 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.ClassPathResource;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,7 +25,7 @@ class ReceitaUsuarioMigracaoTest {
 
       // H2 inicia a transação via JDBC; o START TRANSACTION do arquivo é sintaxe MySQL.
       connection.setAutoCommit(false);
-      String sqlMigracao = Files.readString(Path.of("docs/sql/separar-status-receita.sql"))
+      String sqlMigracao = new ClassPathResource("sql/separar-status-receita.sql").getContentAsString(StandardCharsets.UTF_8)
         .replace("START TRANSACTION;", "");
       var script = new ByteArrayResource(sqlMigracao.getBytes(StandardCharsets.UTF_8));
       ScriptUtils.executeSqlScript(connection, script);
@@ -62,7 +61,7 @@ class ReceitaUsuarioMigracaoTest {
         assertEquals("fazendo", rows.getString("status"));
       }
 
-      String sqlRemocao = Files.readString(Path.of("docs/sql/remover-status-receita.sql"))
+      String sqlRemocao = new ClassPathResource("sql/remover-status-receita.sql").getContentAsString(StandardCharsets.UTF_8)
         .replace("START TRANSACTION;", "");
       ScriptUtils.executeSqlScript(connection,
         new ByteArrayResource(sqlRemocao.getBytes(StandardCharsets.UTF_8)));

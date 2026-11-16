@@ -5,6 +5,9 @@ import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemRepository;
 import com.iagora.backend.modules.casa.cozinha.compras.ComprasRepository;
 import com.iagora.backend.modules.casa.cozinha.estoqueItem.EstoqueItemRepository;
 import com.iagora.backend.modules.endereco.EnderecoService;
+import com.iagora.backend.modules.casa.limpeza.comodo.ComodoRepository;
+import com.iagora.backend.modules.casa.limpeza.limpeza.LimpezaRepository;
+import com.iagora.backend.modules.casa.limpeza.execucaoLimpeza.ExecucaoLimpezaRepository;
 import com.iagora.backend.modules.identidade.autenticacao.User;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -19,15 +22,22 @@ public class CasaService {
   private final ComprasRepository comprasRepository;
   private final CompraItemRepository compraItemRepository;
   private final EstoqueItemRepository estoqueItemRepository;
+  private final ComodoRepository comodoRepository;
+  private final LimpezaRepository limpezaRepository;
+  private final ExecucaoLimpezaRepository execucaoLimpezaRepository;
 
   public CasaService(CasaRepository casaRepository, EnderecoService enderecoService,
     ComprasRepository comprasRepository, CompraItemRepository compraItemRepository,
-    EstoqueItemRepository estoqueItemRepository) {
+    EstoqueItemRepository estoqueItemRepository, ComodoRepository comodoRepository,
+    LimpezaRepository limpezaRepository, ExecucaoLimpezaRepository execucaoLimpezaRepository) {
     this.casaRepository = casaRepository;
     this.enderecoService = enderecoService;
     this.comprasRepository = comprasRepository;
     this.compraItemRepository = compraItemRepository;
     this.estoqueItemRepository = estoqueItemRepository;
+    this.comodoRepository = comodoRepository;
+    this.limpezaRepository = limpezaRepository;
+    this.execucaoLimpezaRepository = execucaoLimpezaRepository;
   }
 
   public void criar(User user) {
@@ -93,6 +103,9 @@ public class CasaService {
 
   @Transactional
   public void apagarPorUserId(Integer userId) {
+    execucaoLimpezaRepository.deleteByLimpeza_Comodo_Casa_User_Id(userId);
+    limpezaRepository.deleteByComodo_Casa_User_Id(userId);
+    comodoRepository.deleteByCasa_User_Id(userId);
     compraItemRepository.deleteByCompras_Casa_User_Id(userId);
     comprasRepository.deleteByCasa_User_Id(userId);
     estoqueItemRepository.deleteByCasa_User_Id(userId);
