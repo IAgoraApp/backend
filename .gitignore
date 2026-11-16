@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+.git
+.vscode
+.idea
+target
+.env
+*.log
+env.sh
