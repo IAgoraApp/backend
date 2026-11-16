@@ -1,6 +1,9 @@
 package com.iagora.backend.modules.casa.casa;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemRepository;
+import com.iagora.backend.modules.casa.cozinha.compras.ComprasRepository;
+import com.iagora.backend.modules.casa.cozinha.estoqueItem.EstoqueItemRepository;
 import com.iagora.backend.modules.endereco.EnderecoService;
 import com.iagora.backend.modules.identidade.autenticacao.User;
 import jakarta.transaction.Transactional;
@@ -13,10 +16,18 @@ public class CasaService {
 
   private final CasaRepository casaRepository;
   private final EnderecoService enderecoService;
+  private final ComprasRepository comprasRepository;
+  private final CompraItemRepository compraItemRepository;
+  private final EstoqueItemRepository estoqueItemRepository;
 
-  public CasaService(CasaRepository casaRepository, EnderecoService enderecoService) {
+  public CasaService(CasaRepository casaRepository, EnderecoService enderecoService,
+    ComprasRepository comprasRepository, CompraItemRepository compraItemRepository,
+    EstoqueItemRepository estoqueItemRepository) {
     this.casaRepository = casaRepository;
     this.enderecoService = enderecoService;
+    this.comprasRepository = comprasRepository;
+    this.compraItemRepository = compraItemRepository;
+    this.estoqueItemRepository = estoqueItemRepository;
   }
 
   public void criar(User user) {
@@ -82,6 +93,9 @@ public class CasaService {
 
   @Transactional
   public void apagarPorUserId(Integer userId) {
+    compraItemRepository.deleteByCompras_Casa_User_Id(userId);
+    comprasRepository.deleteByCasa_User_Id(userId);
+    estoqueItemRepository.deleteByCasa_User_Id(userId);
     casaRepository.deleteByUser_Id(userId);
   }
 }

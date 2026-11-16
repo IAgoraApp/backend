@@ -36,6 +36,8 @@ server:
 springdoc:
   swagger-ui:
     path: /
+    tags-sorter: alpha
+    doc-expansion: none
 
 jwt:
   secret: ${JWT_SECRET}

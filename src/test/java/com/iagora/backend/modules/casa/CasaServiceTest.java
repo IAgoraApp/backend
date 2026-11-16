@@ -6,6 +6,9 @@ import com.iagora.backend.modules.casa.casa.CasaRepository;
 import com.iagora.backend.modules.casa.casa.CasaRequest;
 import com.iagora.backend.modules.casa.casa.CasaResponse;
 import com.iagora.backend.modules.casa.casa.CasaService;
+import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemRepository;
+import com.iagora.backend.modules.casa.cozinha.compras.ComprasRepository;
+import com.iagora.backend.modules.casa.cozinha.estoqueItem.EstoqueItemRepository;
 import com.iagora.backend.modules.endereco.EnderecoService;
 import com.iagora.backend.modules.identidade.autenticacao.User;
 import java.util.List;
@@ -28,7 +31,8 @@ class CasaServiceTest {
   void configurar() {
     casaRepository = mock(CasaRepository.class);
     enderecoService = mock(EnderecoService.class);
-    casaService = new CasaService(casaRepository, enderecoService);
+    casaService = new CasaService(casaRepository, enderecoService, mock(ComprasRepository.class),
+      mock(CompraItemRepository.class), mock(EstoqueItemRepository.class));
     user = mock(User.class);
     when(user.getId()).thenReturn(1);
   }

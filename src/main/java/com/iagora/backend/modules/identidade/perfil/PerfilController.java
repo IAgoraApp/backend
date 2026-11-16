@@ -1,10 +1,12 @@
 package com.iagora.backend.modules.identidade.perfil;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietarioPerfil;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Identidade - Perfis", description = "Consulta e atualização dos perfis dos usuários.")
 @RestController
 @RequestMapping("/perfis")
 public class PerfilController {

@@ -1,9 +1,11 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Identidade - Autenticação", description = "Cadastro, login e gerenciamento da conta.")
 @RestController
 @RequestMapping("/user")
 public class AuthController {

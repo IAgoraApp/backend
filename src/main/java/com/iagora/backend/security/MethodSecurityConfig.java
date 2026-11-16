@@ -36,4 +36,40 @@ public class MethodSecurityConfig {
     @PreAuthorize("@casaService.buscarPorId(#p0).userId().toString() == authentication.name")
     public @interface SomenteProprietarioCasa {
     }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("#p0.casaId() == null || @casaService.buscarPorId(#p0.casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioCasaRequest {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@casaService.buscarPorId(@comprasService.buscarPorId(#p0).casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioCompras {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@casaService.buscarPorId(@estoqueItemService.buscarPorId(#p0).casaId()).userId().toString() == authentication.name")
+    public @interface SomenteProprietarioEstoque {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("#p0.userId() != null && #p0.userId().toString() == authentication.name")
+    public @interface SomenteProprietarioReceitaRequest {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@receitaService.proprietario(#p0, authentication.name)")
+    public @interface SomenteProprietarioReceita {
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    @PreAuthorize("@receitaService.podeLer(#p0, authentication != null ? authentication.name : null)")
+    public @interface PodeLerReceita {
+    }
 }
