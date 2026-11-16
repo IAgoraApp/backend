@@ -35,6 +35,7 @@ public class SecurityConfig {
             "/api/docs",
             "/",
             "/api/health",
+            "/images/perfil-padrao.svg",
             "/api/docs/**",
             "/api/swagger-ui/**",
             "/swagger-ui/**",

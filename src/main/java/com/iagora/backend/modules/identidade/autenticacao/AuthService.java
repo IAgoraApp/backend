@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.identidade.autenticacao;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.identidade.perfil.PerfilService;
 import com.iagora.backend.modules.identidade.resetSenha.EmailService;
 import com.iagora.backend.modules.identidade.resetSenha.TokenReset;
 import com.iagora.backend.modules.identidade.resetSenha.TokenResetService;
@@ -20,19 +21,23 @@ public class AuthService {
     new BCryptPasswordEncoder();
   private final TokenResetService tokenResetService;
   private final EmailService emailService;
+  private final PerfilService perfilService;
 
   public AuthService(
     UserRepository userRepository,
     JwtService jwtService,
     TokenResetService tokenResetService,
-    EmailService emailService
+    EmailService emailService,
+    PerfilService perfilService
   ) {
     this.userRepository = userRepository;
     this.jwtService = jwtService;
     this.tokenResetService = tokenResetService;
     this.emailService = emailService;
+    this.perfilService = perfilService;
   }
 
+  @Transactional
   public AuthResponse cadastrar(CadastroRequest request) {
     boolean emailExiste = userRepository.existsByEmail(request.email());
 
@@ -48,6 +53,10 @@ public class AuthService {
     User usuario = new User(request.email(), senhaHash, request.tipo());
 
     User user = userRepository.save(usuario);
+
+    if (Integer.valueOf(1).equals(user.getTipo())) {
+      perfilService.criar(user);
+    }
 
     return new AuthResponse(user.getId(), user.getEmail(), user.getTipo());
   }
@@ -97,6 +106,7 @@ public class AuthService {
     return new AuthResponse(user.getId(), user.getEmail(), user.getTipo());
   }
 
+  @Transactional
   public void apagarUsuario(Integer id) {
     User user = userRepository
       .findById(id)
@@ -107,6 +117,7 @@ public class AuthService {
         )
       );
 
+    perfilService.apagarPorUserId(id);
     userRepository.delete(user);
   }
 
