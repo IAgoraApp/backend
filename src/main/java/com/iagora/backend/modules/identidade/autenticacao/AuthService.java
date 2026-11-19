@@ -80,18 +80,21 @@ public class AuthService {
         )
       );
 
-    boolean senhaCorreta = passwordEncoder.matches(
-      request.senha(),
-      user.getSenha()
-    );
-
-    if (!senhaCorreta) {
+    if (!senhaCorreta(user, request.senha())) {
       throw new RegraNegocioException(
         "Email ou senha inválidos",
         HttpStatus.UNAUTHORIZED
       );
     }
 
+    return iniciarSessao(user);
+  }
+
+  boolean senhaCorreta(User usuario, String senha) {
+    return senha != null && passwordEncoder.matches(senha, usuario.getSenha());
+  }
+
+  LoginResponse iniciarSessao(User user) {
     String token = jwtService.gerarToken(user.getId());
 
     return new LoginResponse(
