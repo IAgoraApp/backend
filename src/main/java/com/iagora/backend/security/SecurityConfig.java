@@ -21,7 +21,9 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(
     HttpSecurity http,
-    CorsConfigurationSource corsConfigurationSource
+    CorsConfigurationSource corsConfigurationSource,
+    @Value("${iagora.pagamentos.teste:false}") boolean pagamentosTeste,
+    @Value("${iagora.pagamentos.webhook.segredo:}") String segredoWebhook
   )
     throws Exception {
     http.cors(cors -> cors.configurationSource(corsConfigurationSource));
@@ -29,6 +31,9 @@ public class SecurityConfig {
 
     http.authorizeHttpRequests(auth -> {
       if (jwtEnabled) {
+        if (pagamentosTeste && !segredoWebhook.isBlank()) {
+          auth.requestMatchers(HttpMethod.POST, "/pagamentos/webhook").permitAll();
+        }
         auth
           .requestMatchers(HttpMethod.GET,
             "/receitas", "/receitas/{id}",

@@ -10,8 +10,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate.type.json_format_mapper: jackson3
     show-sql: false
     open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
 
   mail:
     host: smtp.gmail.com

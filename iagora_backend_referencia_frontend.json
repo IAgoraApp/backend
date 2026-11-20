@@ -1,0 +1,1275 @@
+{
+  "projeto": "IAgora",
+  "area": "Backend",
+  "listas": [
+    {
+      "nome": "Backend • A fazer",
+      "cards": [
+        {
+          "nome": "Categoria Tarefa",
+          "descricao": "Aqui será a parte responsável por gerenciar as categorias de tarefas dos usuários, permitindo cadastrar, visualizar, editar e excluir categorias.\n\nAs categorias serão utilizadas para organizar as tarefas da casa, como limpeza, manutenção, organização e outras atividades. Cada categoria poderá possuir uma cor e um ícone para facilitar sua identificação no sistema.\n\n```\nTable categoria_tarefa {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(100) [not null]\n  cor varchar(20)\n  icone varchar(100)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /categorias-tarefa - Cadastrar categoria de tarefa",
+                "GET /categorias-tarefa/:id - Buscar categoria pelo ID",
+                "GET /categorias-tarefa/usuario/:userId - Listar categorias de tarefas de um usuário",
+                "PATCH /categorias-tarefa/:id - Atualizar informações da categoria",
+                "DELETE /categorias-tarefa/:id - Excluir categoria de tarefa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Ao excluir uma categoria, verificar se existem tarefas vinculadas a ela"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Tarefas",
+          "descricao": "Aqui será a parte responsável por gerenciar as tarefas dos usuários, permitindo cadastrar, visualizar, editar e excluir atividades relacionadas à organização da casa.\n\nCada tarefa deverá pertencer a uma categoria e poderá possuir uma descrição e um prazo para realização. O acompanhamento das conclusões e das tarefas recorrentes será feito pelos módulos `execucao_tarefa` e `recorrencia_tarefa`.\n\n```\nTable tarefa {\n  id int [pk, increment]\n  categoria_id int [not null]\n  nome varchar(150) [not null]\n  descricao text\n  prazo datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /tarefas - Cadastrar tarefa",
+                "GET /tarefas/:id - Buscar tarefa pelo ID",
+                "GET /tarefas/usuario/:userId - Listar tarefas de um usuário",
+                "GET /tarefas/categoria/:categoriaId - Listar tarefas de uma categoria",
+                "PATCH /tarefas/:id - Atualizar informações da tarefa",
+                "DELETE /tarefas/:id - Excluir tarefa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Cada tarefa deve estar vinculada obrigatoriamente a uma categoria através do categoria_id",
+                "O usuário deve poder cadastrar tarefas sem definir um prazo",
+                "Uma tarefa pode possuir várias execuções registradas através da tabela execucao_tarefa",
+                "Uma tarefa pode possuir uma configuração de recorrência através da tabela recorrencia_tarefa"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Recorrencia Tarefa",
+          "descricao": "Aqui será a parte responsável por gerenciar a recorrência das tarefas do, permitindo configurar atividades que devem se repetir diariamente, semanalmente ou mensalmente.\n\nCada tarefa poderá possuir uma configuração de recorrência, definindo a frequência, o intervalo, os dias de execução e as datas de início e término.\n\nO sistema utilizará essas informações para gerar as próximas ocorrências na tabela `execucao_tarefa`.\n\n```\nTable recorrencia_tarefa {\n  id int [pk, increment]\n  tarefa_id int [not null, unique]\n  frequencia varchar(30) [not null]\n  intervalo int [not null, default: 1]\n  dias_semana json\n  dia_mes json\n  inicio date [not null]\n  fim date\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /tarefas/:tarefaId/recorrencia - Configurar recorrência de uma tarefa",
+                "GET /tarefas/:tarefaId/recorrencia - Consultar recorrência de uma tarefa",
+                "PATCH /tarefas/:tarefaId/recorrencia - Atualizar configuração de recorrência",
+                "DELETE /tarefas/:tarefaId/recorrencia - Remover recorrência de uma tarefa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "A frequência é obrigatória e deve aceitar os valores diaria, semanal e mensal",
+                "O intervalo representa a quantidade de períodos entre as execuções",
+                "O campo dias_semana deve ser utilizado para definir os dias de execução das tarefas semanais"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Execução Tarefa",
+          "descricao": "Aqui será a parte responsável por gerenciar as execuções das tarefas dos usuários, permitindo visualizar, concluir, reabrir e excluir ocorrências de tarefas.\n\nCada tarefa poderá possuir várias execuções, especialmente quando possuir uma recorrência configurada. O sistema permitirá acompanhar quais atividades estão pendentes, concluídas ou atrasadas.\n\nAs execuções poderão ser criadas manualmente ou geradas automaticamente pelo módulo `recorrencia_tarefa`.\n\n```\nTable execucao_tarefa {\n  id int [pk, increment]\n  tarefa_id int [not null]\n  data_prevista datetime [not null]\n  concluida_em datetime\n  status varchar(30) [not null, default: 'pendente']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /tarefas/:tarefaId/execucoes - Criar execução de uma tarefa",
+                "GET /tarefas/:tarefaId/execucoes - Listar execuções de uma tarefa",
+                "GET /execucoes-tarefa/:id - Buscar execução pelo ID",
+                "GET /execucoes-tarefa/usuario/:userId - Listar execuções das tarefas de um usuário",
+                "PATCH /execucoes-tarefa/:id - Atualizar data prevista da execução",
+                "PATCH /execucoes-tarefa/:id/concluir - Marcar execução como concluída",
+                "PATCH /execucoes-tarefa/:id/reabrir - Retornar execução para pendente",
+                "DELETE /execucoes-tarefa/:id - Excluir execução de tarefa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O campo status deve aceitar os valores pendente e concluida",
+                "Ao excluir uma tarefa, suas execuções devem ser tratadas para evitar registros órfãos"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Categoria Finanças",
+          "descricao": "Aqui será a parte responsável por gerenciar as categorias financeiras dos usuários, permitindo cadastrar, visualizar, editar e excluir categorias.\n\nAs categorias serão utilizadas para organizar as receitas e despesas da casa, como alimentação, aluguel, transporte, contas e lazer. Cada categoria poderá possuir uma cor e um ícone para facilitar sua identificação nos relatórios e no controle financeiro.\n\n```\nTable categoria_financas {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(100) [not null]\n  cor varchar(20)\n  icone varchar(100)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /categorias-financas - Cadastrar categoria financeira",
+                "GET /categorias-financas/:id - Buscar categoria pelo ID",
+                "GET /categorias-financas/usuario/:userId - Listar categorias financeiras de um usuário",
+                "PATCH /categorias-financas/:id - Atualizar informações da categoria",
+                "DELETE /categorias-financas/:id - Excluir categoria financeira"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Não permitir categorias com o mesmo nome dentro do mesmo usuário, desconsiderando diferenças entre letras maiúsculas e minúsculas"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Recorrencia Finanças",
+          "descricao": "Aqui será a parte responsável por gerenciar as receitas e despesas recorrentes dos usuários, permitindo cadastrar, visualizar, editar, ativar, desativar e excluir movimentações que se repetem periodicamente.\n\nO sistema permitirá configurar gastos fixos, como aluguel, internet e assinaturas, além de receitas recorrentes, como salários.\n\nAs recorrências serão utilizadas para gerar automaticamente os lançamentos na tabela `transacao_financeira`.\n\n```\nTable recorrencia_financeira {\n  id int [pk, increment]\n  user_id int [not null]\n  descricao text [not null]\n  tipo varchar(30) [not null]\n  valor_previsto decimal(15,2) [not null]\n  frequencia varchar(30) [not null]\n  inicio_em date [not null]\n  fim_em date\n  ativa boolean [not null, default: true]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /recorrencias-financeiras - Cadastrar recorrência financeira",
+                "GET /recorrencias-financeiras/:id - Buscar recorrência financeira pelo ID",
+                "GET /recorrencias-financeiras/usuario/:userId - Listar recorrências financeiras de um usuário",
+                "PATCH /recorrencias-financeiras/:id - Atualizar informações da recorrência",
+                "PATCH /recorrencias-financeiras/:id/ativar - Ativar recorrência financeira",
+                "PATCH /recorrencias-financeiras/:id/desativar - Desativar recorrência financeira",
+                "DELETE /recorrencias-financeiras/:id - Excluir recorrência financeira"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O tipo deve aceitar os valores receita e despesa.",
+                "A frequência é obrigatória e deve aceitar os valores diaria, semanal, mensal e anual",
+                "O campo ativa deve ser definido como true automaticamente ao cadastrar uma recorrência"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Transação Finanças",
+          "descricao": "Aqui será a parte responsável por gerenciar as movimentações financeiras dos usuários, permitindo cadastrar, visualizar, editar e excluir receitas e despesas.\n\nO sistema permitirá registrar gastos e recebimentos, organizar movimentações por categorias, acompanhar pagamentos pendentes e realizados, além de calcular os totais financeiros da casa.\n\nAs transações poderão ser cadastradas manualmente ou geradas automaticamente pelo módulo `recorrencia_financeira`.\n\n```\nTable transacao_financeira {\n  id int [pk, increment]\n  user_id int [not null]\n  categoria_id int [not null]\n  conta_id int\n  recorrencia_id int\n  descricao text [not null]\n  tipo varchar(30) [not null]\n  valor decimal(15,2) [not null]\n  competencia date [not null]\n  vencimento date\n  pago_em date\n  status varchar(30) [not null, default: 'pendente']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /transacoes-financeiras - Cadastrar transação financeira",
+                "GET /transacoes-financeiras/:id - Buscar transação pelo ID",
+                "GET /transacoes-financeiras/usuario/:userId - Listar transações financeiras de um usuário",
+                "GET /transacoes-financeiras/usuario/:userId/resumo - Consultar resumo financeiro do usuário",
+                "PATCH /transacoes-financeiras/:id - Atualizar informações da transação",
+                "PATCH /transacoes-financeiras/:id/pagar - Marcar transação como paga ou recebida",
+                "PATCH /transacoes-financeiras/:id/pendente - Retornar transação para pendente",
+                "DELETE /transacoes-financeiras/:id - Excluir transação financeira"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Uma transação paga deve possuir uma data de pagamento",
+                "Ao marcar uma transação como paga ou recebida, atualizar seu status para pago"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Orçamento",
+          "descricao": "Aqui será a parte responsável por gerenciar os orçamentos financeiros dos usuários, permitindo definir, visualizar, editar e excluir limites de gastos mensais por categoria.\n\nO sistema permitirá que os usuários estabeleçam quanto pretendem gastar em cada categoria, como alimentação, transporte, lazer e moradia, acompanhando os valores já gastos e quanto ainda resta do orçamento.\n\nOs gastos serão calculados utilizando as despesas registradas na tabela `transacao_financeira`.\n\n```\nTable orcamento {\n  id int [pk, increment]\n  user_id int [not null]\n  categoria_id int [not null]\n  mes date [not null]\n  limite decimal(15,2) [not null]\n\n  indexes {\n    (user_id, categoria_id, mes) [unique]\n  }\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /orcamentos - Cadastrar orçamento",
+                "GET /orcamentos/:id - Buscar orçamento pelo ID",
+                "GET /orcamentos/usuario/:userId - Listar orçamentos de um usuário",
+                "GET /orcamentos/usuario/:userId/resumo - Consultar resumo dos orçamentos do usuário",
+                "PATCH /orcamentos/:id - Atualizar orçamento",
+                "DELETE /orcamentos/:id - Excluir orçamento"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Meta Finanças",
+          "descricao": "Aqui será a parte responsável por gerenciar as metas financeiras dos usuários, permitindo cadastrar, visualizar, editar e excluir objetivos financeiros.\n\nO sistema permitirá que os usuários estabeleçam metas, como montar uma reserva de emergência, comprar móveis, juntar dinheiro para uma mudança ou realizar uma viagem.\n\nCada meta terá um valor desejado, um valor já acumulado e poderá possuir um prazo para conclusão. O sistema também permitirá acompanhar o progresso e identificar quando uma meta for alcançada.\n\n```\nTable meta_financeira {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  valor_atual decimal(15,2) [not null, default: 0]\n  valor_alvo decimal(15,2) [not null]\n  prazo date\n  status varchar(30) [not null, default: 'ativa']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /metas-financeiras - Cadastrar meta financeira",
+                "GET /metas-financeiras/:id - Buscar meta financeira pelo ID",
+                "GET /metas-financeiras/usuario/:userId - Listar metas financeiras de um usuário",
+                "PATCH /metas-financeiras/:id - Atualizar informações da meta",
+                "PATCH /metas-financeiras/:id/valor - Atualizar valor acumulado da meta",
+                "PATCH /metas-financeiras/:id/concluir - Marcar meta como concluída",
+                "PATCH /metas-financeiras/:id/cancelar - Cancelar meta financeira",
+                "DELETE /metas-financeiras/:id - Excluir meta financeira"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O campo status deve aceitar os valores ativa, concluida e cancelada",
+                "Ao adicionar um valor, somar a quantia ao valor_atual"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Conta Finanças",
+          "descricao": "Aqui será a parte responsável por gerenciar as contas financeiras dos usuários, permitindo cadastrar, visualizar, editar e excluir contas utilizadas para organizar o dinheiro da casa.\n\nO sistema permitirá que os usuários cadastrem contas como conta corrente, poupança, carteira e dinheiro físico, acompanhando seus saldos e movimentações financeiras.\n\nCada conta possuirá um saldo inicial, e seu saldo atual será calculado a partir das receitas e despesas registradas na tabela `transacao_financeira`.\n\n```\nTable conta_financeira {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  tipo varchar(50) [not null]\n  saldo_inicial decimal(15,2) [not null, default: 0]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /contas-financeiras - Cadastrar conta financeira",
+                "GET /contas-financeiras/:id - Buscar conta financeira pelo ID",
+                "GET /contas-financeiras/usuario/:userId - Listar contas financeiras de um usuário",
+                "GET /contas-financeiras/:id/extrato - Consultar movimentações de uma conta",
+                "PATCH /contas-financeiras/:id - Atualizar informações da conta",
+                "DELETE /contas-financeiras/:id - Excluir conta financeira"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O saldo atual deve ser calculado utilizando o saldo inicial e as transações financeiras vinculadas à conta"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Jornada",
+          "descricao": "Aqui será a parte responsável por gerenciar as jornadas pessoais dos usuários, permitindo cadastrar, visualizar, editar e excluir jornadas relacionadas ao planejamento de morar sozinho.\n\nAs jornadas serão utilizadas principalmente pelos usuários que ainda estão se preparando para morar sozinhos, permitindo acompanhar sua evolução através de etapas e tarefas.\n\nCada jornada poderá possuir várias etapas, que serão gerenciadas pelo módulo `etapa_jornada`.\n\n```\nTable jornada {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  descricao text\n  status varchar(30) [not null, default: 'em_andamento']\n  criada_em datetime [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /jornadas - Cadastrar jornada",
+                "GET /jornadas/:id - Buscar jornada pelo ID",
+                "GET /jornadas/user/:userId - Listar jornadas de um usuário",
+                "GET /jornadas/:id/progresso - Consultar progresso da jornada",
+                "PATCH /jornadas/:id - Atualizar informações da jornada",
+                "PATCH /jornadas/:id/concluir - Marcar jornada como concluída",
+                "PATCH /jornadas/:id/reabrir - Reabrir jornada",
+                "DELETE /jornadas/:id - Excluir jornada"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Etapa Jornada",
+          "descricao": "Aqui será a parte responsável por gerenciar as etapas das jornadas pessoais dos usuários, permitindo cadastrar, visualizar, editar, organizar e concluir etapas relacionadas ao planejamento de morar sozinho.\n\nCada etapa representará uma fase da jornada, como planejamento financeiro, organização da mudança, escolha da moradia ou preparação para a vida independente.\n\nAs etapas poderão possuir tarefas específicas, gerenciadas pelo módulo `tarefa_jornada`, permitindo acompanhar o progresso de cada fase e da jornada como um todo.\n\nA imagem ilustrativa da etapa pode ser definida pelos mesmos endpoints de criação e edição.\n\n```\nTable etapa_jornada {\n  id int [pk, increment]\n  jornada_id int [not null]\n  titulo varchar(150) [not null]\n  descricao text\n  categoria varchar(50)\n  ordem int [not null]\n  status varchar(30) [not null, default: 'pendente']\n  prazo date\n  concluida_em datetime\n  foto varchar(150)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /jornadas/:jornadaId/etapas - Cadastrar etapa em uma jornada",
+                "GET /jornadas/:jornadaId/etapas - Listar etapas de uma jornada",
+                "GET /etapas-jornada/:id - Buscar etapa pelo ID",
+                "GET /etapas-jornada/:id/progresso - Consultar progresso das tarefas da etapa",
+                "PATCH /etapas-jornada/:id - Atualizar informações da etapa",
+                "PATCH /etapas-jornada/:id/concluir - Marcar etapa como concluída",
+                "PATCH /etapas-jornada/:id/reabrir - Reabrir etapa concluída",
+                "PATCH /jornadas/:jornadaId/etapas/ordenar - Reorganizar ordem das etapas",
+                "DELETE /etapas-jornada/:id - Excluir etapa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O campo categoria pode representar áreas como financas, moradia, mudanca, organizacao e aprendizado",
+                "O campo status deve aceitar os valores pendente e concluida",
+                "A imagem escolhida pelo usuário é identificada pela chave de uma opção do catálogo visual da jornada."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Tarefa Jornada",
+          "descricao": "Aqui será a parte responsável por gerenciar as tarefas individuais de cada etapa das jornadas, permitindo cadastrar, visualizar, editar, organizar, concluir e excluir atividades relacionadas à preparação para morar sozinho.\n\nCada tarefa representará uma ação específica que o usuário deverá realizar para avançar em determinada etapa, como pesquisar preços de aluguel, organizar documentos, calcular despesas mensais ou comprar itens essenciais.\n\nAs tarefas estarão vinculadas às etapas através da tabela `etapa_jornada`, permitindo acompanhar o progresso de cada etapa e, consequentemente, da jornada completa.\n\n```\nTable tarefa_jornada {\n  id int [pk, increment]\n  etapa_id int [not null]\n  titulo varchar(150) [not null]\n  descricao text\n  concluida boolean [not null, default: false]\n  ordem int [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /etapas-jornada/:etapaId/tarefas - Cadastrar tarefa em uma etapa",
+                "GET /etapas-jornada/:etapaId/tarefas - Listar tarefas de uma etapa",
+                "GET /tarefas-jornada/:id - Buscar tarefa pelo ID",
+                "PATCH /tarefas-jornada/:id - Atualizar informações da tarefa",
+                "PATCH /tarefas-jornada/:id/concluir - Marcar tarefa como concluída",
+                "PATCH /tarefas-jornada/:id/reabrir - Reabrir tarefa concluída",
+                "PATCH /etapas-jornada/:etapaId/tarefas/ordenar - Reorganizar ordem das tarefas",
+                "DELETE /tarefas-jornada/:id - Excluir tarefa"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Plano Moradia",
+          "descricao": "Aqui será a parte responsável por gerenciar os planos de moradia dos usuários, permitindo cadastrar, visualizar, editar e excluir planejamentos financeiros relacionados ao objetivo de morar sozinho.\n\nO sistema permitirá que o usuário informe sua renda mensal, reserva financeira disponível e previsão de mudança, organizando os valores necessários para conquistar sua independência.\n\nCada plano poderá possuir custos estimados e simulações financeiras, gerenciados pelos módulos `custo_moradia` e `simulacao_moradia`, permitindo avaliar se morar sozinho é financeiramente viável.\n\nO plano pode ser associado a um imóvel desejado para separar o orçamento de cada opção.\n\n```\nTable plano_moradia {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  renda_mensal decimal(12,2) [not null, default: 0]\n  reserva_atual decimal(12,2) [not null, default: 0]\n  mudanca_prevista date\n  status varchar(30) [not null, default: 'ativo']\n  casa_desejada_id int [ref: > casa_desejada.id]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /planos-moradia - Cadastrar plano de moradia",
+                "GET /planos-moradia/:id - Buscar plano de moradia pelo ID",
+                "GET /planos-moradia/user/:userId - Listar planos de moradia de um usuário",
+                "GET /planos-moradia/:id/resumo - Consultar resumo financeiro do plano",
+                "PATCH /planos-moradia/:id - Atualizar informações do plano",
+                "PATCH /planos-moradia/:id/concluir - Marcar plano como concluído",
+                "PATCH /planos-moradia/:id/arquivar - Arquivar plano de moradia",
+                "PATCH /planos-moradia/:id/reativar - Reativar plano de moradia",
+                "DELETE /planos-moradia/:id - Excluir plano de moradia"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O imóvel vinculado deve pertencer ao usuário do plano. Cada imóvel pode ter no máximo um plano vinculado.",
+                "As telas usam a renda e a reserva de Meu dinheiro como referência atual quando preenchidas; os dados legados do plano podem servir como fallback."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Custo Moradia",
+          "descricao": "Aqui será a parte responsável por gerenciar os custos estimados dos planos de moradia, permitindo cadastrar, consultar, editar e excluir despesas relacionadas ao planejamento de morar sozinho.\n\nOs custos poderão representar despesas mensais, como aluguel, água, energia e internet, ou gastos iniciais, como móveis, eletrodomésticos, caução e transporte da mudança.\n\nEssas informações serão utilizadas para calcular o custo de vida estimado, o dinheiro necessário para a mudança e a viabilidade financeira do plano.\n\n```\nTable custo_moradia {\n  id int [pk, increment]\n  plano_id int [not null]\n  nome varchar(150) [not null]\n  categoria varchar(50) [not null]\n  tipo varchar(30) [not null]\n  valor decimal(12,2) [not null, default: 0]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /planos-moradia/:planoId/custos - Cadastrar custo de moradia",
+                "GET /planos-moradia/:planoId/custos - Listar custos do plano",
+                "GET /custos-moradia/:id - Buscar custo pelo ID",
+                "PATCH /custos-moradia/:id - Atualizar custo de moradia",
+                "DELETE /custos-moradia/:id - Excluir custo de moradia"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Simulação Moradia",
+          "descricao": "Aqui será a parte responsável por gerenciar as simulações financeiras dos planos de moradia, permitindo criar, visualizar, editar e excluir diferentes cenários para morar sozinho.\n\nO usuário poderá simular situações com rendas mensais, reservas financeiras e despesas diferentes, comparando possibilidades antes de tomar decisões sobre sua mudança.\n\nCada simulação terá seus próprios custos, gerenciados pelo módulo `simulacao_item`, permitindo comparar cenários sem modificar os valores originais do plano de moradia.\n\n```\nTable simulacao_moradia {\n  id int [pk, increment]\n  plano_id int [not null]\n  nome varchar(150) [not null]\n  renda_mensal decimal(12,2) [not null]\n  reserva decimal(12,2) [not null, default: 0]\n  criada_em datetime [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /planos-moradia/:planoId/simulacoes - Criar simulação de moradia",
+                "GET /planos-moradia/:planoId/simulacoes - Listar simulações do plano",
+                "GET /simulacoes-moradia/:id - Buscar simulação pelo ID",
+                "GET /simulacoes-moradia/:id/resumo - Consultar resultado financeiro da simulação",
+                "PATCH /simulacoes-moradia/:id - Atualizar informações da simulação",
+                "DELETE /simulacoes-moradia/:id - Excluir simulação"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Item Simulação",
+          "descricao": "Aqui será a parte responsável por gerenciar os custos individuais das simulações de moradia, permitindo cadastrar, visualizar, editar e excluir despesas utilizadas na comparação de diferentes cenários financeiros.\n\nCada item representará um gasto estimado, como aluguel, alimentação, transporte, móveis ou contas domésticas, podendo ser classificado como mensal ou inicial.\n\nEsses valores serão utilizados para calcular os resultados financeiros de cada simulação, permitindo que o usuário experimente diferentes custos sem alterar seu plano de moradia original.\n\n```\nTable simulacao_item {\n  id int [pk, increment]\n  simulacao_id int [not null]\n  nome varchar(150) [not null]\n  categoria varchar(50) [not null]\n  tipo varchar(30) [not null]\n  valor decimal(12,2) [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /simulacoes-moradia/:simulacaoId/itens - Cadastrar item na simulação",
+                "GET /simulacoes-moradia/:simulacaoId/itens - Listar itens da simulação",
+                "GET /simulacoes-itens/:id - Buscar item pelo ID",
+                "PATCH /simulacoes-itens/:id - Atualizar item da simulação",
+                "DELETE /simulacoes-itens/:id - Excluir item da simulação"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Casa Desejada",
+          "descricao": "Aqui será a parte responsável por gerenciar os imóveis que os usuários desejam morar, permitindo cadastrar, visualizar, editar e excluir opções de moradia.\n\nO usuário poderá salvar casas, apartamentos, kitnets ou outros tipos de imóveis, registrando informações como localização, valor, tipo e descrição.\n\nEssa funcionalidade permitirá organizar diferentes opções de moradia e consultar seus valores durante o planejamento da mudança, sem precisar cadastrar o imóvel como uma casa real no sistema.\n\nO cadastro também distingue o valor total de compra do valor mensal de locação e guarda a situação da mobília.\n\n```\nTable casa_desejada {\n  id int [pk, increment]\n  user_id int [not null]\n  endereco_id int\n  titulo varchar(150) [not null]\n  descricao varchar(500)\n  tipo varchar(150) [not null]\n  valor decimal(12,2)\n  valor_tipo varchar(20)\n  mobilia varchar(30)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /casas-desejadas - Cadastrar imóvel desejado",
+                "GET /casas-desejadas - Listar imóveis desejados do usuário",
+                "GET /casas-desejadas/:id - Buscar imóvel desejado pelo ID",
+                "PATCH /casas-desejadas/:id - Atualizar informações do imóvel",
+                "DELETE /casas-desejadas/:id - Excluir imóvel desejado"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "valor_tipo aceita mensal ou total. Apenas valores mensais entram automaticamente nos gastos recorrentes.",
+                "mobilia aceita mobiliado, parcial, sem-moveis ou valor nulo."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Aulas",
+          "descricao": "Aqui será a parte responsável por gerenciar os conteúdos educativos, permitindo cadastrar, visualizar, editar e excluir aulas disponibilizadas na plataforma.\n\nAs aulas terão como objetivo ensinar habilidades essenciais para morar sozinho, abordando assuntos como educação financeira, organização doméstica, culinária, limpeza e manutenção da casa.\n\nCada aula poderá conter conteúdo escrito, vídeo e imagem, além de possuir um quiz para avaliar o aprendizado do usuário. As aulas serão disponibilizadas em um catálogo compartilhado, e o progresso individual será controlado pelo módulo `progresso_aula`.\n\n```\nTable aula {\n  id int [pk, increment]\n  titulo varchar(150) [not null]\n  descricao text\n  conteudo text\n  video_url varchar(500)\n  imagem varchar(500)\n  categoria varchar(100) [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /aulas - Cadastrar aula",
+                "GET /aulas - Listar aulas disponíveis",
+                "GET /aulas/:id - Buscar aula pelo ID",
+                "PATCH /aulas/:id - Atualizar informações da aula",
+                "DELETE /aulas/:id - Excluir aula"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Progresso Aula",
+          "descricao": "Aqui será a parte responsável por gerenciar o progresso individual dos usuários nas aulas educativas, permitindo acompanhar quais conteúdos já foram estudados e concluídos.\n\nCada usuário terá seu próprio histórico de aprendizado, podendo marcar aulas como concluídas, acompanhar seu progresso e identificar conteúdos pendentes.\n\nEssas informações serão utilizadas para apresentar o avanço do usuário na área educacional da plataforma, sem interferir no progresso de outros usuários.\n\n```\nTable progresso_aula {\n  id int [pk, increment]\n  user_id int [not null]\n  aula_id int [not null]\n  concluida boolean [not null, default: false]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /progresso-aulas - Listar progresso do usuário nas aulas",
+                "GET /progresso-aulas/resumo - Consultar resumo geral de aprendizado",
+                "GET /aulas/:aulaId/progresso - Consultar progresso do usuário em uma aula",
+                "PATCH /aulas/:aulaId/concluir - Marcar aula como concluída",
+                "PATCH /aulas/:aulaId/reabrir - Marcar aula como não concluída"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Quiz",
+          "descricao": "Aqui será a parte responsável por gerenciar os quizzes educativos, permitindo cadastrar, visualizar, editar e excluir questionários vinculados às aulas da plataforma.\n\nCada quiz será utilizado para avaliar o conhecimento adquirido pelo usuário após estudar uma aula, contendo questões de múltipla escolha gerenciadas pelos módulos `questao` e `alternativa`.\n\nOs usuários poderão responder aos quizzes e acompanhar seus resultados, enquanto as tentativas e pontuações serão registradas pelo módulo `tentativa_quiz`.\n\n```\nTable quiz {\n  id int [pk, increment]\n  aula_id int [not null]\n  titulo varchar(150) [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /aulas/:aulaId/quizzes - Cadastrar quiz em uma aula",
+                "GET /aulas/:aulaId/quizzes - Listar quizzes de uma aula",
+                "GET /quizzes/:id - Buscar quiz pelo ID",
+                "PATCH /quizzes/:id - Atualizar informações do quiz",
+                "DELETE /quizzes/:id - Excluir quiz"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Questão Quiz",
+          "descricao": "Aqui será a parte responsável por gerenciar as questões dos quizzes educativos, permitindo cadastrar, visualizar, editar e excluir perguntas utilizadas nas avaliações das aulas.\n\nCada questão estará vinculada a um quiz e possuirá um enunciado que será apresentado ao usuário durante a avaliação.\n\nAs opções de resposta serão gerenciadas pelo módulo `alternativa`, permitindo criar questões de múltipla escolha e verificar as respostas dos usuários.\n\n```\nTable questao {\n  id int [pk, increment]\n  quiz_id int [not null]\n  enunciado text [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /quizzes/:quizId/questoes - Cadastrar questão em um quiz",
+                "GET /quizzes/:quizId/questoes - Listar questões de um quiz",
+                "GET /questoes/:id - Buscar questão pelo ID",
+                "PATCH /questoes/:id - Atualizar enunciado da questão",
+                "DELETE /questoes/:id - Excluir questão"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Alternativa Quiz",
+          "descricao": "Aqui será a parte responsável por gerenciar as alternativas das questões dos quizzes educativos, permitindo cadastrar, visualizar, editar e excluir as opções de resposta.\n\nCada alternativa estará vinculada a uma questão e possuirá um texto e um indicador que determina se ela é a resposta correta.\n\nEssas informações serão utilizadas para apresentar as opções de múltipla escolha e corrigir automaticamente as respostas dos usuários durante os quizzes.\n\n```\nTable alternativa {\n  id int [pk, increment]\n  questao_id int [not null]\n  texto text [not null]\n  correta boolean [not null, default: false]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /questoes/:questaoId/alternativas - Cadastrar alternativa em uma questão",
+                "GET /questoes/:questaoId/alternativas - Listar alternativas de uma questão",
+                "GET /alternativas/:id - Buscar alternativa pelo ID",
+                "PATCH /alternativas/:id - Atualizar alternativa",
+                "DELETE /alternativas/:id - Excluir alternativa"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Tentativa Quiz",
+          "descricao": "Aqui será a parte responsável por gerenciar as tentativas dos usuários nos quizzes educativos, permitindo iniciar avaliações, registrar respostas, finalizar tentativas e consultar resultados.\n\nCada tentativa estará vinculada a um usuário e a um quiz, permitindo que o mesmo usuário realize uma avaliação várias vezes e acompanhe seu desempenho.\n\nAs respostas serão armazenadas no módulo `resposta_quiz`, enquanto a pontuação será calculada automaticamente com base nas alternativas corretas.\n\n```\nTable tentativa_quiz {\n  id int [pk, increment]\n  user_id int [not null]\n  quiz_id int [not null]\n  pontuacao decimal(5,2)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /quizzes/:quizId/tentativas - Iniciar tentativa de um quiz",
+                "GET /quizzes/:quizId/tentativas - Listar tentativas do usuário em um quiz",
+                "GET /tentativas-quiz/:id - Consultar tentativa e suas respostas",
+                "POST /tentativas-quiz/:id/finalizar - Finalizar tentativa e calcular pontuação",
+                "GET /tentativas-quiz/:id/resultado - Consultar resultado da tentativa"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Resposta Quiz",
+          "descricao": "Aqui será a parte responsável por gerenciar as respostas dos usuários durante as tentativas dos quizzes educativos, permitindo registrar, consultar e atualizar as alternativas selecionadas.\n\nCada resposta estará vinculada a uma tentativa, uma questão e uma alternativa, permitindo que o sistema corrija automaticamente as avaliações e calcule a pontuação final.\n\nAs respostas serão utilizadas pelo módulo `tentativa_quiz` para identificar acertos, erros e apresentar os resultados ao usuário.\n\n```\nTable resposta_quiz {\n  id int [pk, increment]\n  tentativa_id int [not null]\n  questao_id int [not null]\n  alternativa_id int [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /tentativas-quiz/:tentativaId/respostas - Registrar resposta de uma questão",
+                "GET /tentativas-quiz/:tentativaId/respostas - Listar respostas da tentativa",
+                "PATCH /respostas-quiz/:id - Alterar alternativa selecionada",
+                "DELETE /respostas-quiz/:id - Remover resposta de uma tentativa"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Perfil Empresa",
+          "descricao": "Aqui será a parte responsável por gerenciar os perfis das empresas e prestadores de serviços cadastrados, permitindo preencher, visualizar e atualizar suas informações comerciais.\n\nDiferentemente dos usuários comuns, as empresas deverão preencher seus dados após o cadastro e enviar o perfil para validação, antes de disponibilizar seus serviços publicamente no marketplace.\n\nO módulo também permitirá que os administradores analisem e aprovem os perfis, garantindo que apenas empresas validadas possam anunciar seus serviços na plataforma.\n\n```\nTable perfil_empresa {\n  id int [pk, increment]\n  user_id int [not null]\n  endereco_id int\n  nome varchar(150) [not null]\n  cnpj char(14) [not null, unique]\n  descricao text\n  categoria varchar(150) [not null]\n  logo varchar(500)\n  banner varchar(500)\n  telefone varchar(20) [not null]\n  local_atendimento json\n  horario_atendimento json\n  email_comercial varchar(255) [not null]\n  site varchar(500)\n  data_criacao datetime [not null]\n  validado boolean [not null, default: false]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /empresas/perfil - Cadastrar perfil comercial",
+                "GET /empresas/meu-perfil - Consultar próprio perfil empresarial",
+                "PATCH /empresas/meu-perfil - Atualizar informações comerciais",
+                "POST /empresas/meu-perfil/enviar-validacao - Enviar perfil para análise",
+                "GET /empresas - Listar empresas validadas",
+                "GET /empresas/:id - Consultar perfil público de uma empresa",
+                "GET /admin/empresas/pendentes - Listar empresas aguardando validação",
+                "PATCH /admin/empresas/:id/aprovar - Aprovar perfil empresarial",
+                "PATCH /admin/empresas/:id/reprovar - Reprovar perfil empresarial"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Somente usuários cadastrados como empresa (users.tipo = 2) podem criar perfis empresariais",
+                "A data de criação deve ser definida automaticamente"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Serviços",
+          "descricao": "Aqui será a parte responsável por gerenciar os serviços oferecidos pelas empresas e prestadores cadastrados, permitindo criar, visualizar, editar e excluir anúncios de serviços no marketplace.\n\nCada serviço estará vinculado a um perfil empresarial e poderá conter descrição, imagens, categoria, preço, disponibilidade e avaliações, permitindo que os usuários encontrem profissionais para suas necessidades.\n\nOs serviços deverão passar por um processo de validação e publicação antes de aparecerem no marketplace. O módulo também será integrado aos sistemas de contratação, avaliação e planos de publicação.\n\n```\nTable servico {\n  id int [pk, increment]\n  empresa_id int [not null]\n  titulo varchar(150) [not null]\n  descricao text [not null]\n  fotos json\n  categoria varchar(100) [not null]\n  preco decimal(10,2)\n  tipo_preco varchar(30) [not null]\n  ativo boolean [not null, default: true]\n  disponibilidade json\n  validado boolean [not null, default: false]\n  nota decimal(3,2)\n  status_publicacao varchar(30) [not null, default: 'rascunho']\n  publicado_em datetime\n  expira_em datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /servicos - Cadastrar novo serviço",
+                "GET /servicos - Listar serviços disponíveis no marketplace",
+                "GET /servicos/:id - Consultar detalhes de um serviço",
+                "GET /empresas/meus-servicos - Listar serviços da empresa autenticada",
+                "PATCH /servicos/:id - Atualizar informações do serviço",
+                "DELETE /servicos/:id - Excluir serviço",
+                "POST /servicos/:id/enviar-validacao - Enviar serviço para análise",
+                "PATCH /servicos/:id/ativar - Ativar serviço",
+                "PATCH /servicos/:id/desativar - Desativar serviço",
+                "GET /admin/servicos/pendentes - Listar serviços aguardando validação",
+                "PATCH /admin/servicos/:id/aprovar - Aprovar serviço",
+                "PATCH /admin/servicos/:id/reprovar - Reprovar serviço"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Todo serviço deve ser criado inicialmente como rascunho, com validado = false",
+                "Serviços em rascunho podem ser editados livremente pela empresa e não devem aparecer no marketplace"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Publicar Serviço",
+          "descricao": "Aqui será a parte responsável por gerenciar as publicações pagas dos serviços oferecidos pelas empresas no marketplace, permitindo contratar planos de divulgação, acompanhar o período de publicação e consultar seu status.\n\nCada publicação estará vinculada a um serviço e a um plano de publicação, armazenando o valor contratado, a data de início, a data de término e o status da publicação.\n\nO módulo será integrado às tabelas `servico`, `plano_publicacao` e `pagamento`, permitindo que os serviços aprovados sejam disponibilizados no marketplace após a confirmação do pagamento.\n\n```\nTable publicacao_servico {\n  id int [pk, increment]\n  servico_id int [not null]\n  plano_id int [not null]\n  inicio datetime\n  fim datetime\n  valor decimal(10,2) [not null]\n  status varchar(30) [not null, default: 'pendente']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /servicos/:servicoId/publicacoes - Contratar plano de publicação para um serviço",
+                "GET /servicos/:servicoId/publicacoes - Listar histórico de publicações do serviço",
+                "GET /publicacoes-servico/:id - Consultar detalhes de uma publicação",
+                "GET /empresas/minhas-publicacoes - Listar publicações da empresa autenticada",
+                "POST /publicacoes-servico/:id/renovar - Renovar publicação de um serviço",
+                "PATCH /publicacoes-servico/:id/cancelar - Cancelar publicação"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Contratação Serviços",
+          "descricao": "Aqui será a parte responsável por gerenciar as contratações de serviços realizadas pelos usuários no marketplace, permitindo solicitar, acompanhar, cancelar e concluir serviços.\n\nCada contratação estará vinculada a um serviço e ao perfil do usuário contratante, armazenando o valor combinado, endereço de atendimento, descrição da solicitação, data de agendamento e status da contratação.\n\nO módulo também permitirá que as empresas acompanhem as solicitações recebidas, aceitem ou recusem contratações e atualizem seu andamento. Após a conclusão, o usuário poderá avaliar o serviço prestado.\n\n```\nTable servico_contratado {\n  id int [pk, increment]\n  servico_id int [not null]\n  perfil_id int [not null]\n  endereco_id int\n  descricao text\n  data_agendamento datetime\n  valor decimal(10,2) [not null]\n  status varchar(30) [not null, default: 'pendente']\n  data_contratacao datetime [not null]\n  data_conclusao datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /servicos/:servicoId/contratar - Solicitar contratação de um serviço",
+                "GET /contratacoes - Listar contratações realizadas pelo usuário",
+                "GET /contratacoes/:id - Consultar detalhes de uma contratação",
+                "PATCH /contratacoes/:id - Atualizar informações da solicitação",
+                "PATCH /contratacoes/:id/cancelar - Cancelar contratação",
+                "GET /empresas/contratacoes - Listar solicitações recebidas pela empresa",
+                "PATCH /contratacoes/:id/aceitar - Aceitar solicitação de contratação",
+                "PATCH /contratacoes/:id/recusar - Recusar solicitação de contratação",
+                "PATCH /contratacoes/:id/iniciar - Marcar serviço como em andamento",
+                "PATCH /contratacoes/:id/concluir - Marcar serviço como concluído"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Somente usuários comuns podem solicitar a contratação de serviços",
+                "O sistema deve utilizar os seguintes status: pendente, aceito, em_andamento, concluido, cancelado e recusado",
+                "O usuário pode cancelar uma solicitação pendente. Cancelamentos após a aceitação devem seguir uma regra específica de negociação"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Avaliacao Serviços",
+          "descricao": "Aqui será a parte responsável por gerenciar as avaliações dos serviços contratados no marketplace, permitindo que os usuários atribuam notas e publiquem comentários sobre suas experiências.\n\nCada avaliação estará vinculada a uma contratação e ao perfil do usuário responsável, garantindo que somente pessoas que realmente contrataram e concluíram um serviço possam avaliá-lo.\n\nAs avaliações serão utilizadas para calcular a nota média dos serviços e ajudar outros usuários a escolher prestadores de serviços na plataforma.\n\n```\nTable avaliacao_servico {\n  id int [pk, increment]\n  contratado_id int [not null, unique]\n  perfil_id int [not null]\n  nota int [not null]\n  comentario text\n  data_avaliacao datetime [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /contratacoes/:contratacaoId/avaliacao - Avaliar um serviço contratado",
+                "GET /servicos/:servicoId/avaliacoes - Listar avaliações de um serviço",
+                "GET /avaliacoes/:id - Consultar detalhes de uma avaliação",
+                "GET /minhas-avaliacoes - Listar avaliações realizadas pelo usuário",
+                "PATCH /avaliacoes/:id - Editar avaliação realizada",
+                "DELETE /avaliacoes/:id - Excluir avaliação realizada"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Somente contratações com status = 'concluido' podem receber avaliações",
+                "Cada contratação pode possuir apenas uma avaliação, respeitando o campo contratado_id unique"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Chat Serviços",
+          "descricao": "Aqui será a parte responsável por gerenciar as conversas entre usuários e empresas no marketplace, permitindo que clientes entrem em contato com prestadores de serviços para tirar dúvidas, solicitar informações e negociar contratações.\n\nCada chat estará vinculado ao perfil de um usuário e a uma empresa, podendo também estar associado a uma contratação específica.\n\nO módulo será integrado à tabela `mensagem`, responsável por armazenar o conteúdo das conversas, permitindo manter o histórico de comunicação entre clientes e prestadores de serviços.\n\n```\nTable chat_servico {\n  id int [pk, increment]\n  perfil_id int [not null]\n  empresa_id int [not null]\n  contratado_id int [unique]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /chats-servico - Iniciar conversa com uma empresa",
+                "GET /chats-servico - Listar conversas do usuário autenticado",
+                "GET /chats-servico/:id - Listar detalhes de um chat",
+                "DELETE /chats-servico/:id - Excluir conversa do histórico"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Mensagem Chat",
+          "descricao": "Aqui será a parte responsável por gerenciar as mensagens enviadas entre usuários e empresas nos chats de serviços, permitindo enviar, visualizar e acompanhar a leitura das mensagens.\n\nCada mensagem estará vinculada a um chat e ao usuário responsável pelo envio, armazenando o conteúdo, a data de envio e o momento em que a mensagem foi lida.\n\nO módulo será integrado ao `chat_servico`, permitindo que clientes e prestadores de serviços conversem sobre dúvidas, orçamentos, agendamentos e contratações, mantendo o histórico de comunicação.\n\n```\nTable mensagem {\n  id int [pk, increment]\n  chat_id int [not null]\n  user_id int [not null]\n  mensagem text [not null]\n  data datetime [not null]\n  lida_em datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /chats-servico/:chatId/mensagens - Enviar mensagem em uma conversa",
+                "GET /chats-servico/:chatId/mensagens - Listar mensagens da conversa",
+                "PATCH /chats-servico/:chatId/mensagens/lidas - Marcar mensagens recebidas como lidas",
+                "GET /chats-servico/:chatId/mensagens/nao-lidas - Consultar quantidade de mensagens não lidas"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "A data de envio deve ser definida automaticamente"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Assinatura",
+          "descricao": "Aqui será a parte responsável por gerenciar as assinaturas contratadas pelos usuários, permitindo contratar planos, consultar assinaturas, acompanhar cobranças e solicitar cancelamentos.\n\nCada assinatura estará vinculada a um usuário e a um plano de assinatura, armazenando o status da contratação, a data de início, a próxima cobrança e a data de cancelamento.\n\nO módulo será integrado às tabelas `plano_assinatura` e `pagamento`, permitindo controlar os benefícios disponíveis para cada usuário de acordo com a situação de sua assinatura.\n\n```\nTable assinatura {\n  id int [pk, increment]\n  user_id int [not null]\n  plano_id int [not null]\n  status varchar(30) [not null, default: 'pendente']\n  inicio datetime [not null]\n  proxima_cobranca datetime\n  cancelada_em datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /assinaturas - Contratar um plano de assinatura",
+                "GET /assinaturas/minha - Consultar assinatura atual do usuário",
+                "GET /assinaturas/historico - Listar histórico de assinaturas do usuário",
+                "GET /assinaturas/:id - Consultar detalhes de uma assinatura",
+                "PATCH /assinaturas/:id/cancelar - Solicitar cancelamento da assinatura",
+                "PATCH /assinaturas/:id/alterar-plano - Alterar plano contratado",
+                "GET /admin/assinaturas - Listar assinaturas da plataforma",
+                "GET /admin/assinaturas/:id - Consultar assinatura de um usuário"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Somente planos ativos podem receber novas assinaturas",
+                "O sistema deve utilizar os status: pendente, ativa, atrasada, cancelada e expirada",
+                "Cada usuário pode possuir apenas uma assinatura ativa ou pendente por vez",
+                "Uma assinatura deve ser criada inicialmente com status = 'pendente'"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Plano Assinatura",
+          "descricao": "Aqui será a parte responsável por gerenciar os planos de assinatura oferecidos, permitindo cadastrar, visualizar, atualizar e desativar planos com diferentes preços e benefícios.\n\nCada plano possuirá um nome, descrição, valor e conjunto de benefícios, permitindo que a plataforma ofereça funcionalidades e vantagens exclusivas para usuários assinantes.\n\nO módulo será integrado às tabelas `assinatura` e `pagamento`, responsáveis por controlar as assinaturas contratadas, seus status e as cobranças realizadas.\n\n```\nTable plano_assinatura {\n  id int [pk, increment]\n  nome varchar(100) [not null, unique]\n  descricao text\n  preco decimal(10,2) [not null]\n  beneficios json\n  ativo boolean [not null, default: true]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /planos-assinatura - Cadastrar plano de assinatura",
+                "GET /planos-assinatura - Listar planos disponíveis",
+                "GET /planos-assinatura/:id - Consultar detalhes de um plano",
+                "PATCH /planos-assinatura/:id - Atualizar informações do plano",
+                "PATCH /planos-assinatura/:id/ativar - Ativar plano",
+                "PATCH /planos-assinatura/:id/desativar - Desativar plano"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Pagamento",
+          "descricao": "Aqui será a parte responsável por gerenciar os pagamentos realizados pelos usuários e empresas, permitindo criar cobranças, acompanhar seus status e consultar o histórico de transações financeiras.\n\nCada pagamento estará vinculado a um usuário e poderá estar associado a uma assinatura ou à publicação de um serviço no marketplace, armazenando o valor cobrado, método utilizado, gateway responsável e informações da transação.\n\nO módulo será integrado às tabelas `metodo_pagamento`, `assinatura` e `publicacao_servico`, permitindo confirmar pagamentos e liberar automaticamente os benefícios ou publicações correspondentes.\n\n```\nTable pagamento {\n  id int [pk, increment]\n  user_id int [not null]\n  metodo_id int\n  assinatura_id int\n  publicacao_id int\n  valor decimal(10,2) [not null]\n  status varchar(30) [not null, default: 'pendente']\n  gateway varchar(50)\n  transacao_externa_id varchar(255) [unique]\n  criado_em datetime [not null]\n  pago_em datetime\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /pagamentos - Criar cobrança para assinatura ou publicação",
+                "GET /pagamentos - Listar pagamentos do usuário autenticado",
+                "GET /pagamentos/:id - Consultar detalhes de um pagamento",
+                "POST /pagamentos/:id/confirmar - Confirmar pagamento em ambiente de testes",
+                "POST /pagamentos/:id/cancelar - Cancelar pagamento pendente",
+                "POST /pagamentos/webhook - Receber atualizações do gateway de pagamento",
+                "GET /admin/pagamentos - Listar pagamentos da plataforma",
+                "GET /admin/pagamentos/:id - Consultar detalhes administrativos de um pagamento"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Metodo Pagamento",
+          "descricao": "Aqui será a parte responsável por gerenciar os métodos de pagamento cadastrados pelos usuários, permitindo adicionar, consultar, definir como principal e desativar formas de pagamento.\n\nCada método estará vinculado a um usuário e poderá armazenar o tipo de pagamento, a bandeira do cartão, os últimos quatro dígitos e um token fornecido pelo gateway de pagamento.\n\nO módulo será integrado às tabelas `pagamento` e `assinatura`, permitindo realizar cobranças de assinaturas e publicações de serviços sem armazenar informações bancárias sensíveis diretamente no banco de dados.\n\n```\nTable metodo_pagamento {\n  id int [pk, increment]\n  user_id int [not null]\n  tipo varchar(30) [not null]\n  apelido varchar(100)\n  bandeira varchar(30)\n  ultimos_digitos char(4)\n  token_gateway varchar(255) [not null, unique]\n  validade_mes int\n  validade_ano int\n  principal boolean [not null, default: false]\n  ativo boolean [not null, default: true]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /metodos-pagamento - Cadastrar método de pagamento",
+                "GET /metodos-pagamento - Listar métodos do usuário",
+                "GET /metodos-pagamento/:id - Consultar detalhes de um método",
+                "PATCH /metodos-pagamento/:id - Atualizar apelido do método",
+                "PATCH /metodos-pagamento/:id/principal - Definir método como principal",
+                "PATCH /metodos-pagamento/:id/desativar - Desativar método de pagamento"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Plano Publicação",
+          "descricao": "Aqui será a parte responsável por gerenciar os planos de publicação oferecidos às empresas e prestadores de serviços, permitindo cadastrar, visualizar, atualizar e desativar planos de divulgação no marketplace.\n\nCada plano possuirá nome, descrição, preço e duração em dias, permitindo que as empresas escolham por quanto tempo desejam manter seus serviços anunciados na plataforma.\n\nO módulo será integrado às tabelas `publicacao_servico` e `pagamento`, responsáveis por registrar a contratação dos planos, controlar as cobranças e determinar o período de exibição dos anúncios.\n\n```\nTable plano_publicacao {\n  id int [pk, increment]\n  nome varchar(100) [not null, unique]\n  descricao text\n  preco decimal(10,2) [not null]\n  duracao_dias int [not null]\n  ativo boolean [not null, default: true]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /planos-publicacao - Cadastrar plano de publicação",
+                "GET /planos-publicacao - Listar planos disponíveis",
+                "GET /planos-publicacao/:id - Consultar detalhes de um plano",
+                "PATCH /planos-publicacao/:id - Atualizar informações do plano",
+                "PATCH /planos-publicacao/:id/ativar - Ativar plano",
+                "PATCH /planos-publicacao/:id/desativar - Desativar plano"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Meu Dinheiro",
+          "descricao": "Aqui será a parte responsável por consultar e atualizar a renda atual, a reserva disponível e a previsão de mudança usadas em Meu dinheiro, Meu plano, Imóveis desejados e Metas.\n\n```\nTable dinheiro_preparacao {\n  user_id int [pk]\n  renda decimal(12,2)\n  reserva decimal(12,2)\n  mudanca_prevista date\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /meu-dinheiro - Consultar a situação financeira do usuário autenticado",
+                "PATCH /meu-dinheiro - Atualizar renda, reserva ou previsão da mudança"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Cada usuário possui uma única situação financeira. Valores monetários informados devem ser não negativos.",
+                "O PATCH distingue campos omitidos de valores nulos. Uma data nula remove a previsão."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Gasto Atual da Preparação",
+          "descricao": "Aqui será a parte responsável pelos gastos atuais de Meu dinheiro e seu tratamento no orçamento após a mudança.\n\n```\nTable gasto_preparacao {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(100) [not null]\n  valor decimal(12,2) [not null]\n  frequencia varchar(20) [not null]\n  destino varchar(20) [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /meu-dinheiro/gastos - Cadastrar gasto mensal atual",
+                "GET /meu-dinheiro/gastos - Listar gastos atuais",
+                "PATCH /meu-dinheiro/gastos/:id - Editar gasto",
+                "DELETE /meu-dinheiro/gastos/:id - Excluir gasto"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "frequencia aceita fixo ou variavel; destino aceita continua, termina ou transferido.",
+                "Apenas os gastos com destino continua são somados aos gastos do plano na projeção após a mudança."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Meta da Mudança",
+          "descricao": "Aqui será a parte responsável por guardar as metas do perfil de preparação. O usuário pode definir um alvo próprio ou guardar a estimativa da mudança junto da meta.\n\n```\nTable meta_mudanca {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  fonte varchar(20) [not null]\n  alvo decimal(12,2) [not null]\n  modo varchar(20) [not null]\n  data date\n  aporte decimal(12,2)\n  estimativa_mudanca json\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /metas-mudanca - Cadastrar meta de mudança",
+                "GET /metas-mudanca - Listar metas do usuário autenticado",
+                "GET /metas-mudanca/:id - Consultar uma meta",
+                "PATCH /metas-mudanca/:id - Editar meta",
+                "DELETE /metas-mudanca/:id - Excluir meta"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "fonte aceita personalizada ou mudanca. modo aceita prazo ou aporte.",
+                "O modo prazo usa a data desejada; o modo aporte usa o valor que o usuário pode guardar por mês."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Categoria de Custo Inicial",
+          "descricao": "Aqui será a parte responsável pelos cards de categorias dos gastos iniciais, incluindo categorias personalizadas, imagens e preferências de exclusão das categorias padrão.\n\n```\nTable categoria_custo_inicial {\n  id int [pk, increment]\n  user_id int [not null]\n  plano_id int [ref: > plano_moradia.id]\n  casa_desejada_id int [ref: > casa_desejada.id]\n  categoria varchar(50) [not null]\n  titulo varchar(60)\n  foto varchar(150)\n  oculta boolean [not null, default: false]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /categorias-custo-inicial - Listar categorias pelo imóvel ou plano informado",
+                "POST /categorias-custo-inicial - Cadastrar categoria com título e imagem",
+                "DELETE /categorias-custo-inicial/:categoria - Excluir categoria no escopo informado"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O escopo deve pertencer ao usuário autenticado. O imóvel permite salvar categorias antes do primeiro custo criar o plano.",
+                "A exclusão deve remover os custos iniciais da categoria no mesmo escopo; nas categorias padrão, deve guardar a preferência de ocultação."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Proposta de Atendimento",
+          "descricao": "Aqui será a parte responsável pela negociação de dia, horário e valor entre cliente e empresa na conversa do serviço.\n\n```\nTable proposta_atendimento {\n  id int [pk, increment]\n  contratado_id int [not null, ref: > servico_contratado.id]\n  autor_user_id int [not null]\n  data_agendamento datetime [not null]\n  valor decimal(10,2) [not null]\n  status varchar(20) [not null, default: 'pendente']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /contratacoes/:id/propostas - Listar propostas e estados da negociação",
+                "POST /contratacoes/:id/propostas - Enviar proposta ou contraproposta",
+                "PATCH /contratacoes/:id/propostas/:propostaId/confirmar - Confirmar a proposta",
+                "PATCH /contratacoes/:id/propostas/:propostaId/recusar - Recusar a proposta",
+                "PATCH /contratacoes/:id/propostas/:propostaId/retirar - Retirar a proposta enviada"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Apenas cliente e empresa da contratação podem consultar ou negociar enquanto ela estiver pendente. Deve haver no máximo uma proposta pendente.",
+                "O autor pode retirar; a outra parte pode confirmar ou recusar. Uma contraproposta substitui a anterior.",
+                "A confirmação deve validar horário futuro e atualizar data, valor e status da contratação na mesma operação."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Serviço Favorito",
+          "descricao": "Aqui será a parte responsável pela seção Favoritos do Marketplace.\n\n```\nTable servico_favorito {\n  user_id int [pk]\n  servico_id int [pk, ref: > servico.id]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /servicos-favoritos - Listar os serviços favoritos do usuário autenticado",
+                "PUT /servicos/:id/favorito - Adicionar serviço aos favoritos",
+                "DELETE /servicos/:id/favorito - Remover serviço dos favoritos"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O par user_id e servico_id é único. Favoritar novamente não cria registros duplicados.",
+                "A listagem deve respeitar a visibilidade dos serviços no catálogo."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Imagens da Empresa e dos Serviços",
+          "descricao": "Aqui será a parte responsável por receber as imagens selecionadas na área profissional e devolver suas URLs para uso no logo, na capa e na galeria dos serviços. As URLs são gravadas pelos endpoints de edição já descritos nos cards Perfil Empresa e Serviços.",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /empresas/meu-perfil/imagens - Enviar uma imagem para logo ou capa do perfil",
+                "POST /servicos/:id/imagens - Enviar imagem para a galeria de um serviço da empresa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Somente o proprietário pode enviar as imagens. Validar tipo, tamanho e quantidade no servidor.",
+                "Aceitar JPG, PNG e WebP. A ordem de fotos no serviço define a imagem principal."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nome": "Backend • v1.0.0",
+      "cards": [
+        {
+          "nome": "Comodo",
+          "descricao": "Aqui será a parte responsável por gerenciar os cômodos das casas, permitindo que os usuários cadastrem, visualizem, editem e excluam ambientes da residência, como quartos, cozinha, banheiro e sala.\n\nOs cômodos também serão utilizados para organizar as atividades de limpeza da casa.\n\n```\nTable comodo {\n  id int [pk, increment]\n  casa_id int [not null]\n  nome varchar(100) [not null]\n  tipo varchar(50) [not null]\n  descricao text\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /comodos - Cadastrar cômodo",
+                "GET /comodos/:id - Buscar cômodo pelo ID",
+                "GET /comodos/casa/:casaId - Listar cômodos de uma casa",
+                "PATCH /comodos/:id - Atualizar informações do cômodo",
+                "DELETE /comodos/:id - Excluir cômodo"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O tipo do cômodo pode representar quarto, sala, cozinha, banheiro, lavanderia, entre outros",
+                "Caso existam atividades de limpeza, a exclusão deve tratar esses registros e seus históricos para evitar dados órfãos"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Executar Limpeza",
+          "descricao": "Aqui será a parte responsável por registrar o histórico de limpezas realizadas nos cômodos das casas, permitindo identificar qual integrante realizou determinada atividade e quando ela foi concluída.\n\nCada execução será vinculada a uma atividade de limpeza e ao perfil do usuário responsável.\n\n```\nTable execucao_limpeza {\n  id int [pk, increment]\n  limpeza_id int [not null]\n  perfil_id int [not null]\n  realizada_em datetime [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /limpezas/:limpezaId/execucoes - Registrar execução de uma limpeza",
+                "GET /limpezas/:limpezaId/execucoes - Listar histórico de execuções de uma limpeza",
+                "GET /limpezas/:limpezaId/execucoes/:id - Buscar execução pelo ID",
+                "GET /execucoes-limpeza/perfil/:perfilId - Listar limpezas realizadas por um perfil",
+                "DELETE /limpezas/:limpezaId/execucoes/:id - Excluir registro de execução"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Caso a execução excluída seja a mais recente, recalcular o campo ultima_vez utilizando a execução anterior"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Limpeza",
+          "descricao": "Aqui será a parte responsável por gerenciar as atividades de limpeza dos cômodos das casas, permitindo cadastrar, visualizar, editar e excluir atividades.\n\nCada cômodo poderá possuir várias atividades de limpeza, como varrer o chão, lavar o banheiro ou limpar os móveis. O sistema também permitirá acompanhar quando uma limpeza foi realizada pela última vez e quando deverá ser feita novamente.\n\n```\nTable limpezas {\n  id int [pk, increment]\n  comodo_id int [not null]\n  nome varchar(150) [not null]\n  descricao text\n  ultima_vez date\n  proxima_vez date\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /limpezas - Cadastrar atividade de limpeza",
+                "GET /limpezas/:id - Buscar atividade de limpeza pelo ID",
+                "GET /limpezas/comodo/:comodoId - Listar atividades de limpeza de um cômodo",
+                "GET /limpezas/casa/:casaId - Listar atividades de limpeza de uma casa",
+                "PATCH /limpezas/:id - Atualizar informações da atividade de limpeza",
+                "DELETE /limpezas/:id - Excluir atividade de limpeza"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Quando uma limpeza for concluída através do módulo execucao_limpeza, atualizar automaticamente o campo ultima_vez"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Compras",
+          "descricao": "Aqui será a parte responsável por gerenciar as listas de compras das casas, permitindo criar, visualizar, editar e excluir listas.\n\nCada casa poderá possuir várias listas de compras, compartilhadas entre os integrantes do usuário. Os produtos de cada lista serão gerenciados pela tabela `compra_item`.\n\n```\nTable compras {\n  id int [pk, increment]\n  casa_id int [not null]\n  nome varchar(150) [not null]\n  criacao date [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /compras - Criar lista de compras",
+                "GET /compras/:id - Buscar lista de compras pelo ID",
+                "GET /compras/casa/:casaId - Listar todas as listas de compras de uma casa",
+                "PATCH /compras/:id - Atualizar informações da lista de compras",
+                "DELETE /compras/:id - Excluir lista de compras"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "A data de criação deve ser definida automaticamente pelo sistema",
+                "Uma lista de compras deve começar vazia, sem itens cadastrados",
+                "A exclusão de uma lista não deve remover produtos do catálogo geral"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Item Compras",
+          "descricao": "Aqui será a parte responsável por gerenciar os itens das listas de compras do, permitindo adicionar produtos, definir quantidades e valores, marcar itens como comprados e removê-los da lista.\n\nOs itens poderão ser vinculados ao catálogo de produtos ou cadastrados manualmente pelo usuário.\n\n```\nTable compra_item {\n  id int [pk, increment]\n  compras_id int [not null]\n  produto_id int\n  nome_item varchar(150)\n  quantidade int [not null, default: 1]\n  comprado boolean [not null, default: false]\n  valor decimal(10,2)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /compras/:compraId/itens - Adicionar item à lista de compras",
+                "GET /compras/:compraId/itens - Listar itens de uma lista de compras",
+                "GET /compras/:compraId/itens/:id - Buscar item pelo ID",
+                "PATCH /compras/:compraId/itens/:id - Atualizar informações do item",
+                "PATCH /compras/:compraId/itens/:id/comprado - Marcar ou desmarcar item como comprado",
+                "DELETE /compras/:compraId/itens/:id - Remover item da lista de compras"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O produto_id é opcional, permitindo cadastrar itens que não existem no catálogo de produtos",
+                "Quando o produto_id for informado, o nome do produto pode ser obtido diretamente da tabela produto",
+                "O campo comprado deve ser definido como false quando um item for adicionado",
+                "Marcar um item como comprado não deve atualizar automaticamente o estoque da casa."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Item Estoque",
+          "descricao": "Aqui será a parte responsável por gerenciar os produtos armazenados no estoque de cada casa, permitindo adicionar, consultar, atualizar quantidades e remover produtos.\n\nCada casa possui seu próprio estoque, que será compartilhado entre os integrantes do usuário responsável pela residência.\n\n```\nTable estoque_item {\n  id int [pk, increment]\n  casa_id int [not null]\n  produto_id int [not null]\n  quantidade decimal(10,2) [not null, default: 0]\n\n  indexes {\n    (casa_id, produto_id) [unique]\n  }\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /estoque-itens - Adicionar produto ao estoque",
+                "GET /estoque-itens/:id - Buscar item do estoque pelo ID",
+                "GET /estoque-itens/casa/:casaId - Listar produtos do estoque de uma casa",
+                "PATCH /estoque-itens/:id - Atualizar quantidade do produto",
+                "DELETE /estoque-itens/:id - Remover produto do estoque"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Caso o produto já exista no estoque da casa, permitir atualizar sua quantidade em vez de criar outro registro."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Receita do Usuário",
+          "descricao": "Acompanha o preparo de uma receita para cada usuário, com os estados fazer, fazendo e feita.\n\n```\nTable receita_usuario {\n  id int [pk, increment]\n  user_id int [not null, ref: > users.id]\n  receita_id int [not null, ref: > receitas.id]\n  status varchar [not null, default: 'fazer']\n\n  indexes {\n    (user_id, receita_id) [unique]\n  }\n}\n```",
+          "checklists": [
+            {
+              "nome": "Regras",
+              "itens": [
+                "O par user_id e receita_id é único.",
+                "O status deve aceitar fazer, fazendo e feita. O padrão é fazer."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Receita Favorita",
+          "descricao": "Aqui será a parte responsável por gerenciar as receitas favoritas dos usuários, permitindo adicionar, visualizar e remover receitas da lista de favoritos.\n\nCada usuário terá sua própria lista de receitas favoritas, podendo salvar receitas públicas do catálogo para acessá-las posteriormente.\n\n```\nTable receita_favorita {\n  id int [pk, increment]\n  user_id int [not null]\n  receita_id int [not null]\n\n  indexes {\n    (user_id, receita_id) [unique]\n  }\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /receitas/:receitaId/favoritos - Adicionar receita aos favoritos",
+                "GET /users/:userId/receitas-favoritas - Listar receitas favoritas do usuário",
+                "GET /receitas/:receitaId/favoritos/status - Verificar se a receita está nos favoritos",
+                "DELETE /receitas/:receitaId/favoritos - Remover receita dos favoritos"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Item Receita",
+          "descricao": "Aqui será a parte responsável por gerenciar os ingredientes utilizados nas receitas, permitindo adicionar, visualizar, editar e remover ingredientes.\n\nCada receita poderá possuir vários ingredientes, que poderão ser vinculados ao catálogo de produtos ou cadastrados manualmente pelo usuário.\n\n```\nTable receita_item {\n  id int [pk, increment]\n  receita_id int [not null]\n  produto_id int\n  nome_item varchar(150)\n  quantidade decimal(10,2) [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /receitas/:receitaId/itens - Adicionar ingrediente à receita",
+                "GET /receitas/:receitaId/itens - Listar ingredientes de uma receita",
+                "GET /receitas/:receitaId/itens/:id - Buscar ingrediente pelo ID",
+                "PATCH /receitas/:receitaId/itens/:id - Atualizar ingrediente da receita",
+                "DELETE /receitas/:receitaId/itens/:id - Remover ingrediente da receita"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Cada ingrediente deve estar vinculado obrigatoriamente a uma receita"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Produto",
+          "descricao": "Aqui será a parte responsável por gerenciar o catálogo de produtos, permitindo cadastrar, visualizar, editar e excluir produtos que poderão ser utilizados no estoque das casas, listas de compras e receitas.\n\nOs produtos serão compartilhados entre os usuários da plataforma, evitando a necessidade de cadastrar o mesmo produto várias vezes.\n\n```\nTable produto {\n  id int [pk, increment]\n  nome varchar(150) [not null]\n  marca varchar(100)\n  tamanho decimal(10,2)\n  unidade varchar(20)\n  imagem varchar(500)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /produtos - Cadastrar produto",
+                "GET /produtos - Listar produtos cadastrados",
+                "GET /produtos/:id - Buscar produto pelo ID",
+                "GET /produtos/busca?nome= - Buscar produtos pelo nome",
+                "PATCH /produtos/:id - Atualizar informações do produto",
+                "DELETE /produtos/:id - Excluir produto"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O cadastro de um produto não deve adicioná-lo automaticamente ao estoque de nenhuma casa",
+                "Essa table sera compartilhada entre os produtos do estoque, produtos na lista de compras e produtos da receita",
+                "A unidade deve representar a medida do produto, como kg, g, L, ml ou unidade",
+                "A imagem deve ser armazenada como uma URL ou caminho para o arquivo"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Receita",
+          "descricao": "Aqui será a parte responsável por gerenciar as receitas culinárias, permitindo cadastrar, visualizar, editar, publicar e excluir receitas.\n\nO sistema terá um catálogo público de receitas, incluindo receitas oficiais da plataforma e receitas criadas pelos usuários. Cada usuário também poderá manter suas próprias receitas privadas ou em rascunho.\n\n```\nTable receitas {\n  id int [pk, increment]\n  user_id int\n  publica boolean [not null, default: true]\n  nome varchar(150) [not null]\n  descricao text\n  tipo varchar(50)\n  preparo text [not null]\n  status varchar(30) [not null, default: 'rascunho']\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /receitas - Cadastrar receita",
+                "GET /receitas - Listar receitas públicas e publicadas",
+                "GET /receitas/:id - Buscar receita pelo ID",
+                "GET /receitas/user/:userId - Listar receitas criadas por um usuário",
+                "PATCH /receitas/:id - Atualizar informações da receita",
+                "DELETE /receitas/:id - Excluir receita"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Uma receita pode ser criada por um usuário ou pela própria plataforma IAGORA",
+                "O campo user_id é opcional, permitindo cadastrar receitas oficiais da plataforma",
+                "O campo status controla a publicação. O andamento do preparo fica em receita_usuario."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Casa",
+          "descricao": "Aqui será a parte responsável por gerenciar as casas dos usuários, permitindo visualizar e editar suas informações, como nome, tipo de moradia e endereço.\n\n```\nTable casa {\n  id int [pk, increment]\n  user_id int [not null]\n  nome varchar(150) [not null]\n  tipo varchar(50) [not null]\n  endereco_id int\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /casas/:id - Buscar casa pelo ID",
+                "GET /casas/usuario/:userId - Buscar casas de um usuário",
+                "PATCH /casas/:id - Atualizar informações da casa"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Quando um usuário comum for cadastrado, uma casa deve ser criada automaticamente e vinculada ao usuário",
+                "O usuário pode alterar o nome, tipo e endereço da casa posteriormente"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Endereço",
+          "descricao": "Responsável por armazenar e gerenciar os endereços utilizados pelos diferentes módulos, incluindo perfil, casa, casa desejada, empresas e serviços contratados.\n\n```\nTable endereco {\n  id int [pk, increment]\n  estado varchar(100) [not null]\n  rua varchar(255) [not null]\n  bairro varchar(150) [not null]\n  pais varchar(100) [not null, default: 'Brasil']\n  cep varchar(9) [not null]\n  cidade varchar(150) [not null]\n  numero varchar(20)\n  complemento varchar(150)\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /enderecos - Cadastrar endereço",
+                "GET /enderecos/:id - Buscar endereço pelo ID",
+                "PATCH /enderecos/:id - Atualizar informações do endereço",
+                "DELETE /enderecos/:id - Excluir endereço"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Quando cadastrar um endereço, retornar seu ID para permitir a vinculação com outras tabelas",
+                "Os campos estado, rua, bairro, país, CEP e cidade são obrigatórios"
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Perfil Usuário",
+          "descricao": "Responsável por armazenar e gerenciar as informações pessoais dos usuários comuns.\n\n```\nTable perfil {\n  id int [pk, increment]\n  user_id int [not null, unique]\n  endereco_id int\n  nome varchar(150) [not null]\n  foto varchar(500)\n  tipo int [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "GET /perfis/:id - Buscar perfil pelo ID",
+                "GET /perfis/user/:userId — Buscar perfil pelo ID do usuário",
+                "PATCH /perfis/:id — Atualizar informações do perfil (nome, foto, tipo e endereco_id)"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "O perfil deve ser criado automaticamente quando um usuário comum se cadastrar.",
+                "Cada usuário pode possuir apenas um perfil.",
+                "O perfil deve ser criado com um nome aleatório e uma foto padrão ou aleatória.",
+                "O tipo do perfil deve diferenciar quem já possui moradia **1** de quem está planejando morar sozinho **2**.",
+                "O endereço é opcional e pode ser vinculado posteriormente através do endereco_id."
+              ]
+            }
+          ]
+        },
+        {
+          "nome": "Auth",
+          "descricao": "Aqui vai ser a parte de login, independente se é empresa ou não\n\n```\nTable users {\n  id int [pk, increment]\n  email varchar(255) [not null, unique]\n  senha varchar(255) [not null]\n  tipo int [not null]\n}\n```",
+          "checklists": [
+            {
+              "nome": "Rotas",
+              "itens": [
+                "POST /user/register - Registrar o user com email e senha",
+                "POST /user/login - Logar com email e senha",
+                "GET /users/:id - Identificar usuário pelo id",
+                "PATCH /users/:id - Atualizar email do usuário",
+                "DELETE /users/:id - Apagar usuário",
+                "POST /user/forgot-passord - Mandar solicitação de alterar senha",
+                "POST /user/reset-password - Conferir token de resetar e definir nova senha"
+              ]
+            },
+            {
+              "nome": "Regras",
+              "itens": [
+                "Quando for criar o user o tipo 1 = user, o tipo 2 = empresa",
+                "Quando criar usuário tipo 1, ele automaticamente criar: um **perfil** com nome de usuário e foto aleatório, uma **casa** vazia vinculada ao usuário",
+                "Senhas armazenadas em Hash"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

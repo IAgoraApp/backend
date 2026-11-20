@@ -20,3 +20,20 @@ O backend é responsável pelo **gerenciamento dos dados, processamento das regr
 <sub>Desenvolvido pela equipe IAGORA.</sub>
 
 </div>
+
+## Módulos da referência do frontend
+
+Execute `./mvnw test` com Java 25. Os testes de integração usam H2 em modo MySQL e exercitam a API com JWT habilitado.
+
+| Variável de ambiente | Finalidade |
+| --- | --- |
+| `SECURITY_JWT_ENABLED=true` | Habilita a autenticação Bearer usada pelos novos módulos. |
+| `IAGORA_ADMINISTRACAO_USUARIOS` | IDs de contas administrativas existentes, separados por vírgula. Sem valor, as operações administrativas ficam restritas. |
+| `IAGORA_PAGAMENTOS_TESTE=true` | Habilita a criação e a confirmação de cobranças simuladas. O padrão é desabilitado. |
+| `IAGORA_PAGAMENTOS_WEBHOOK_SEGREDO` | Chave de pelo menos 32 bytes codificada em Base64, usada pelo webhook de teste. |
+
+Os uploads de empresa e serviço recebem um campo multipart `arquivo`, com até 5 MB em JPG, PNG ou WebP. A resposta fornece `url`, que pode ser salva em `logo`, `banner` ou `fotos`. Para consultar a imagem, use o endereço retornado com o JWT do usuário.
+
+O webhook de teste recebe um JSON com `transacaoExternaId`, `status` (`pago` ou `cancelado`) e `valor`. Envie a data Unix em segundos no cabeçalho `X-IAgora-Timestamp`. O cabeçalho `X-IAgora-Assinatura` recebe o HMAC-SHA256 de `timestamp.corpo` em Base64. A assinatura usa os bytes exatos do corpo e é válida por cinco minutos.
+
+A rota de recuperação de senha é `POST /user/forgot-password`.

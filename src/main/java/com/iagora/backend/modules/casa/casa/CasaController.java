@@ -25,7 +25,7 @@ public class CasaController {
   }
 
   @SomenteProprietario
-  @GetMapping("/user/{userId}")
+  @GetMapping({"/user/{userId}", "/usuario/{userId}"})
   public List<CasaResponse> buscarPorUserId(@PathVariable Integer userId) {
     return casaService.buscarPorUserId(userId);
   }
