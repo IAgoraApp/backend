@@ -17,6 +17,9 @@ public class User {
     @Column (nullable = false)
     private Integer tipo;
 
+    @Column(name = "google_subject", unique = true)
+    private String googleSubject;
+
     public  User(){}
 
     public User(String email, String senha, Integer tipo){
@@ -40,6 +43,10 @@ public class User {
     public Integer getTipo(){
         return tipo;
     }
+
+    public String getGoogleSubject() { return googleSubject; }
+
+    public void setGoogleSubject(String googleSubject) { this.googleSubject = googleSubject; }
 
     public void setEmail(String email){
         this.email = email;

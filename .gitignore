@@ -39,3 +39,6 @@ target
 .env
 *.log
 env.sh
+
+# Configuração da máquina de desenvolvimento
+.env.local
