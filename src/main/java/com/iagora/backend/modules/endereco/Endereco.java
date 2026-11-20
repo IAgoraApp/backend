@@ -10,6 +10,9 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "user_id")
+    private Integer userId;
+
     @Column(nullable = false)
     private String estado;
 
@@ -38,6 +41,14 @@ public class Endereco {
 
     public Integer getId() {
         return id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getEstado() {

@@ -16,7 +16,13 @@ public class EnderecoService {
 
   @Transactional
   public EnderecoResponse cadastrar(EnderecoRequest request) {
+    return cadastrar(request, null);
+  }
+
+  @Transactional
+  public EnderecoResponse cadastrar(EnderecoRequest request, Integer userId) {
     Endereco endereco = new Endereco();
+    endereco.setUserId(userId);
 
     endereco.setEstado(request.estado());
     endereco.setRua(request.rua());
@@ -46,7 +52,16 @@ public class EnderecoService {
   }
 
   public EnderecoResponse buscarPorId(Integer id) {
-    Endereco endereco = enderecoRepository
+    Endereco endereco = buscar(id);
+    return resposta(endereco);
+  }
+
+  public EnderecoResponse buscarSeExistir(Integer id) {
+    return id == null ? null : enderecoRepository.findById(id).map(this::resposta).orElse(null);
+  }
+
+  private Endereco buscar(Integer id) {
+    return enderecoRepository
       .findById(id)
       .orElseThrow(() ->
         new RegraNegocioException(
@@ -54,7 +69,9 @@ public class EnderecoService {
           HttpStatus.NOT_FOUND
         )
       );
+  }
 
+  private EnderecoResponse resposta(Endereco endereco) {
     return new EnderecoResponse(
       endereco.getId(),
       endereco.getEstado(),
@@ -66,6 +83,23 @@ public class EnderecoService {
       endereco.getNumero(),
       endereco.getComplemento()
     );
+  }
+
+  public void verificarProprietario(Integer id, Integer userId) {
+    if (userId == null || !userId.equals(buscar(id).getUserId())) {
+      throw new RegraNegocioException("Endereço indisponível para esta conta", HttpStatus.FORBIDDEN);
+    }
+  }
+
+  @Transactional
+  public Integer salvarResidencia(Integer id, Integer usuario, EnderecoRequest request) {
+    Endereco atual = id == null ? null : enderecoRepository.findById(id).orElse(null);
+    if (atual == null || !usuario.equals(atual.getUserId())) {
+      return cadastrar(request, usuario).id();
+    }
+    atualizar(id, request);
+    atual.setComplemento(request.complemento());
+    return id;
   }
 
   @Transactional

@@ -5,6 +5,7 @@ import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemRepository;
 import com.iagora.backend.modules.casa.cozinha.compras.ComprasRepository;
 import com.iagora.backend.modules.casa.cozinha.estoqueItem.EstoqueItemRepository;
 import com.iagora.backend.modules.endereco.EnderecoService;
+import com.iagora.backend.modules.endereco.EnderecoResponse;
 import com.iagora.backend.modules.casa.limpeza.comodo.ComodoRepository;
 import com.iagora.backend.modules.casa.limpeza.limpeza.LimpezaRepository;
 import com.iagora.backend.modules.casa.limpeza.execucaoLimpeza.ExecucaoLimpezaRepository;
@@ -79,19 +80,7 @@ public class CasaService {
         new RegraNegocioException("Casa não encontrada", HttpStatus.NOT_FOUND)
       );
 
-    if (request.nome() != null) {
-      if (request.nome().isBlank()) {
-        throw new RegraNegocioException("Nome é obrigatório", HttpStatus.BAD_REQUEST);
-      }
-      casa.setNome(request.nome());
-    }
-
-    if (request.tipo() != null) {
-      if (request.tipo().isBlank()) {
-        throw new RegraNegocioException("Tipo é obrigatório", HttpStatus.BAD_REQUEST);
-      }
-      casa.setTipo(request.tipo());
-    }
+    aplicarIdentidade(casa, request.nome(), request.tipo());
 
     if (request.enderecoId() != null) {
       enderecoService.buscarPorId(request.enderecoId());
@@ -99,6 +88,53 @@ public class CasaService {
     }
 
     casaRepository.save(casa);
+  }
+
+  @Transactional
+  public void atualizarVinculo(Integer id, CasaRequest request) {
+    var casa = buscarPorId(id);
+    if (request.enderecoId() != null && !request.enderecoId().equals(casa.enderecoId())) {
+      enderecoService.verificarProprietario(request.enderecoId(), casa.userId());
+    }
+    atualizar(id, request);
+  }
+
+  @Transactional
+  public EnderecoResponse consultarEndereco(Integer id) {
+    Integer enderecoId = buscarPorId(id).enderecoId();
+    if (enderecoId == null) {
+      throw new RegraNegocioException("Residência sem endereço", HttpStatus.NOT_FOUND);
+    }
+    return enderecoService.buscarPorId(enderecoId);
+  }
+
+  @Transactional
+  public void editarResidencia(Integer id, ResidenciaRequest request) {
+    Casa casa = casaRepository.findCasaById(id).orElseThrow(() ->
+      new RegraNegocioException("Casa não encontrada", HttpStatus.NOT_FOUND));
+    aplicarIdentidade(casa, request.nome(), request.tipo());
+    if (request.endereco() != null) {
+      casa.setEnderecoId(enderecoService.salvarResidencia(
+        casa.getEnderecoId(), casa.getUser().getId(), request.endereco()
+      ));
+    }
+    casaRepository.save(casa);
+  }
+
+  private void aplicarIdentidade(Casa casa, String nome, String tipo) {
+    if (nome != null) {
+      if (nome.isBlank()) {
+        throw new RegraNegocioException("Nome é obrigatório", HttpStatus.BAD_REQUEST);
+      }
+      casa.setNome(nome);
+    }
+
+    if (tipo != null) {
+      if (tipo.isBlank()) {
+        throw new RegraNegocioException("Tipo é obrigatório", HttpStatus.BAD_REQUEST);
+      }
+      casa.setTipo(tipo);
+    }
   }
 
   @Transactional

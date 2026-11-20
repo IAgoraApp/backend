@@ -49,6 +49,22 @@ public class EstoqueItemService {
   }
 
   @Transactional
+  public EstoqueItemResponse adicionarQuantidade(Integer casaId, EstoqueItemRequest request) {
+    if (request.produtoId() == null || request.quantidade() == null || request.quantidade().signum() <= 0) {
+      throw new RegraNegocioException("Informe o produto e uma quantidade positiva", HttpStatus.BAD_REQUEST);
+    }
+    casaRepository.findCasaById(casaId).orElseThrow(() ->
+      new RegraNegocioException("Casa não encontrada", HttpStatus.NOT_FOUND));
+    var quantidadeAtual = estoqueItemRepository.findByCasa_IdAndProduto_Id(casaId, request.produtoId())
+      .map(EstoqueItem::getQuantidade).orElse(java.math.BigDecimal.ZERO);
+    var quantidade = quantidadeAtual.add(request.quantidade());
+    if (quantidade.scale() > 2 || quantidade.compareTo(new java.math.BigDecimal("99999999.99")) > 0) {
+      throw new RegraNegocioException("Quantidade excede o limite do estoque", HttpStatus.BAD_REQUEST);
+    }
+    return cadastrar(new EstoqueItemRequest(casaId, request.produtoId(), quantidade));
+  }
+
+  @Transactional
   public EstoqueItemResponse buscarPorId(Integer id) {
     return resposta(buscar(id));
   }

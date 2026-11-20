@@ -6,4 +6,5 @@ import java.util.List;
 public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
 
     List<Produto> findByNomeContainingIgnoreCase(String nome);
+    List<Produto> findByUserIdIsNullOrderByIdAsc();
 }

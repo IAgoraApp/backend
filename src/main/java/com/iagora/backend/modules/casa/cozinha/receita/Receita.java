@@ -30,7 +30,29 @@ public class Receita {
     @Column(nullable = false, columnDefinition = "text")
     private String preparo;
 
+    @Column(length = 500)
+    private String imagem;
+
+    @Column(name = "status_publicacao", length = 20)
+    private String statusPublicacao;
+
     public Receita() {}
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public String getStatusPublicacao() {
+        return statusPublicacao;
+    }
+
+    public void setStatusPublicacao(String statusPublicacao) {
+        this.statusPublicacao = statusPublicacao;
+    }
 
     public Integer getId() {
         return id;

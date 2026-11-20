@@ -1,0 +1,6343 @@
+{
+  "produtos": [
+    {
+      "ref": "arroz-branco-1-0-kg",
+      "nome": "Arroz branco (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "arroz-integral-1-0-kg",
+      "nome": "Arroz integral (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "arroz-parboilizado-1-0-kg",
+      "nome": "Arroz parboilizado (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-carioca-1-0-kg",
+      "nome": "Feijão carioca (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-preto-1-0-kg",
+      "nome": "Feijão preto (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-branco-500-0-g",
+      "nome": "Feijão branco (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "lentilha-500-0-g",
+      "nome": "Lentilha (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "grao-de-bico-500-0-g",
+      "nome": "Grão-de-bico (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-seca-500-0-g",
+      "nome": "Ervilha seca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "milho-para-pipoca-500-0-g",
+      "nome": "Milho para pipoca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "canjica-branca-500-0-g",
+      "nome": "Canjica branca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "quinoa-em-graos-250-0-g",
+      "nome": "Quinoa em grãos (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "aveia-em-flocos-200-0-g",
+      "nome": "Aveia em flocos (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "aveia-fina-200-0-g",
+      "nome": "Aveia fina (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farelo-de-aveia-200-0-g",
+      "nome": "Farelo de aveia (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "granola-sem-acucar-250-0-g",
+      "nome": "Granola sem açúcar (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-trigo-1-0-kg",
+      "nome": "Farinha de trigo (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-trigo-integral-1-0-kg",
+      "nome": "Farinha de trigo integral (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-mandioca-500-0-g",
+      "nome": "Farinha de mandioca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-milho-500-0-g",
+      "nome": "Farinha de milho (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fuba-500-0-g",
+      "nome": "Fubá (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polvilho-doce-500-0-g",
+      "nome": "Polvilho doce (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polvilho-azedo-500-0-g",
+      "nome": "Polvilho azedo (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "amido-de-milho-200-0-g",
+      "nome": "Amido de milho (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-aveia-200-0-g",
+      "nome": "Farinha de aveia (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-arroz-500-0-g",
+      "nome": "Farinha de arroz (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-rosca-500-0-g",
+      "nome": "Farinha de rosca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tapioca-hidratada-500-0-g",
+      "nome": "Tapioca hidratada (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cuscuz-de-milho-500-0-g",
+      "nome": "Cuscuz de milho (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "trigo-para-quibe-500-0-g",
+      "nome": "Trigo para quibe (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "semola-de-milho-500-0-g",
+      "nome": "Sêmola de milho (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "linhaca-dourada-200-0-g",
+      "nome": "Linhaça dourada (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "chia-200-0-g",
+      "nome": "Chia (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "gergelim-100-0-g",
+      "nome": "Gergelim (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "semente-de-girassol-100-0-g",
+      "nome": "Semente de girassol (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-espaguete-500-0-g",
+      "nome": "Macarrão espaguete (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-parafuso-500-0-g",
+      "nome": "Macarrão parafuso (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-penne-500-0-g",
+      "nome": "Macarrão penne (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-integral-500-0-g",
+      "nome": "Macarrão integral (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-cabelo-de-anjo-500-0-g",
+      "nome": "Macarrão cabelo de anjo (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-para-sopa-500-0-g",
+      "nome": "Macarrão para sopa (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-de-lasanha-500-0-g",
+      "nome": "Massa de lasanha (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-para-pastel-500-0-g",
+      "nome": "Massa para pastel (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-para-pizza-500-0-g",
+      "nome": "Massa para pizza (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-forma-integral-400-0-g",
+      "nome": "Pão de forma integral (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-forma-tradicional-400-0-g",
+      "nome": "Pão de forma tradicional (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-frances-1-0-un",
+      "nome": "Pão francês (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pao-sirio-300-0-g",
+      "nome": "Pão sírio (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-hamburguer-4-0-un",
+      "nome": "Pão de hambúrguer (4 un)",
+      "marca": null,
+      "tamanho": 4.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-hot-dog-6-0-un",
+      "nome": "Pão de hot dog (6 un)",
+      "marca": null,
+      "tamanho": 6.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "torrada-integral-150-0-g",
+      "nome": "Torrada integral (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-agua-e-sal-200-0-g",
+      "nome": "Biscoito água e sal (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-cream-cracker-200-0-g",
+      "nome": "Biscoito cream cracker (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-de-maisena-200-0-g",
+      "nome": "Biscoito de maisena (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-integral-200-0-g",
+      "nome": "Biscoito integral (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "bolacha-de-arroz-100-0-g",
+      "nome": "Bolacha de arroz (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fermento-biologico-seco-10-0-g",
+      "nome": "Fermento biológico seco (10 g)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fermento-quimico-100-0-g",
+      "nome": "Fermento químico (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "mistura-para-pao-de-queijo-250-0-g",
+      "nome": "Mistura para pão de queijo (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "mistura-para-panqueca-250-0-g",
+      "nome": "Mistura para panqueca (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ovo-de-galinha-12-0-un",
+      "nome": "Ovo de galinha (12 un)",
+      "marca": null,
+      "tamanho": 12.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "peito-de-frango-1-0-kg",
+      "nome": "Peito de frango (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "coxa-de-frango-1-0-kg",
+      "nome": "Coxa de frango (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "sobrecoxa-de-frango-1-0-kg",
+      "nome": "Sobrecoxa de frango (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "file-de-frango-1-0-kg",
+      "nome": "Filé de frango (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "frango-desfiado-congelado-500-0-g",
+      "nome": "Frango desfiado congelado (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "carne-moida-bovina-500-0-g",
+      "nome": "Carne moída bovina (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "patinho-bovino-1-0-kg",
+      "nome": "Patinho bovino (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "acem-bovino-1-0-kg",
+      "nome": "Acém bovino (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "musculo-bovino-1-0-kg",
+      "nome": "Músculo bovino (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "bife-bovino-500-0-g",
+      "nome": "Bife bovino (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "carne-de-panela-bovina-500-0-g",
+      "nome": "Carne de panela bovina (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "lombo-suino-1-0-kg",
+      "nome": "Lombo suíno (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "pernil-suino-1-0-kg",
+      "nome": "Pernil suíno (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "file-de-tilapia-500-0-g",
+      "nome": "Filé de tilápia (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sardinha-fresca-500-0-g",
+      "nome": "Sardinha fresca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "atum-em-lata-170-0-g",
+      "nome": "Atum em lata (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sardinha-em-lata-125-0-g",
+      "nome": "Sardinha em lata (125 g)",
+      "marca": null,
+      "tamanho": 125.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "proteina-de-soja-texturizada-400-0-g",
+      "nome": "Proteína de soja texturizada (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tofu-firme-300-0-g",
+      "nome": "Tofu firme (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "hamburguer-vegetal-2-0-un",
+      "nome": "Hambúrguer vegetal (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "peixe-merluza-congelado-500-0-g",
+      "nome": "Peixe merluza congelado (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "linguica-de-frango-500-0-g",
+      "nome": "Linguiça de frango (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "peito-de-peru-fatiado-150-0-g",
+      "nome": "Peito de peru fatiado (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "presunto-cozido-150-0-g",
+      "nome": "Presunto cozido (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "leite-integral-1-0-l",
+      "nome": "Leite integral (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-desnatado-1-0-l",
+      "nome": "Leite desnatado (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-sem-lactose-1-0-l",
+      "nome": "Leite sem lactose (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "bebida-vegetal-de-aveia-1-0-l",
+      "nome": "Bebida vegetal de aveia (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "bebida-vegetal-de-soja-1-0-l",
+      "nome": "Bebida vegetal de soja (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-em-po-integral-400-0-g",
+      "nome": "Leite em pó integral (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-natural-170-0-g",
+      "nome": "Iogurte natural (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-natural-desnatado-170-0-g",
+      "nome": "Iogurte natural desnatado (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-grego-natural-100-0-g",
+      "nome": "Iogurte grego natural (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "kefir-natural-200-0-g",
+      "nome": "Kefir natural (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-mucarela-200-0-g",
+      "nome": "Queijo muçarela (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-prato-200-0-g",
+      "nome": "Queijo prato (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-minas-frescal-300-0-g",
+      "nome": "Queijo minas frescal (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ricota-fresca-300-0-g",
+      "nome": "Ricota fresca (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-cottage-200-0-g",
+      "nome": "Queijo cottage (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "requeijao-cremoso-200-0-g",
+      "nome": "Requeijão cremoso (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cream-cheese-150-0-g",
+      "nome": "Cream cheese (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "manteiga-sem-sal-200-0-g",
+      "nome": "Manteiga sem sal (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "manteiga-com-sal-200-0-g",
+      "nome": "Manteiga com sal (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "margarina-250-0-g",
+      "nome": "Margarina (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "creme-de-leite-200-0-g",
+      "nome": "Creme de leite (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "leite-condensado-395-0-g",
+      "nome": "Leite condensado (395 g)",
+      "marca": null,
+      "tamanho": 395.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "doce-de-leite-400-0-g",
+      "nome": "Doce de leite (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-parmesao-ralado-50-0-g",
+      "nome": "Queijo parmesão ralado (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "coalhada-natural-200-0-g",
+      "nome": "Coalhada natural (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "batata-inglesa-1-0-kg",
+      "nome": "Batata inglesa (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "batata-doce-1-0-kg",
+      "nome": "Batata-doce (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "mandioca-1-0-kg",
+      "nome": "Mandioca (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "inhame-1-0-kg",
+      "nome": "Inhame (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "cenoura-1-0-kg",
+      "nome": "Cenoura (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "beterraba-1-0-kg",
+      "nome": "Beterraba (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobrinha-1-0-kg",
+      "nome": "Abobrinha (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "berinjela-1-0-kg",
+      "nome": "Berinjela (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "chuchu-1-0-kg",
+      "nome": "Chuchu (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobora-cabotia-1-0-kg",
+      "nome": "Abóbora cabotiá (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobora-moranga-1-0-kg",
+      "nome": "Abóbora moranga (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tomate-1-0-kg",
+      "nome": "Tomate (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tomate-cereja-250-0-g",
+      "nome": "Tomate-cereja (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cebola-1-0-kg",
+      "nome": "Cebola (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "cebola-roxa-500-0-g",
+      "nome": "Cebola roxa (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "alho-200-0-g",
+      "nome": "Alho (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "alho-poro-1-0-un",
+      "nome": "Alho-poró (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pimentao-verde-1-0-un",
+      "nome": "Pimentão verde (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pimentao-vermelho-1-0-un",
+      "nome": "Pimentão vermelho (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pimentao-amarelo-1-0-un",
+      "nome": "Pimentão amarelo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pepino-1-0-kg",
+      "nome": "Pepino (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "alface-crespa-1-0-un",
+      "nome": "Alface crespa (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "alface-americana-1-0-un",
+      "nome": "Alface americana (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "rucula-1-0-un",
+      "nome": "Rúcula (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "espinafre-1-0-un",
+      "nome": "Espinafre (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "couve-manteiga-1-0-un",
+      "nome": "Couve-manteiga (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "repolho-verde-1-0-un",
+      "nome": "Repolho verde (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "repolho-roxo-1-0-un",
+      "nome": "Repolho roxo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "brocolis-1-0-un",
+      "nome": "Brócolis (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "couve-flor-1-0-un",
+      "nome": "Couve-flor (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "vagem-500-0-g",
+      "nome": "Vagem (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "quiabo-500-0-g",
+      "nome": "Quiabo (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "milho-verde-em-espiga-1-0-un",
+      "nome": "Milho-verde em espiga (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-torta-250-0-g",
+      "nome": "Ervilha torta (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cogumelo-paris-200-0-g",
+      "nome": "Cogumelo paris (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cogumelo-shimeji-200-0-g",
+      "nome": "Cogumelo shimeji (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "salsinha-1-0-un",
+      "nome": "Salsinha (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cebolinha-1-0-un",
+      "nome": "Cebolinha (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "coentro-1-0-un",
+      "nome": "Coentro (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "manjericao-fresco-1-0-un",
+      "nome": "Manjericão fresco (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "hortela-fresca-1-0-un",
+      "nome": "Hortelã fresca (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "gengibre-100-0-g",
+      "nome": "Gengibre (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "limao-tahiti-1-0-kg",
+      "nome": "Limão tahiti (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "limao-siciliano-500-0-g",
+      "nome": "Limão siciliano (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "laranja-pera-1-0-kg",
+      "nome": "Laranja pera (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tangerina-1-0-kg",
+      "nome": "Tangerina (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "banana-prata-1-0-kg",
+      "nome": "Banana prata (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "banana-nanica-1-0-kg",
+      "nome": "Banana nanica (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "maca-gala-1-0-kg",
+      "nome": "Maçã gala (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "maca-fuji-1-0-kg",
+      "nome": "Maçã fuji (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "pera-1-0-kg",
+      "nome": "Pera (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "mamao-papaia-1-0-un",
+      "nome": "Mamão papaia (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "mamao-formosa-1-0-un",
+      "nome": "Mamão formosa (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "abacaxi-1-0-un",
+      "nome": "Abacaxi (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "melancia-1-0-un",
+      "nome": "Melancia (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "melao-1-0-un",
+      "nome": "Melão (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "manga-palmer-1-0-kg",
+      "nome": "Manga palmer (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "manga-tommy-1-0-kg",
+      "nome": "Manga tommy (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "uva-verde-500-0-g",
+      "nome": "Uva verde (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "uva-roxa-500-0-g",
+      "nome": "Uva roxa (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "morango-250-0-g",
+      "nome": "Morango (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "abacate-1-0-un",
+      "nome": "Abacate (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "kiwi-500-0-g",
+      "nome": "Kiwi (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "maracuja-500-0-g",
+      "nome": "Maracujá (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "goiaba-1-0-kg",
+      "nome": "Goiaba (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "ameixa-fresca-500-0-g",
+      "nome": "Ameixa fresca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pessego-500-0-g",
+      "nome": "Pêssego (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "milho-verde-em-conserva-170-0-g",
+      "nome": "Milho-verde em conserva (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-em-conserva-170-0-g",
+      "nome": "Ervilha em conserva (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "seleta-de-legumes-170-0-g",
+      "nome": "Seleta de legumes (170 g)",
+      "marca": null,
+      "tamanho": 170.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "palmito-em-conserva-300-0-g",
+      "nome": "Palmito em conserva (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "azeitona-verde-sem-caroco-150-0-g",
+      "nome": "Azeitona verde sem caroço (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "azeitona-preta-sem-caroco-150-0-g",
+      "nome": "Azeitona preta sem caroço (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pepino-em-conserva-200-0-g",
+      "nome": "Pepino em conserva (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "molho-de-tomate-300-0-g",
+      "nome": "Molho de tomate (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "extrato-de-tomate-140-0-g",
+      "nome": "Extrato de tomate (140 g)",
+      "marca": null,
+      "tamanho": 140.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tomate-pelado-em-lata-400-0-g",
+      "nome": "Tomate pelado em lata (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "passata-de-tomate-500-0-g",
+      "nome": "Passata de tomate (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "leite-de-coco-200-0-ml",
+      "nome": "Leite de coco (200 ml)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "vinagre-de-alcool-750-0-ml",
+      "nome": "Vinagre de álcool (750 ml)",
+      "marca": null,
+      "tamanho": 750.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "vinagre-de-maca-500-0-ml",
+      "nome": "Vinagre de maçã (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "vinagre-balsamico-250-0-ml",
+      "nome": "Vinagre balsâmico (250 ml)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "azeite-de-oliva-500-0-ml",
+      "nome": "Azeite de oliva (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "oleo-de-soja-900-0-ml",
+      "nome": "Óleo de soja (900 ml)",
+      "marca": null,
+      "tamanho": 900.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "oleo-de-girassol-900-0-ml",
+      "nome": "Óleo de girassol (900 ml)",
+      "marca": null,
+      "tamanho": 900.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "oleo-de-canola-900-0-ml",
+      "nome": "Óleo de canola (900 ml)",
+      "marca": null,
+      "tamanho": 900.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "molho-shoyu-150-0-ml",
+      "nome": "Molho shoyu (150 ml)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "molho-ingles-150-0-ml",
+      "nome": "Molho inglês (150 ml)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "molho-de-pimenta-150-0-ml",
+      "nome": "Molho de pimenta (150 ml)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "mostarda-200-0-g",
+      "nome": "Mostarda (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ketchup-400-0-g",
+      "nome": "Ketchup (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "maionese-250-0-g",
+      "nome": "Maionese (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tahine-200-0-g",
+      "nome": "Tahine (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pasta-de-amendoim-500-0-g",
+      "nome": "Pasta de amendoim (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "geleia-de-morango-250-0-g",
+      "nome": "Geleia de morango (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "geleia-de-uva-250-0-g",
+      "nome": "Geleia de uva (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "mel-250-0-g",
+      "nome": "Mel (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sal-refinado-1-0-kg",
+      "nome": "Sal refinado (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "sal-grosso-1-0-kg",
+      "nome": "Sal grosso (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "acucar-cristal-1-0-kg",
+      "nome": "Açúcar cristal (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "acucar-refinado-1-0-kg",
+      "nome": "Açúcar refinado (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "acucar-mascavo-500-0-g",
+      "nome": "Açúcar mascavo (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "adocante-culinario-100-0-g",
+      "nome": "Adoçante culinário (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pimenta-do-reino-moida-50-0-g",
+      "nome": "Pimenta-do-reino moída (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "paprica-doce-50-0-g",
+      "nome": "Páprica doce (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "paprica-defumada-50-0-g",
+      "nome": "Páprica defumada (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "curcuma-em-po-50-0-g",
+      "nome": "Cúrcuma em pó (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cominho-moido-50-0-g",
+      "nome": "Cominho moído (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "oregano-seco-20-0-g",
+      "nome": "Orégano seco (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "manjericao-seco-20-0-g",
+      "nome": "Manjericão seco (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "alecrim-seco-20-0-g",
+      "nome": "Alecrim seco (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tomilho-seco-20-0-g",
+      "nome": "Tomilho seco (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "louro-seco-10-0-g",
+      "nome": "Louro seco (10 g)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "canela-em-po-50-0-g",
+      "nome": "Canela em pó (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "canela-em-pau-30-0-g",
+      "nome": "Canela em pau (30 g)",
+      "marca": null,
+      "tamanho": 30.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cravo-da-india-20-0-g",
+      "nome": "Cravo-da-índia (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "noz-moscada-20-0-g",
+      "nome": "Noz-moscada (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "curry-em-po-50-0-g",
+      "nome": "Curry em pó (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "chimichurri-seco-50-0-g",
+      "nome": "Chimichurri seco (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "colorau-100-0-g",
+      "nome": "Colorau (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "alho-em-po-50-0-g",
+      "nome": "Alho em pó (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cebola-em-po-50-0-g",
+      "nome": "Cebola em pó (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "gergelim-torrado-100-0-g",
+      "nome": "Gergelim torrado (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "caldo-de-legumes-em-po-100-0-g",
+      "nome": "Caldo de legumes em pó (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "caldo-de-galinha-em-po-100-0-g",
+      "nome": "Caldo de galinha em pó (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "essencia-de-baunilha-30-0-ml",
+      "nome": "Essência de baunilha (30 ml)",
+      "marca": null,
+      "tamanho": 30.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "cacau-em-po-200-0-g",
+      "nome": "Cacau em pó (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cafe-torrado-e-moido-500-0-g",
+      "nome": "Café torrado e moído (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cafe-soluvel-100-0-g",
+      "nome": "Café solúvel (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cha-de-camomila-10-0-un",
+      "nome": "Chá de camomila (10 un)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cha-de-erva-doce-10-0-un",
+      "nome": "Chá de erva-doce (10 un)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cha-de-hortela-10-0-un",
+      "nome": "Chá de hortelã (10 un)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cha-verde-10-0-un",
+      "nome": "Chá verde (10 un)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cha-preto-10-0-un",
+      "nome": "Chá preto (10 un)",
+      "marca": null,
+      "tamanho": 10.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "achocolatado-em-po-400-0-g",
+      "nome": "Achocolatado em pó (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "chocolate-em-po-200-0-g",
+      "nome": "Chocolate em pó (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "suco-de-uva-integral-1-0-l",
+      "nome": "Suco de uva integral (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "suco-de-laranja-integral-1-0-l",
+      "nome": "Suco de laranja integral (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "agua-mineral-sem-gas-1-5-l",
+      "nome": "Água mineral sem gás (1.5 L)",
+      "marca": null,
+      "tamanho": 1.5,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "agua-mineral-com-gas-500-0-ml",
+      "nome": "Água mineral com gás (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "agua-de-coco-1-0-l",
+      "nome": "Água de coco (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "polpa-de-acerola-congelada-100-0-g",
+      "nome": "Polpa de acerola congelada (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polpa-de-maracuja-congelada-100-0-g",
+      "nome": "Polpa de maracujá congelada (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polpa-de-manga-congelada-100-0-g",
+      "nome": "Polpa de manga congelada (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polpa-de-goiaba-congelada-100-0-g",
+      "nome": "Polpa de goiaba congelada (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polpa-de-morango-congelada-100-0-g",
+      "nome": "Polpa de morango congelada (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "isotonico-500-0-ml",
+      "nome": "Isotônico (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "detergente-neutro-500-0-ml",
+      "nome": "Detergente neutro (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "detergente-de-coco-500-0-ml",
+      "nome": "Detergente de coco (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "sabao-liquido-para-roupas-1-0-l",
+      "nome": "Sabão líquido para roupas (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "sabao-em-po-1-0-kg",
+      "nome": "Sabão em pó (1 kg)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "sabao-em-barra-5-0-un",
+      "nome": "Sabão em barra (5 un)",
+      "marca": null,
+      "tamanho": 5.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "amaciante-de-roupas-1-0-l",
+      "nome": "Amaciante de roupas (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "agua-sanitaria-1-0-l",
+      "nome": "Água sanitária (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "desinfetante-1-0-l",
+      "nome": "Desinfetante (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "limpador-multiuso-500-0-ml",
+      "nome": "Limpador multiuso (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "limpador-de-vidros-500-0-ml",
+      "nome": "Limpador de vidros (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "limpador-de-banheiro-500-0-ml",
+      "nome": "Limpador de banheiro (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "limpador-de-piso-1-0-l",
+      "nome": "Limpador de piso (1 L)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "desengordurante-500-0-ml",
+      "nome": "Desengordurante (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "alcool-70-para-limpeza-500-0-ml",
+      "nome": "Álcool 70% para limpeza (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "bicarbonato-de-sodio-200-0-g",
+      "nome": "Bicarbonato de sódio (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "esponja-de-louca-3-0-un",
+      "nome": "Esponja de louça (3 un)",
+      "marca": null,
+      "tamanho": 3.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "esponja-de-aco-8-0-un",
+      "nome": "Esponja de aço (8 un)",
+      "marca": null,
+      "tamanho": 8.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pano-de-microfibra-3-0-un",
+      "nome": "Pano de microfibra (3 un)",
+      "marca": null,
+      "tamanho": 3.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pano-de-chao-2-0-un",
+      "nome": "Pano de chão (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "flanela-de-limpeza-2-0-un",
+      "nome": "Flanela de limpeza (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "luva-de-limpeza-1-0-un",
+      "nome": "Luva de limpeza (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "vassoura-1-0-un",
+      "nome": "Vassoura (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "rodo-1-0-un",
+      "nome": "Rodo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pa-de-lixo-1-0-un",
+      "nome": "Pá de lixo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "balde-1-0-un",
+      "nome": "Balde (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "escova-sanitaria-1-0-un",
+      "nome": "Escova sanitária (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "escova-de-limpeza-1-0-un",
+      "nome": "Escova de limpeza (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "saco-de-lixo-30-litros-20-0-un",
+      "nome": "Saco de lixo 30 litros (20 un)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "saco-de-lixo-50-litros-20-0-un",
+      "nome": "Saco de lixo 50 litros (20 un)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "papel-toalha-2-0-un",
+      "nome": "Papel toalha (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "papel-higienico-12-0-un",
+      "nome": "Papel higiênico (12 un)",
+      "marca": null,
+      "tamanho": 12.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "guardanapo-de-papel-50-0-un",
+      "nome": "Guardanapo de papel (50 un)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "filme-plastico-1-0-un",
+      "nome": "Filme plástico (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "papel-aluminio-1-0-un",
+      "nome": "Papel alumínio (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "saco-para-congelamento-20-0-un",
+      "nome": "Saco para congelamento (20 un)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "sabonete-em-barra-90-0-g",
+      "nome": "Sabonete em barra (90 g)",
+      "marca": null,
+      "tamanho": 90.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sabonete-liquido-250-0-ml",
+      "nome": "Sabonete líquido (250 ml)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "shampoo-350-0-ml",
+      "nome": "Shampoo (350 ml)",
+      "marca": null,
+      "tamanho": 350.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "condicionador-350-0-ml",
+      "nome": "Condicionador (350 ml)",
+      "marca": null,
+      "tamanho": 350.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "creme-dental-90-0-g",
+      "nome": "Creme dental (90 g)",
+      "marca": null,
+      "tamanho": 90.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "escova-de-dentes-1-0-un",
+      "nome": "Escova de dentes (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "fio-dental-50-0-un",
+      "nome": "Fio dental (50 un)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "enxaguante-bucal-500-0-ml",
+      "nome": "Enxaguante bucal (500 ml)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "desodorante-roll-on-50-0-ml",
+      "nome": "Desodorante roll-on (50 ml)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "desodorante-aerossol-150-0-ml",
+      "nome": "Desodorante aerossol (150 ml)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "protetor-solar-120-0-ml",
+      "nome": "Protetor solar (120 ml)",
+      "marca": null,
+      "tamanho": 120.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "hidratante-corporal-200-0-ml",
+      "nome": "Hidratante corporal (200 ml)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "ml",
+      "imagem": null
+    },
+    {
+      "ref": "hidratante-facial-50-0-g",
+      "nome": "Hidratante facial (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "algodao-em-bolas-50-0-g",
+      "nome": "Algodão em bolas (50 g)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cotonete-75-0-un",
+      "nome": "Cotonete (75 un)",
+      "marca": null,
+      "tamanho": 75.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "lenco-de-papel-50-0-un",
+      "nome": "Lenço de papel (50 un)",
+      "marca": null,
+      "tamanho": 50.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "absorvente-externo-8-0-un",
+      "nome": "Absorvente externo (8 un)",
+      "marca": null,
+      "tamanho": 8.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "absorvente-diario-15-0-un",
+      "nome": "Absorvente diário (15 un)",
+      "marca": null,
+      "tamanho": 15.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "aparelho-de-barbear-descartavel-2-0-un",
+      "nome": "Aparelho de barbear descartável (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "creme-de-barbear-150-0-g",
+      "nome": "Creme de barbear (150 g)",
+      "marca": null,
+      "tamanho": 150.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pente-de-cabelo-1-0-un",
+      "nome": "Pente de cabelo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "escova-de-cabelo-1-0-un",
+      "nome": "Escova de cabelo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "cortador-de-unhas-1-0-un",
+      "nome": "Cortador de unhas (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "lixa-de-unhas-6-0-un",
+      "nome": "Lixa de unhas (6 un)",
+      "marca": null,
+      "tamanho": 6.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "toalha-de-banho-1-0-un",
+      "nome": "Toalha de banho (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "panela-pequena-1-0-un",
+      "nome": "Panela pequena (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "panela-media-1-0-un",
+      "nome": "Panela média (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "frigideira-antiaderente-1-0-un",
+      "nome": "Frigideira antiaderente (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "assadeira-retangular-1-0-un",
+      "nome": "Assadeira retangular (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "forma-de-bolo-1-0-un",
+      "nome": "Forma de bolo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "peneira-de-cozinha-1-0-un",
+      "nome": "Peneira de cozinha (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "escorredor-de-macarrao-1-0-un",
+      "nome": "Escorredor de macarrão (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "escorredor-de-louca-1-0-un",
+      "nome": "Escorredor de louça (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "tabua-de-corte-1-0-un",
+      "nome": "Tábua de corte (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "faca-de-cozinha-1-0-un",
+      "nome": "Faca de cozinha (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "faca-de-pao-1-0-un",
+      "nome": "Faca de pão (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "colher-de-pau-1-0-un",
+      "nome": "Colher de pau (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "espatula-de-silicone-1-0-un",
+      "nome": "Espátula de silicone (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "concha-de-sopa-1-0-un",
+      "nome": "Concha de sopa (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pegador-de-alimentos-1-0-un",
+      "nome": "Pegador de alimentos (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "abridor-de-latas-1-0-un",
+      "nome": "Abridor de latas (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "descascador-de-legumes-1-0-un",
+      "nome": "Descascador de legumes (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "ralador-1-0-un",
+      "nome": "Ralador (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "copo-de-vidro-1-0-un",
+      "nome": "Copo de vidro (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "caneca-1-0-un",
+      "nome": "Caneca (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "prato-raso-1-0-un",
+      "nome": "Prato raso (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "prato-fundo-1-0-un",
+      "nome": "Prato fundo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "tigela-1-0-un",
+      "nome": "Tigela (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pote-hermetico-1-0-un",
+      "nome": "Pote hermético (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "garrafa-reutilizavel-1-0-un",
+      "nome": "Garrafa reutilizável (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "funil-1-0-un",
+      "nome": "Funil (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "medidor-de-cozinha-1-0-un",
+      "nome": "Medidor de cozinha (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "batedor-manual-1-0-un",
+      "nome": "Batedor manual (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "forma-de-gelo-1-0-un",
+      "nome": "Forma de gelo (1 un)",
+      "marca": null,
+      "tamanho": 1.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "pano-de-prato-2-0-un",
+      "nome": "Pano de prato (2 un)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "un",
+      "imagem": null
+    },
+    {
+      "ref": "arroz-branco-2-0-kg",
+      "nome": "Arroz branco (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "arroz-integral-2-0-kg",
+      "nome": "Arroz integral (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "arroz-parboilizado-2-0-kg",
+      "nome": "Arroz parboilizado (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-carioca-2-0-kg",
+      "nome": "Feijão carioca (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-preto-2-0-kg",
+      "nome": "Feijão preto (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "feijao-branco-1000-0-g",
+      "nome": "Feijão branco (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "lentilha-1000-0-g",
+      "nome": "Lentilha (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "grao-de-bico-1000-0-g",
+      "nome": "Grão-de-bico (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-seca-1000-0-g",
+      "nome": "Ervilha seca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "milho-para-pipoca-1000-0-g",
+      "nome": "Milho para pipoca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "canjica-branca-1000-0-g",
+      "nome": "Canjica branca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "quinoa-em-graos-500-0-g",
+      "nome": "Quinoa em grãos (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "aveia-em-flocos-400-0-g",
+      "nome": "Aveia em flocos (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "aveia-fina-400-0-g",
+      "nome": "Aveia fina (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farelo-de-aveia-400-0-g",
+      "nome": "Farelo de aveia (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "granola-sem-acucar-500-0-g",
+      "nome": "Granola sem açúcar (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-trigo-2-0-kg",
+      "nome": "Farinha de trigo (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-trigo-integral-2-0-kg",
+      "nome": "Farinha de trigo integral (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-mandioca-1000-0-g",
+      "nome": "Farinha de mandioca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-milho-1000-0-g",
+      "nome": "Farinha de milho (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fuba-1000-0-g",
+      "nome": "Fubá (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polvilho-doce-1000-0-g",
+      "nome": "Polvilho doce (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "polvilho-azedo-1000-0-g",
+      "nome": "Polvilho azedo (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "amido-de-milho-400-0-g",
+      "nome": "Amido de milho (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-aveia-400-0-g",
+      "nome": "Farinha de aveia (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-arroz-1000-0-g",
+      "nome": "Farinha de arroz (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "farinha-de-rosca-1000-0-g",
+      "nome": "Farinha de rosca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tapioca-hidratada-1000-0-g",
+      "nome": "Tapioca hidratada (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cuscuz-de-milho-1000-0-g",
+      "nome": "Cuscuz de milho (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "trigo-para-quibe-1000-0-g",
+      "nome": "Trigo para quibe (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "semola-de-milho-1000-0-g",
+      "nome": "Sêmola de milho (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "linhaca-dourada-400-0-g",
+      "nome": "Linhaça dourada (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "chia-400-0-g",
+      "nome": "Chia (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "gergelim-200-0-g",
+      "nome": "Gergelim (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "semente-de-girassol-200-0-g",
+      "nome": "Semente de girassol (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-espaguete-1000-0-g",
+      "nome": "Macarrão espaguete (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-parafuso-1000-0-g",
+      "nome": "Macarrão parafuso (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-penne-1000-0-g",
+      "nome": "Macarrão penne (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-integral-1000-0-g",
+      "nome": "Macarrão integral (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-cabelo-de-anjo-1000-0-g",
+      "nome": "Macarrão cabelo de anjo (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "macarrao-para-sopa-1000-0-g",
+      "nome": "Macarrão para sopa (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-de-lasanha-1000-0-g",
+      "nome": "Massa de lasanha (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-para-pastel-1000-0-g",
+      "nome": "Massa para pastel (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "massa-para-pizza-1000-0-g",
+      "nome": "Massa para pizza (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-forma-integral-800-0-g",
+      "nome": "Pão de forma integral (800 g)",
+      "marca": null,
+      "tamanho": 800.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-de-forma-tradicional-800-0-g",
+      "nome": "Pão de forma tradicional (800 g)",
+      "marca": null,
+      "tamanho": 800.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pao-sirio-600-0-g",
+      "nome": "Pão sírio (600 g)",
+      "marca": null,
+      "tamanho": 600.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "torrada-integral-300-0-g",
+      "nome": "Torrada integral (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-agua-e-sal-400-0-g",
+      "nome": "Biscoito água e sal (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-cream-cracker-400-0-g",
+      "nome": "Biscoito cream cracker (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-de-maisena-400-0-g",
+      "nome": "Biscoito de maisena (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "biscoito-integral-400-0-g",
+      "nome": "Biscoito integral (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "bolacha-de-arroz-200-0-g",
+      "nome": "Bolacha de arroz (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fermento-biologico-seco-20-0-g",
+      "nome": "Fermento biológico seco (20 g)",
+      "marca": null,
+      "tamanho": 20.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "fermento-quimico-200-0-g",
+      "nome": "Fermento químico (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "mistura-para-pao-de-queijo-500-0-g",
+      "nome": "Mistura para pão de queijo (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "mistura-para-panqueca-500-0-g",
+      "nome": "Mistura para panqueca (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "peito-de-frango-2-0-kg",
+      "nome": "Peito de frango (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "coxa-de-frango-2-0-kg",
+      "nome": "Coxa de frango (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "sobrecoxa-de-frango-2-0-kg",
+      "nome": "Sobrecoxa de frango (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "file-de-frango-2-0-kg",
+      "nome": "Filé de frango (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "frango-desfiado-congelado-1000-0-g",
+      "nome": "Frango desfiado congelado (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "carne-moida-bovina-1000-0-g",
+      "nome": "Carne moída bovina (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "patinho-bovino-2-0-kg",
+      "nome": "Patinho bovino (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "acem-bovino-2-0-kg",
+      "nome": "Acém bovino (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "musculo-bovino-2-0-kg",
+      "nome": "Músculo bovino (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "bife-bovino-1000-0-g",
+      "nome": "Bife bovino (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "carne-de-panela-bovina-1000-0-g",
+      "nome": "Carne de panela bovina (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "lombo-suino-2-0-kg",
+      "nome": "Lombo suíno (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "pernil-suino-2-0-kg",
+      "nome": "Pernil suíno (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "file-de-tilapia-1000-0-g",
+      "nome": "Filé de tilápia (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sardinha-fresca-1000-0-g",
+      "nome": "Sardinha fresca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "atum-em-lata-340-0-g",
+      "nome": "Atum em lata (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "sardinha-em-lata-250-0-g",
+      "nome": "Sardinha em lata (250 g)",
+      "marca": null,
+      "tamanho": 250.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "proteina-de-soja-texturizada-800-0-g",
+      "nome": "Proteína de soja texturizada (800 g)",
+      "marca": null,
+      "tamanho": 800.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "tofu-firme-600-0-g",
+      "nome": "Tofu firme (600 g)",
+      "marca": null,
+      "tamanho": 600.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "peixe-merluza-congelado-1000-0-g",
+      "nome": "Peixe merluza congelado (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "linguica-de-frango-1000-0-g",
+      "nome": "Linguiça de frango (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "peito-de-peru-fatiado-300-0-g",
+      "nome": "Peito de peru fatiado (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "presunto-cozido-300-0-g",
+      "nome": "Presunto cozido (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "leite-integral-2-0-l",
+      "nome": "Leite integral (2 L)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-desnatado-2-0-l",
+      "nome": "Leite desnatado (2 L)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-sem-lactose-2-0-l",
+      "nome": "Leite sem lactose (2 L)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "bebida-vegetal-de-aveia-2-0-l",
+      "nome": "Bebida vegetal de aveia (2 L)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "bebida-vegetal-de-soja-2-0-l",
+      "nome": "Bebida vegetal de soja (2 L)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "L",
+      "imagem": null
+    },
+    {
+      "ref": "leite-em-po-integral-800-0-g",
+      "nome": "Leite em pó integral (800 g)",
+      "marca": null,
+      "tamanho": 800.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-natural-340-0-g",
+      "nome": "Iogurte natural (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-natural-desnatado-340-0-g",
+      "nome": "Iogurte natural desnatado (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "iogurte-grego-natural-200-0-g",
+      "nome": "Iogurte grego natural (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "kefir-natural-400-0-g",
+      "nome": "Kefir natural (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-mucarela-400-0-g",
+      "nome": "Queijo muçarela (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-prato-400-0-g",
+      "nome": "Queijo prato (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-minas-frescal-600-0-g",
+      "nome": "Queijo minas frescal (600 g)",
+      "marca": null,
+      "tamanho": 600.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ricota-fresca-600-0-g",
+      "nome": "Ricota fresca (600 g)",
+      "marca": null,
+      "tamanho": 600.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-cottage-400-0-g",
+      "nome": "Queijo cottage (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "requeijao-cremoso-400-0-g",
+      "nome": "Requeijão cremoso (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cream-cheese-300-0-g",
+      "nome": "Cream cheese (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "manteiga-sem-sal-400-0-g",
+      "nome": "Manteiga sem sal (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "manteiga-com-sal-400-0-g",
+      "nome": "Manteiga com sal (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "margarina-500-0-g",
+      "nome": "Margarina (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "creme-de-leite-400-0-g",
+      "nome": "Creme de leite (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "leite-condensado-790-0-g",
+      "nome": "Leite condensado (790 g)",
+      "marca": null,
+      "tamanho": 790.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "doce-de-leite-800-0-g",
+      "nome": "Doce de leite (800 g)",
+      "marca": null,
+      "tamanho": 800.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "queijo-parmesao-ralado-100-0-g",
+      "nome": "Queijo parmesão ralado (100 g)",
+      "marca": null,
+      "tamanho": 100.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "coalhada-natural-400-0-g",
+      "nome": "Coalhada natural (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "batata-inglesa-2-0-kg",
+      "nome": "Batata inglesa (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "batata-doce-2-0-kg",
+      "nome": "Batata-doce (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "mandioca-2-0-kg",
+      "nome": "Mandioca (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "inhame-2-0-kg",
+      "nome": "Inhame (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "cenoura-2-0-kg",
+      "nome": "Cenoura (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "beterraba-2-0-kg",
+      "nome": "Beterraba (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobrinha-2-0-kg",
+      "nome": "Abobrinha (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "berinjela-2-0-kg",
+      "nome": "Berinjela (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "chuchu-2-0-kg",
+      "nome": "Chuchu (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobora-cabotia-2-0-kg",
+      "nome": "Abóbora cabotiá (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "abobora-moranga-2-0-kg",
+      "nome": "Abóbora moranga (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tomate-2-0-kg",
+      "nome": "Tomate (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tomate-cereja-500-0-g",
+      "nome": "Tomate-cereja (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cebola-2-0-kg",
+      "nome": "Cebola (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "cebola-roxa-1000-0-g",
+      "nome": "Cebola roxa (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "alho-400-0-g",
+      "nome": "Alho (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pepino-2-0-kg",
+      "nome": "Pepino (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "vagem-1000-0-g",
+      "nome": "Vagem (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "quiabo-1000-0-g",
+      "nome": "Quiabo (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-torta-500-0-g",
+      "nome": "Ervilha torta (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cogumelo-paris-400-0-g",
+      "nome": "Cogumelo paris (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "cogumelo-shimeji-400-0-g",
+      "nome": "Cogumelo shimeji (400 g)",
+      "marca": null,
+      "tamanho": 400.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "gengibre-200-0-g",
+      "nome": "Gengibre (200 g)",
+      "marca": null,
+      "tamanho": 200.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "limao-tahiti-2-0-kg",
+      "nome": "Limão tahiti (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "limao-siciliano-1000-0-g",
+      "nome": "Limão siciliano (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "laranja-pera-2-0-kg",
+      "nome": "Laranja pera (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "tangerina-2-0-kg",
+      "nome": "Tangerina (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "banana-prata-2-0-kg",
+      "nome": "Banana prata (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "banana-nanica-2-0-kg",
+      "nome": "Banana nanica (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "maca-gala-2-0-kg",
+      "nome": "Maçã gala (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "maca-fuji-2-0-kg",
+      "nome": "Maçã fuji (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "pera-2-0-kg",
+      "nome": "Pera (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "manga-palmer-2-0-kg",
+      "nome": "Manga palmer (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "manga-tommy-2-0-kg",
+      "nome": "Manga tommy (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "uva-verde-1000-0-g",
+      "nome": "Uva verde (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "uva-roxa-1000-0-g",
+      "nome": "Uva roxa (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "morango-500-0-g",
+      "nome": "Morango (500 g)",
+      "marca": null,
+      "tamanho": 500.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "kiwi-1000-0-g",
+      "nome": "Kiwi (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "maracuja-1000-0-g",
+      "nome": "Maracujá (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "goiaba-2-0-kg",
+      "nome": "Goiaba (2 kg)",
+      "marca": null,
+      "tamanho": 2.0,
+      "unidade": "kg",
+      "imagem": null
+    },
+    {
+      "ref": "ameixa-fresca-1000-0-g",
+      "nome": "Ameixa fresca (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "pessego-1000-0-g",
+      "nome": "Pêssego (1000 g)",
+      "marca": null,
+      "tamanho": 1000.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "milho-verde-em-conserva-340-0-g",
+      "nome": "Milho-verde em conserva (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "ervilha-em-conserva-340-0-g",
+      "nome": "Ervilha em conserva (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "seleta-de-legumes-340-0-g",
+      "nome": "Seleta de legumes (340 g)",
+      "marca": null,
+      "tamanho": 340.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "palmito-em-conserva-600-0-g",
+      "nome": "Palmito em conserva (600 g)",
+      "marca": null,
+      "tamanho": 600.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "azeitona-verde-sem-caroco-300-0-g",
+      "nome": "Azeitona verde sem caroço (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    },
+    {
+      "ref": "azeitona-preta-sem-caroco-300-0-g",
+      "nome": "Azeitona preta sem caroço (300 g)",
+      "marca": null,
+      "tamanho": 300.0,
+      "unidade": "g",
+      "imagem": null
+    }
+  ],
+  "receitas": [
+    {
+      "nome": "Arroz branco soltinho",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Lave o arroz rapidamente, se desejar, e escorra.\nRefogue o alho picado no óleo em fogo baixo.\nAcrescente o arroz e mexa por um minuto.\nCubra com cerca de 600 ml de água quente, tempere com sal e cozinhe tampado em fogo baixo até secar.\nDesligue e deixe descansar por cinco minutos antes de soltar com um garfo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "arroz-branco-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 5
+        }
+      ]
+    },
+    {
+      "nome": "Feijão carioca básico",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 6 porções.",
+      "tipo": "almoco",
+      "preparo": "Escolha e lave os grãos.\nDeixe de molho por 8 horas na geladeira e descarte a água.\nCozinhe na pressão com água limpa conforme as orientações da panela, até amaciar; só abra após a pressão sair completamente.\nRefogue alho e cebola no óleo, junte uma concha de feijão, amasse levemente e devolva à panela.\nTempere e ferva por cinco minutos.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "feijao-carioca-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.5
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 12
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Omelete de tomate",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Quebre os ovos em uma tigela e bata com um garfo.\nPique tomate e cebola e misture aos ovos com o sal.\nAqueça uma frigideira com óleo em fogo baixo.\nDespeje a mistura, tampe e cozinhe até firmar.\nVire com cuidado e doure o outro lado.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.03
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 5
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Mingau de aveia com banana",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Coloque a aveia e o leite em uma panela pequena.\nMexa em fogo baixo por cinco minutos até engrossar.\nAmasse a banana e misture ao mingau.\nFinalize com canela e sirva morno.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "aveia-em-flocos-200-0-g",
+          "nomeItem": null,
+          "quantidade": 40
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "banana-prata-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.12
+        },
+        {
+          "produtoRef": "canela-em-po-50-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Macarrão ao molho de tomate",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe o macarrão em água fervente até ficar al dente e escorra.\nRefogue cebola e alho no azeite.\nAdicione o molho de tomate e cozinhe por cinco minutos.\nMisture a massa ao molho, ajuste o tempero e sirva.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "macarrao-espaguete-500-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 300
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.06
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 6
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Frango grelhado com limão",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "almoco",
+      "preparo": "Tempere os filés com limão, alho e sal.\nAqueça uma frigideira com azeite.\nGrelhe o frango dos dois lados até dourar e cozinhar completamente por dentro.\nDeixe descansar dois minutos e sirva.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "file-de-frango-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 4
+        }
+      ]
+    },
+    {
+      "nome": "Purê de batata simples",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "jantar",
+      "preparo": "Descasque e corte as batatas.\nCozinhe em água até ficarem macias e escorra.\nAmasse ainda quentes.\nMisture leite aquecido e manteiga aos poucos até ficar cremoso.\nTempere e sirva.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "batata-inglesa-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.6
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "manteiga-sem-sal-200-0-g",
+          "nomeItem": null,
+          "quantidade": 20
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 3
+        }
+      ]
+    },
+    {
+      "nome": "Salada de grão-de-bico",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "almoco",
+      "preparo": "Deixe o grão-de-bico de molho na geladeira por 8 horas, descarte a água e cozinhe até ficar macio.\nEscorra e deixe esfriar.\nCorte tomate e cebola em cubos.\nMisture tudo com suco de limão e azeite.\nSirva fresco.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "grao-de-bico-500-0-g",
+          "nomeItem": null,
+          "quantidade": 250
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "cebola-roxa-500-0-g",
+          "nomeItem": null,
+          "quantidade": 80
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Panqueca de banana e aveia",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Amasse as bananas e misture com ovos, aveia e canela.\nAqueça uma frigideira antiaderente.\nColoque pequenas porções de massa e doure em fogo baixo.\nVire quando as bordas firmarem e sirva.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "banana-nanica-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "aveia-em-flocos-200-0-g",
+          "nomeItem": null,
+          "quantidade": 60
+        },
+        {
+          "produtoRef": "canela-em-po-50-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Arroz integral com cenoura",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Refogue a cebola no óleo.\nJunte o arroz integral e a cenoura ralada.\nAcrescente água quente conforme a embalagem e cozinhe em fogo baixo até amaciar.\nDescanse cinco minutos e solte com garfo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "arroz-integral-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.08
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Lentilha refogada",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave a lentilha e cozinhe em água com louro até ficar macia, sem desmanchar.\nEscorra o excesso de água.\nRefogue cebola e alho no azeite, acrescente a lentilha e mexa por três minutos.\nAjuste o sal e sirva.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "lentilha-500-0-g",
+          "nomeItem": null,
+          "quantidade": 300
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        },
+        {
+          "produtoRef": "louro-seco-10-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Sopa de legumes econômica",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave e pique os legumes em cubos semelhantes.\nRefogue alho e cebola no óleo.\nAcrescente os legumes e cubra com água.\nCozinhe até tudo ficar macio.\nAmasse uma parte dos legumes para engrossar e sirva quente.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "batata-inglesa-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "chuchu-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Sanduíche de queijo e tomate",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "lanche",
+      "preparo": "Monte o sanduíche com pão, queijo, tomate em rodelas e orégano.\nAqueça em frigideira tampada ou sanduicheira até o queijo derreter.\nSirva imediatamente.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "pao-de-forma-integral-400-0-g",
+          "nomeItem": null,
+          "quantidade": 80
+        },
+        {
+          "produtoRef": "queijo-mucarela-200-0-g",
+          "nomeItem": null,
+          "quantidade": 40
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.08
+        },
+        {
+          "produtoRef": "oregano-seco-20-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Vitamina de mamão",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Lave, descasque e retire as sementes do mamão.\nBata a polpa com leite e aveia até ficar homogêneo.\nSirva imediatamente e mantenha refrigerado se não consumir na hora.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "mamao-papaia-1-0-un",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "aveia-em-flocos-200-0-g",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Cuscuz de milho no vapor",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Misture o flocão com cerca de 100 ml de água e o sal.\nDescanse por dez minutos para hidratar.\nColoque na cuscuzeira sem compactar e cozinhe no vapor por dez minutos.\nDesenforme e finalize com manteiga.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "cuscuz-de-milho-500-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "manteiga-com-sal-200-0-g",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Tapioca com queijo",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Espalhe a tapioca em uma frigideira fria formando uma camada uniforme.\nAqueça em fogo médio até unir os grãos.\nAcrescente queijo esfarelado e orégano, dobre ao meio e aqueça até o recheio ficar quente.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "tapioca-hidratada-500-0-g",
+          "nomeItem": null,
+          "quantidade": 80
+        },
+        {
+          "produtoRef": "queijo-minas-frescal-300-0-g",
+          "nomeItem": null,
+          "quantidade": 60
+        },
+        {
+          "produtoRef": "oregano-seco-20-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Batata-doce assada",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "lanche",
+      "preparo": "Lave e corte a batata-doce em palitos.\nMisture com azeite, páprica e sal.\nEspalhe em uma assadeira sem sobrepor.\nAsse a 200 °C por 30 a 40 minutos, virando na metade, até ficar macia e dourada.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "batata-doce-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.6
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        },
+        {
+          "produtoRef": "paprica-doce-50-0-g",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 3
+        }
+      ]
+    },
+    {
+      "nome": "Legumes salteados",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave e corte os legumes.\nCozinhe rapidamente o brócolis no vapor até ficar levemente macio.\nAqueça azeite e alho em frigideira grande.\nSalteie cenoura, abobrinha e brócolis até ficarem cozidos e ainda firmes.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "abobrinha-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "brocolis-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Ovos mexidos cremosos",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Bata os ovos com o leite.\nDerreta a manteiga em fogo baixo.\nDespeje os ovos e mexa lentamente com espátula, retirando do fogo assim que estiverem cozidos e ainda macios.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.03
+        },
+        {
+          "produtoRef": "manteiga-sem-sal-200-0-g",
+          "nomeItem": null,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Macarrão com atum",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe o penne e escorra.\nRefogue cebola no azeite e acrescente tomate picado.\nCozinhe até formar molho leve.\nJunte o atum escorrido, aqueça e misture ao macarrão.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "macarrao-penne-500-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "atum-em-lata-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.15
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.06
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Frango desfiado temperado",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe o frango até ficar completamente cozido e desfie com dois garfos.\nRefogue cebola e alho no óleo.\nJunte o frango e o molho de tomate.\nCozinhe por cinco minutos, mexendo, e use em refeições ou recheios.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "peito-de-frango-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.7
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 10
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Escondidinho de mandioca",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Cozinhe a mandioca até ficar muito macia, retire as fibras centrais e amasse.\nRefogue a carne moída com cebola até cozinhar completamente, depois acrescente o molho.\nEm refratário, faça camadas de purê e carne.\nCubra com queijo e leve ao forno a 200 °C até gratinar.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "mandioca-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.8
+        },
+        {
+          "produtoRef": "carne-moida-bovina-500-0-g",
+          "nomeItem": null,
+          "quantidade": 500
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "queijo-mucarela-200-0-g",
+          "nomeItem": null,
+          "quantidade": 100
+        }
+      ]
+    },
+    {
+      "nome": "Carne moída com abobrinha",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "almoco",
+      "preparo": "Refogue cebola e alho no óleo.\nAcrescente a carne e mexa até perder a cor crua e cozinhar por completo.\nAdicione a abobrinha em cubos e um pouco de água.\nTampe e cozinhe até amaciar.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "carne-moida-bovina-500-0-g",
+          "nomeItem": null,
+          "quantidade": 400
+        },
+        {
+          "produtoRef": "abobrinha-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Sardinha ao molho de tomate",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "almoco",
+      "preparo": "Refogue a cebola no azeite até murchar.\nAcrescente o molho de tomate e cozinhe cinco minutos.\nAdicione a sardinha com cuidado para não desmanchar demais.\nAqueça e sirva com arroz.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "sardinha-em-lata-125-0-g",
+          "nomeItem": null,
+          "quantidade": 125
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.06
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Salada de repolho e cenoura",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave os vegetais.\nFatie o repolho bem fino e rale a cenoura.\nMisture em tigela com suco de limão e azeite.\nDeixe descansar dez minutos na geladeira antes de servir.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "repolho-verde-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Brócolis com alho",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "jantar",
+      "preparo": "Separe e lave os floretes.\nCozinhe no vapor até ficarem macios, mas verdes.\nRefogue alho no azeite sem queimar.\nJunte o brócolis e misture por dois minutos.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "brocolis-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 10
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Abóbora assada com ervas",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave a abóbora e corte em fatias com cuidado.\nMisture com azeite, alecrim e sal.\nAsse em forma a 200 °C por cerca de 35 minutos, até ficar macia e dourada.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "abobora-cabotia-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.7
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        },
+        {
+          "produtoRef": "alecrim-seco-20-0-g",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 3
+        }
+      ]
+    },
+    {
+      "nome": "Creme de abóbora",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Refogue cebola e alho.\nAcrescente a abóbora em cubos e água suficiente para cobrir parcialmente.\nCozinhe até amaciar.\nBata com mixer ou amasse cuidadosamente.\nAdicione leite de coco e aqueça sem ferver demais.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "abobora-moranga-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.8
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "leite-de-coco-200-0-ml",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Salada de macarrão frio",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe o macarrão, escorra e resfrie rapidamente.\nEscorra milho e ervilha, lave o tomate e corte em cubos.\nMisture todos os ingredientes com iogurte.\nRefrigere e consuma em curto prazo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "macarrao-parafuso-500-0-g",
+          "nomeItem": null,
+          "quantidade": 300
+        },
+        {
+          "produtoRef": "milho-verde-em-conserva-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "ervilha-em-conserva-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.15
+        },
+        {
+          "produtoRef": "iogurte-natural-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        }
+      ]
+    },
+    {
+      "nome": "Arroz com lentilha e cebola",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe a lentilha em água até quase macia.\nCozinhe o arroz separadamente.\nFatie e doure a cebola lentamente no azeite.\nMisture arroz e lentilha e finalize com a cebola dourada.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "arroz-branco-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.25
+        },
+        {
+          "produtoRef": "lentilha-500-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 25
+        }
+      ]
+    },
+    {
+      "nome": "Pão com pasta de ricota",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "lanche",
+      "preparo": "Amasse a ricota com garfo.\nAcrescente iogurte aos poucos até formar pasta.\nPique a cebolinha e misture.\nPasse no pão e sirva; conserve a pasta na geladeira.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "pao-de-forma-integral-400-0-g",
+          "nomeItem": null,
+          "quantidade": 120
+        },
+        {
+          "produtoRef": "ricota-fresca-300-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": "iogurte-natural-170-0-g",
+          "nomeItem": null,
+          "quantidade": 50
+        },
+        {
+          "produtoRef": "cebolinha-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Salada de frutas simples",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "sobremesa",
+      "preparo": "Lave todas as frutas.\nDescasque quando necessário e corte em cubos.\nEsprema parte da laranja para umedecer e misture delicadamente.\nSirva gelada e consuma no mesmo dia.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "banana-prata-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "maca-gala-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "mamao-papaia-1-0-un",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "laranja-pera-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        }
+      ]
+    },
+    {
+      "nome": "Maçã assada com canela",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "sobremesa",
+      "preparo": "Lave as maçãs e retire o miolo com cuidado.\nColoque em refratário, polvilhe canela e aveia.\nAsse a 180 °C por 20 a 30 minutos, até ficarem macias.\nEspere amornar antes de servir.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "maca-fuji-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "canela-em-po-50-0-g",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "aveia-em-flocos-200-0-g",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Banana caramelizada sem açúcar",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "sobremesa",
+      "preparo": "Corte as bananas ao meio no comprimento.\nAqueça a manteiga em frigideira antiaderente.\nDoure as bananas em fogo médio-baixo dos dois lados, usando o açúcar natural da fruta.\nFinalize com canela.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "banana-nanica-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "manteiga-sem-sal-200-0-g",
+          "nomeItem": null,
+          "quantidade": 10
+        },
+        {
+          "produtoRef": "canela-em-po-50-0-g",
+          "nomeItem": null,
+          "quantidade": 1
+        }
+      ]
+    },
+    {
+      "nome": "Bolo simples de cenoura",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 10 porções.",
+      "tipo": "sobremesa",
+      "preparo": "Preaqueça o forno a 180 °C.\nBata cenoura picada, ovos e óleo no liquidificador.\nMisture com açúcar e farinha em uma tigela, incorporando o fermento por último.\nDespeje em forma untada e asse por 35 a 45 minutos, até o palito sair limpo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 3
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 120.0
+        },
+        {
+          "produtoRef": "acucar-cristal-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "farinha-de-trigo-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.24
+        },
+        {
+          "produtoRef": "fermento-quimico-100-0-g",
+          "nomeItem": null,
+          "quantidade": 12
+        }
+      ]
+    },
+    {
+      "nome": "Panqueca salgada de frango",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Misture farinha, leite e ovos até obter massa lisa.\nFaça discos finos em frigideira antiaderente.\nAqueça o frango até ficar completamente cozido e misture com parte do molho.\nRecheie as panquecas, cubra com o molho restante e aqueça no forno.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "farinha-de-trigo-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.18
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "frango-desfiado-congelado-500-0-g",
+          "nomeItem": null,
+          "quantidade": 400
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 200
+        }
+      ]
+    },
+    {
+      "nome": "Quibe de forno simples",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 6 porções.",
+      "tipo": "jantar",
+      "preparo": "Hidrate o trigo em água por 30 minutos e esprema bem.\nMisture com carne moída, cebola picada, hortelã e azeite.\nEspalhe em assadeira untada.\nAsse a 200 °C por cerca de 35 minutos, até a carne estar completamente cozida.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "trigo-para-quibe-500-0-g",
+          "nomeItem": null,
+          "quantidade": 250
+        },
+        {
+          "produtoRef": "carne-moida-bovina-500-0-g",
+          "nomeItem": null,
+          "quantidade": 500
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.15
+        },
+        {
+          "produtoRef": "hortela-fresca-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Torta rápida de legumes",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 6 porções.",
+      "tipo": "jantar",
+      "preparo": "Preaqueça o forno a 180 °C.\nBata ovos, leite e farinha até obter massa uniforme.\nIncorpore fermento e legumes ralados.\nColoque em forma untada e asse por 35 a 45 minutos, até firmar e dourar.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "farinha-de-trigo-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 3
+        },
+        {
+          "produtoRef": "fermento-quimico-100-0-g",
+          "nomeItem": null,
+          "quantidade": 10
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "abobrinha-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        }
+      ]
+    },
+    {
+      "nome": "Pizza de pão de forma",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "lanche",
+      "preparo": "Coloque as fatias de pão em assadeira.\nEspalhe molho de tomate, queijo, rodelas de tomate e orégano.\nLeve ao forno preaquecido a 200 °C por cerca de dez minutos, até derreter o queijo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "pao-de-forma-tradicional-400-0-g",
+          "nomeItem": null,
+          "quantidade": 160
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 100
+        },
+        {
+          "produtoRef": "queijo-mucarela-200-0-g",
+          "nomeItem": null,
+          "quantidade": 100
+        },
+        {
+          "produtoRef": "tomate-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "oregano-seco-20-0-g",
+          "nomeItem": null,
+          "quantidade": 2
+        }
+      ]
+    },
+    {
+      "nome": "Cuscuz com ovo mexido",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Hidrate o flocão com água por dez minutos e cozinhe no vapor até ficar macio.\nEm frigideira, derreta a manteiga e mexa os ovos em fogo baixo até cozinhar.\nSirva os ovos sobre o cuscuz.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "cuscuz-de-milho-500-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 2
+        },
+        {
+          "produtoRef": "manteiga-com-sal-200-0-g",
+          "nomeItem": null,
+          "quantidade": 15
+        }
+      ]
+    },
+    {
+      "nome": "Iogurte com granola e fruta",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 1 porção.",
+      "tipo": "cafe_da_manha",
+      "preparo": "Coloque o iogurte em tigela.\nCorte a banana em rodelas e distribua por cima.\nAcrescente a granola somente na hora de comer para manter a crocância.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "iogurte-natural-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "granola-sem-acucar-250-0-g",
+          "nomeItem": null,
+          "quantidade": 40
+        },
+        {
+          "produtoRef": "banana-prata-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        }
+      ]
+    },
+    {
+      "nome": "Smoothie de morango e banana",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "lanche",
+      "preparo": "Lave e retire as folhas dos morangos.\nDescasque as bananas e corte em rodelas.\nBata tudo no liquidificador até ficar homogêneo.\nSirva imediatamente.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "morango-250-0-g",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "banana-nanica-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "iogurte-natural-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "leite-integral-1-0-l",
+          "nomeItem": null,
+          "quantidade": 0.15
+        }
+      ]
+    },
+    {
+      "nome": "Homus de grão-de-bico",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 5 porções.",
+      "tipo": "lanche",
+      "preparo": "Deixe o grão-de-bico de molho por 8 horas na geladeira e descarte a água.\nCozinhe até ficar bem macio.\nBata com tahine, limão, alho e um pouco da água do cozimento até ficar cremoso.\nFinalize com azeite e mantenha refrigerado.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "grao-de-bico-500-0-g",
+          "nomeItem": null,
+          "quantidade": 250
+        },
+        {
+          "produtoRef": "tahine-200-0-g",
+          "nomeItem": null,
+          "quantidade": 40
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 5
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        }
+      ]
+    },
+    {
+      "nome": "Patê de atum com iogurte",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "lanche",
+      "preparo": "Escorra o atum.\nRale a cenoura e misture com o atum, iogurte e limão.\nMexa até obter pasta homogênea.\nRefrigere e use em sanduíches.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "atum-em-lata-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "iogurte-natural-170-0-g",
+          "nomeItem": null,
+          "quantidade": 100
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.05
+        }
+      ]
+    },
+    {
+      "nome": "Omelete de espinafre",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave o espinafre e refogue rapidamente com cebola no azeite.\nBata os ovos e misture ao espinafre.\nCozinhe em frigideira tampada em fogo baixo até firmar, vire e finalize o cozimento.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "ovo-de-galinha-12-0-un",
+          "nomeItem": null,
+          "quantidade": 3
+        },
+        {
+          "produtoRef": "espinafre-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.05
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Arroz de forno com sobras de frango",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "almoco",
+      "preparo": "Cozinhe o arroz e reserve.\nCozinhe completamente o frango e misture com milho e molho de tomate.\nIncorpore ao arroz, transfira para refratário e cubra com queijo.\nLeve ao forno a 200 °C até aquecer por inteiro e gratinar.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "arroz-branco-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "frango-desfiado-congelado-500-0-g",
+          "nomeItem": null,
+          "quantidade": 300
+        },
+        {
+          "produtoRef": "milho-verde-em-conserva-170-0-g",
+          "nomeItem": null,
+          "quantidade": 170
+        },
+        {
+          "produtoRef": "molho-de-tomate-300-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": "queijo-mucarela-200-0-g",
+          "nomeItem": null,
+          "quantidade": 100
+        }
+      ]
+    },
+    {
+      "nome": "Tilápia assada com batatas",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 3 porções.",
+      "tipo": "jantar",
+      "preparo": "Corte as batatas em fatias finas e pré-asse com azeite por 20 minutos a 200 °C.\nTempere a tilápia com alho e limão.\nDisponha sobre as batatas e volte ao forno até o peixe ficar opaco e se desfazer facilmente com garfo.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "file-de-tilapia-500-0-g",
+          "nomeItem": null,
+          "quantidade": 500
+        },
+        {
+          "produtoRef": "batata-inglesa-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.5
+        },
+        {
+          "produtoRef": "limao-tahiti-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        },
+        {
+          "produtoRef": "azeite-de-oliva-500-0-ml",
+          "nomeItem": null,
+          "quantidade": 20
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        }
+      ]
+    },
+    {
+      "nome": "Sopa de macarrão com frango",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 4 porções.",
+      "tipo": "jantar",
+      "preparo": "Cozinhe o frango em água até estar completamente cozido e desfie.\nJunte cebola e legumes picados ao caldo e cozinhe até quase macios.\nAcrescente macarrão e frango e cozinhe pelo tempo indicado na embalagem.\nSirva quente.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "peito-de-frango-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.4
+        },
+        {
+          "produtoRef": "macarrao-para-sopa-500-0-g",
+          "nomeItem": null,
+          "quantidade": 150
+        },
+        {
+          "produtoRef": "cenoura-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.2
+        },
+        {
+          "produtoRef": "batata-inglesa-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.3
+        },
+        {
+          "produtoRef": "cebola-1-0-kg",
+          "nomeItem": null,
+          "quantidade": 0.1
+        }
+      ]
+    },
+    {
+      "nome": "Couve refogada com alho",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "jantar",
+      "preparo": "Lave as folhas de couve, retire talos muito grossos e corte em tiras finas.\nAqueça o óleo e refogue o alho rapidamente.\nAcrescente a couve e mexa por dois a três minutos, até murchar sem perder a cor.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "couve-manteiga-1-0-un",
+          "nomeItem": null,
+          "quantidade": 1
+        },
+        {
+          "produtoRef": "alho-200-0-g",
+          "nomeItem": null,
+          "quantidade": 8
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "nome": "Pipoca caseira na panela",
+      "descricao": "Receita prática e econômica para o dia a dia. Rendimento: 2 porções.",
+      "tipo": "lanche",
+      "preparo": "Coloque o óleo e o milho em panela grande com tampa.\nAqueça em fogo médio e sacuda a panela ocasionalmente com cuidado.\nQuando os estouros diminuírem bastante, desligue o fogo.\nAguarde parar de estourar, abra longe do rosto e tempere.",
+      "publica": true,
+      "userId": null,
+      "imagem": null,
+      "statusPublicacao": "publicada",
+      "ingredientes": [
+        {
+          "produtoRef": "milho-para-pipoca-500-0-g",
+          "nomeItem": null,
+          "quantidade": 80
+        },
+        {
+          "produtoRef": "oleo-de-soja-900-0-ml",
+          "nomeItem": null,
+          "quantidade": 10
+        },
+        {
+          "produtoRef": null,
+          "nomeItem": "Sal refinado (g)",
+          "quantidade": 2
+        }
+      ]
+    }
+  ],
+  "aulas": [
+    {
+      "titulo": "Como montar seu orçamento mensal",
+      "descricao": "Aprenda a organizar renda, despesas fixas, variáveis e metas sem complicação.",
+      "conteudo": "Comece anotando quanto realmente entra por mês. Use a renda líquida, depois de descontos, e evite contar com dinheiro que ainda não recebeu.\n\nListe despesas fixas como aluguel, condomínio, internet e transporte. Em seguida, estime despesas variáveis como mercado, lazer e farmácia usando registros recentes.\n\nSepare um valor possível para reserva de emergência antes de distribuir o restante. Se o total planejado ultrapassar sua renda, ajuste categorias flexíveis e renegocie gastos.\n\nRevise o orçamento uma vez por semana. Anote o que gastou e compare com o limite; pequenas correções ao longo do mês são mais fáceis do que tentar recuperar tudo no final.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "financas",
+      "quizzes": [
+        {
+          "titulo": "Revise: Como montar seu orçamento mensal",
+          "questoes": [
+            {
+              "enunciado": "Qual valor usar como base do orçamento?",
+              "alternativas": [
+                {
+                  "texto": "Renda líquida que realmente entra",
+                  "correta": true
+                },
+                {
+                  "texto": "Limite do cartão de crédito",
+                  "correta": false
+                },
+                {
+                  "texto": "Renda ideal que se espera receber",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "O que fazer quando as despesas previstas superam a renda?",
+              "alternativas": [
+                {
+                  "texto": "Ignorar a diferença",
+                  "correta": false
+                },
+                {
+                  "texto": "Rever gastos e prioridades",
+                  "correta": true
+                },
+                {
+                  "texto": "Parcelar tudo automaticamente",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Quando revisar o orçamento?",
+              "alternativas": [
+                {
+                  "texto": "Somente no fim do ano",
+                  "correta": false
+                },
+                {
+                  "texto": "Nunca, se estiver anotado",
+                  "correta": false
+                },
+                {
+                  "texto": "Regularmente, por exemplo toda semana",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Reserva de emergência sem mistério",
+      "descricao": "Entenda por que guardar dinheiro e como iniciar com pouco.",
+      "conteudo": "A reserva de emergência é um valor separado para imprevistos reais, como perda de renda ou consertos urgentes. Ela não deve se misturar ao dinheiro do mercado.\n\nCalcule seus gastos essenciais mensais e estabeleça uma meta gradual. Um ponto de referência comum é acumular alguns meses dessas despesas; o prazo depende da estabilidade da sua renda.\n\nComece com um valor pequeno e constante. Automatizar uma transferência depois de receber pode ajudar, desde que o valor não prejudique contas essenciais.\n\nMantenha a reserva em local de baixo risco e com acesso rápido. Sempre que usar parte dela, planeje como recompor aos poucos.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "financas",
+      "quizzes": [
+        {
+          "titulo": "Revise: Reserva de emergência sem mistério",
+          "questoes": [
+            {
+              "enunciado": "Qual gasto combina com reserva de emergência?",
+              "alternativas": [
+                {
+                  "texto": "Promoção de celular",
+                  "correta": false
+                },
+                {
+                  "texto": "Reparo urgente de encanamento",
+                  "correta": true
+                },
+                {
+                  "texto": "Viagem de férias",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como começar a guardar?",
+              "alternativas": [
+                {
+                  "texto": "Separar um valor viável regularmente",
+                  "correta": true
+                },
+                {
+                  "texto": "Esperar sobrar muito dinheiro",
+                  "correta": false
+                },
+                {
+                  "texto": "Usar o limite do cheque especial",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "O que fazer após usar a reserva?",
+              "alternativas": [
+                {
+                  "texto": "Esquecer o valor",
+                  "correta": false
+                },
+                {
+                  "texto": "Gastar o restante",
+                  "correta": false
+                },
+                {
+                  "texto": "Planejar a recomposição",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Planejando a mudança para morar sozinho",
+      "descricao": "Organize custos, documentos e prioridades antes da mudança.",
+      "conteudo": "Antes de procurar imóvel, defina quanto pode pagar por mês considerando aluguel, condomínio, água, luz, internet, alimentação e transporte.\n\nInclua gastos de entrada, como caução quando aplicável, frete, utensílios essenciais e pequenas adaptações. Não comprometa toda a reserva com móveis decorativos.\n\nVisite o imóvel e confira torneiras, tomadas, ventilação, sinais de umidade e condições das portas. Registre os pontos observados para discutir na vistoria.\n\nMonte uma lista de tarefas por data: documentação, contrato, mudança de endereço, serviços essenciais e compras. Guarde cópias dos comprovantes e do contrato.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "moradia",
+      "quizzes": [
+        {
+          "titulo": "Revise: Planejando a mudança para morar sozinho",
+          "questoes": [
+            {
+              "enunciado": "Qual custo costuma ser esquecido no planejamento?",
+              "alternativas": [
+                {
+                  "texto": "Apenas o aluguel",
+                  "correta": false
+                },
+                {
+                  "texto": "Somente decoração",
+                  "correta": false
+                },
+                {
+                  "texto": "Frete e despesas iniciais",
+                  "correta": true
+                }
+              ]
+            },
+            {
+              "enunciado": "O que conferir em uma visita ao imóvel?",
+              "alternativas": [
+                {
+                  "texto": "Somente a cor das paredes",
+                  "correta": false
+                },
+                {
+                  "texto": "Umidade, tomadas e torneiras",
+                  "correta": true
+                },
+                {
+                  "texto": "A marca da televisão",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Qual compra priorizar?",
+              "alternativas": [
+                {
+                  "texto": "Itens essenciais para dormir e cozinhar",
+                  "correta": true
+                },
+                {
+                  "texto": "Decoração cara",
+                  "correta": false
+                },
+                {
+                  "texto": "Objetos duplicados",
+                  "correta": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Como avaliar um imóvel e seu contrato",
+      "descricao": "Conheça cuidados básicos antes de assinar uma locação.",
+      "conteudo": "Compare o valor total da moradia, não apenas o aluguel anunciado. Verifique condomínio, tributos quando atribuídos ao locatário e eventuais taxas previstas.\n\nLeia o contrato com atenção, incluindo prazo, reajuste, garantias, responsabilidades por reparos e condições de saída. Em caso de dúvida relevante, busque orientação qualificada.\n\nFaça a vistoria de entrada com fotos datadas e descrição de problemas. Confira se o documento reflete o estado real do imóvel antes de concordar.\n\nGuarde contrato, comprovantes e comunicações importantes. Combine por escrito reparos e condições que tenham sido negociados.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "moradia",
+      "quizzes": [
+        {
+          "titulo": "Revise: Como avaliar um imóvel e seu contrato",
+          "questoes": [
+            {
+              "enunciado": "O que comparar entre dois imóveis?",
+              "alternativas": [
+                {
+                  "texto": "Somente aluguel",
+                  "correta": false
+                },
+                {
+                  "texto": "Custo mensal total e condições",
+                  "correta": true
+                },
+                {
+                  "texto": "A cor da fachada",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como registrar defeitos existentes?",
+              "alternativas": [
+                {
+                  "texto": "Com fotos e vistoria documentada",
+                  "correta": true
+                },
+                {
+                  "texto": "Apenas de memória",
+                  "correta": false
+                },
+                {
+                  "texto": "Sem comunicar ninguém",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "O que fazer antes de assinar?",
+              "alternativas": [
+                {
+                  "texto": "Pular as cláusulas",
+                  "correta": false
+                },
+                {
+                  "texto": "Confiar só em promessas verbais",
+                  "correta": false
+                },
+                {
+                  "texto": "Ler prazos, reajustes e responsabilidades",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Rotina de limpeza em 20 minutos",
+      "descricao": "Crie uma rotina curta para evitar acúmulo de sujeira.",
+      "conteudo": "Divida a casa em pequenas zonas: cozinha, banheiro, quarto e sala. Uma rotina diária curta pode incluir lavar louça, limpar superfícies e recolher lixo.\n\nComece retirando objetos do caminho. Use um pano apropriado para cada área, evitando levar sujeira do banheiro para a cozinha.\n\nSiga a ordem de cima para baixo e deixe o chão por último. Leia os rótulos dos produtos e mantenha o ambiente ventilado.\n\nEscolha tarefas semanais para pontos mais trabalhosos, como box, geladeira e troca de roupa de cama. Ajuste a frequência conforme o uso real.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "limpeza",
+      "quizzes": [
+        {
+          "titulo": "Revise: Rotina de limpeza em 20 minutos",
+          "questoes": [
+            {
+              "enunciado": "Qual sequência ajuda a limpar melhor?",
+              "alternativas": [
+                {
+                  "texto": "Chão primeiro e teto depois",
+                  "correta": false
+                },
+                {
+                  "texto": "De cima para baixo, chão por último",
+                  "correta": true
+                },
+                {
+                  "texto": "Tudo ao mesmo tempo",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como evitar contaminação entre ambientes?",
+              "alternativas": [
+                {
+                  "texto": "Usar panos separados por área",
+                  "correta": true
+                },
+                {
+                  "texto": "Usar o mesmo pano em tudo",
+                  "correta": false
+                },
+                {
+                  "texto": "Guardar panos úmidos fechados",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como organizar tarefas mais pesadas?",
+              "alternativas": [
+                {
+                  "texto": "Fazer todas diariamente",
+                  "correta": false
+                },
+                {
+                  "texto": "Ignorar por meses",
+                  "correta": false
+                },
+                {
+                  "texto": "Distribuir ao longo da semana",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Produtos de limpeza: uso seguro",
+      "descricao": "Aprenda a ler rótulos e evitar misturas perigosas.",
+      "conteudo": "Leia as instruções e a diluição indicada na embalagem. Mais produto nem sempre limpa melhor e pode deixar resíduos.\n\nNunca misture água sanitária com vinagre, amônia, ácidos ou outros produtos de limpeza. Essas combinações podem liberar gases perigosos.\n\nUse luvas quando recomendado e mantenha janelas abertas. Guarde produtos nas embalagens originais, longe de crianças, animais e alimentos.\n\nAntes de usar um produto em superfície delicada, teste em área discreta e siga as recomendações do fabricante.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "limpeza",
+      "quizzes": [
+        {
+          "titulo": "Revise: Produtos de limpeza: uso seguro",
+          "questoes": [
+            {
+              "enunciado": "Qual mistura deve ser evitada?",
+              "alternativas": [
+                {
+                  "texto": "Água e detergente conforme rótulo",
+                  "correta": false
+                },
+                {
+                  "texto": "Água sanitária e vinagre",
+                  "correta": true
+                },
+                {
+                  "texto": "Água pura para enxágue",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Onde guardar produtos?",
+              "alternativas": [
+                {
+                  "texto": "Em recipientes de bebidas",
+                  "correta": false
+                },
+                {
+                  "texto": "Junto dos alimentos",
+                  "correta": false
+                },
+                {
+                  "texto": "Na embalagem original e local seguro",
+                  "correta": true
+                }
+              ]
+            },
+            {
+              "enunciado": "O que fazer antes de diluir um limpador?",
+              "alternativas": [
+                {
+                  "texto": "Ler o rótulo",
+                  "correta": true
+                },
+                {
+                  "texto": "Usar a maior dose possível",
+                  "correta": false
+                },
+                {
+                  "texto": "Misturar com outro limpador",
+                  "correta": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Cozinhando o básico sem desperdício",
+      "descricao": "Organize refeições simples, porções e aproveitamento.",
+      "conteudo": "Planeje duas ou três refeições base para a semana, como arroz, feijão, legumes e uma proteína. Varie os acompanhamentos para não enjoar.\n\nConfira a despensa e a geladeira antes de comprar. Faça lista com quantidades aproximadas e priorize ingredientes que servem para mais de uma receita.\n\nLave as mãos, separe utensílios para alimentos crus e prontos e cozinhe completamente carnes e ovos. Resfrie sobras rapidamente e mantenha refrigeradas.\n\nCongele porções em recipientes adequados, identificando o conteúdo e a data. Descongele na geladeira ou por método seguro, nunca por horas na bancada.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "culinaria",
+      "quizzes": [
+        {
+          "titulo": "Revise: Cozinhando o básico sem desperdício",
+          "questoes": [
+            {
+              "enunciado": "Como reduzir compras duplicadas?",
+              "alternativas": [
+                {
+                  "texto": "Comprar sem olhar a cozinha",
+                  "correta": false
+                },
+                {
+                  "texto": "Conferir estoque antes da lista",
+                  "correta": true
+                },
+                {
+                  "texto": "Comprar apenas pacotes grandes",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como descongelar com segurança?",
+              "alternativas": [
+                {
+                  "texto": "Na bancada durante a noite",
+                  "correta": false
+                },
+                {
+                  "texto": "Ao sol",
+                  "correta": false
+                },
+                {
+                  "texto": "Na geladeira",
+                  "correta": true
+                }
+              ]
+            },
+            {
+              "enunciado": "Como aproveitar melhor o preparo?",
+              "alternativas": [
+                {
+                  "texto": "Fazer porções e armazenar corretamente",
+                  "correta": true
+                },
+                {
+                  "texto": "Deixar comida pronta fora da geladeira",
+                  "correta": false
+                },
+                {
+                  "texto": "Misturar alimentos crus e cozidos",
+                  "correta": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Segurança alimentar e conservação",
+      "descricao": "Cuidados para armazenar, descongelar e manipular alimentos.",
+      "conteudo": "Lave as mãos antes de cozinhar e após manipular alimentos crus. Limpe bancadas, facas e tábuas, evitando contaminação cruzada.\n\nMantenha alimentos perecíveis refrigerados e não deixe refeições prontas por longos períodos à temperatura ambiente. Em caso de dúvida sobre conservação, descarte.\n\nObserve validade, integridade da embalagem e sinais de deterioração. O cheiro sozinho não garante que um alimento esteja seguro.\n\nOrganize a geladeira com recipientes fechados, colocando carnes cruas em área que evite gotejamento sobre alimentos prontos.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "culinaria",
+      "quizzes": [
+        {
+          "titulo": "Revise: Segurança alimentar e conservação",
+          "questoes": [
+            {
+              "enunciado": "O que evita contaminação cruzada?",
+              "alternativas": [
+                {
+                  "texto": "Separar utensílios para crus e prontos",
+                  "correta": true
+                },
+                {
+                  "texto": "Usar a mesma tábua sem lavar",
+                  "correta": false
+                },
+                {
+                  "texto": "Lavar frango cru na pia",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "O cheiro normal garante segurança?",
+              "alternativas": [
+                {
+                  "texto": "Sempre",
+                  "correta": false
+                },
+                {
+                  "texto": "Não",
+                  "correta": true
+                },
+                {
+                  "texto": "Apenas em laticínios",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como guardar carne crua na geladeira?",
+              "alternativas": [
+                {
+                  "texto": "Acima da salada aberta",
+                  "correta": false
+                },
+                {
+                  "texto": "Em contato com refeições prontas",
+                  "correta": false
+                },
+                {
+                  "texto": "Bem fechada e sem risco de gotejar",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Pequenos cuidados de manutenção",
+      "descricao": "Aprenda a reconhecer problemas e saber quando chamar ajuda.",
+      "conteudo": "Faça uma inspeção visual periódica em torneiras, sifões, rejuntes e paredes. Pequenos vazamentos podem aumentar a conta de água e causar mofo.\n\nAprenda onde ficam os registros de água e o quadro de disjuntores, mas não abra equipamentos elétricos nem mexa em fiação energizada.\n\nLimpe ralos e filtros seguindo o manual do equipamento. Para vazamentos persistentes, cheiro de gás ou falhas elétricas, interrompa o uso e procure profissional habilitado.\n\nAnote datas de manutenção e guarde manuais. Essa organização ajuda a evitar improvisos inseguros e gastos maiores.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "manutencao",
+      "quizzes": [
+        {
+          "titulo": "Revise: Pequenos cuidados de manutenção",
+          "questoes": [
+            {
+              "enunciado": "O que fazer ao sentir cheiro de gás?",
+              "alternativas": [
+                {
+                  "texto": "Acender a luz para verificar",
+                  "correta": false
+                },
+                {
+                  "texto": "Evitar interruptores, sair do local e buscar ajuda especializada",
+                  "correta": true
+                },
+                {
+                  "texto": "Testar com chama",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como lidar com fiação energizada?",
+              "alternativas": [
+                {
+                  "texto": "Não manusear; procurar profissional",
+                  "correta": true
+                },
+                {
+                  "texto": "Abrir a tomada para olhar",
+                  "correta": false
+                },
+                {
+                  "texto": "Tocar para testar",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Qual hábito ajuda a prevenir problemas?",
+              "alternativas": [
+                {
+                  "texto": "Ignorar pequenas infiltrações",
+                  "correta": false
+                },
+                {
+                  "texto": "Esperar tudo quebrar",
+                  "correta": false
+                },
+                {
+                  "texto": "Inspecionar e registrar manutenções",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Economia de água e energia em casa",
+      "descricao": "Adote hábitos de consumo consciente que cabem na rotina.",
+      "conteudo": "Observe a conta de água e energia ao longo dos meses. Mudanças inesperadas podem indicar vazamentos, aparelhos com defeito ou hábitos que precisam de revisão.\n\nFeche a torneira ao escovar os dentes, conserte gotejamentos e use a máquina de lavar com cargas adequadas às instruções do fabricante.\n\nAproveite iluminação natural, apague luzes de cômodos vazios e mantenha a vedação da geladeira em boas condições. Não obstrua a ventilação dos eletrodomésticos.\n\nCompare resultados depois de algumas semanas. Prefira mudanças consistentes e seguras, sem improvisar instalações elétricas ou hidráulicas.",
+      "videoUrl": null,
+      "imagem": null,
+      "categoria": "manutencao",
+      "quizzes": [
+        {
+          "titulo": "Revise: Economia de água e energia em casa",
+          "questoes": [
+            {
+              "enunciado": "O que pode indicar vazamento?",
+              "alternativas": [
+                {
+                  "texto": "Conta de água subindo sem explicação",
+                  "correta": true
+                },
+                {
+                  "texto": "Piso limpo",
+                  "correta": false
+                },
+                {
+                  "texto": "Janela aberta",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Como usar melhor a lavadora?",
+              "alternativas": [
+                {
+                  "texto": "Lavar uma peça por ciclo sempre",
+                  "correta": false
+                },
+                {
+                  "texto": "Respeitar cargas recomendadas",
+                  "correta": true
+                },
+                {
+                  "texto": "Colocar acima da capacidade",
+                  "correta": false
+                }
+              ]
+            },
+            {
+              "enunciado": "Qual hábito economiza energia?",
+              "alternativas": [
+                {
+                  "texto": "Deixar a geladeira aberta",
+                  "correta": false
+                },
+                {
+                  "texto": "Obstruir ventilação dos aparelhos",
+                  "correta": false
+                },
+                {
+                  "texto": "Apagar luzes de cômodos vazios",
+                  "correta": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

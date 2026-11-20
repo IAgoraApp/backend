@@ -1,5 +1,6 @@
 package com.iagora.backend.modules.cozinha;
 
+import com.iagora.backend.modules.catalogo.ImportadorCatalogo;
 import com.iagora.backend.modules.casa.casa.Casa;
 import com.iagora.backend.modules.casa.casa.CasaRepository;
 import com.iagora.backend.modules.casa.cozinha.receita.ReceitaRequest;
@@ -10,7 +11,11 @@ import com.iagora.backend.security.JwtService;
 import com.jayway.jsonpath.JsonPath;
 import jakarta.persistence.EntityManager;
 import java.time.LocalDate;
+import java.util.Base64;
 import java.util.UUID;
+import org.springframework.http.HttpMethod;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.mock.web.MockMultipartFile;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +26,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -41,6 +48,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class CozinhaIntegrationTest {
 
   @Autowired private MockMvc mvc;
+  @Autowired private ImportadorCatalogo importador;
+  @Autowired private JdbcTemplate jdbc;
   @Autowired private UserRepository userRepository;
   @Autowired private CasaRepository casaRepository;
   @Autowired private JwtService jwtService;
@@ -65,14 +74,45 @@ class CozinhaIntegrationTest {
   }
 
   @Test
+  void importaCatalogoCompletoSemDuplicarNemAlterarDadosPrivados() throws Exception {
+    int privada = receita(false);
+    var tabelas = java.util.Map.of(
+      "produto", 500, "receitas", 50, "receita_item", 215, "aula", 10,
+      "quiz", 10, "questao", 30, "alternativa", 90, "catalogo_importado", 1);
+    var contagens = new java.util.HashMap<String, Integer>();
+    tabelas.keySet().forEach(tabela -> contagens.put(tabela, contar(tabela)));
+
+    importador.importar();
+    entityManager.flush();
+    importador.importar();
+    entityManager.flush();
+
+    tabelas.forEach((tabela, esperado) -> assertEquals(esperado.intValue(),
+      contar(tabela) - contagens.get(tabela), tabela));
+    assertEquals(9, jdbc.queryForObject(
+      "select count(*) from receita_item where nome_item = ? and produto_id is null",
+      Integer.class, "Sal refinado (g)"));
+    mvc.perform(auth(get("/receitas/" + privada))).andExpect(jsonPath("$.publica").value(false));
+    mvc.perform(get("/receitas")).andExpect(jsonPath("$[*].nome").value(hasItem("Arroz branco soltinho")));
+  }
+
+  private int contar(String tabela) {
+    return jdbc.queryForObject("select count(*) from " + tabela, Integer.class);
+  }
+
+  @Test
   void produtoCompartilhadoNaoCriaEstoqueEPermiteBusca() throws Exception {
     int produto = produto("Arroz");
     mvc.perform(auth(get("/produtos/busca").param("nome", "aRR")))
-      .andExpect(status().isOk()).andExpect(jsonPath("$[0].id").value(produto));
+      .andExpect(status().isOk()).andExpect(jsonPath("$[*].id").value(hasItem(produto)));
     mvc.perform(auth(get("/estoque-itens/casa/" + casa.getId())))
       .andExpect(status().isOk()).andExpect(content().json("[]"));
     mvc.perform(auth(get("/produtos"), outroToken))
-      .andExpect(status().isOk()).andExpect(jsonPath("$[0].id").value(produto));
+      .andExpect(status().isOk()).andExpect(jsonPath("$[*].id").value(hasItem(produto)));
+    mvc.perform(auth(patch("/produtos/" + produto).contentType("application/json")
+      .content("""
+        {"marca":"Alteração indevida"}
+        """), outroToken)).andExpect(status().isForbidden());
     mvc.perform(auth(patch("/produtos/" + produto).contentType("application/json")
       .content("{\"marca\":\"Marca nova\"}"))).andExpect(status().isNoContent());
     mvc.perform(auth(get("/produtos/" + produto)))
@@ -160,7 +200,10 @@ class CozinhaIntegrationTest {
   @Test
   void receitasPrivadasSoAparecemParaAutor() throws Exception {
     int receita = receita(false);
-    mvc.perform(get("/receitas")).andExpect(status().isOk()).andExpect(content().json("[]"));
+    mvc.perform(get("/receitas"))
+      .andExpect(status().isOk())
+      .andExpect(jsonPath("$[*].nome").value(hasItem("Arroz integral com tomate")))
+      .andExpect(jsonPath("$[*].id").value(not(hasItem(receita))));
     mvc.perform(get("/receitas/" + receita)).andExpect(status().isUnauthorized());
     mvc.perform(auth(get("/receitas/" + receita), outroToken)).andExpect(status().isForbidden());
     mvc.perform(auth(get("/receitas/" + receita)))
@@ -173,9 +216,40 @@ class CozinhaIntegrationTest {
       .content("{\"publica\":true}")))
       .andExpect(status().isNoContent());
     mvc.perform(get("/receitas/" + receita)).andExpect(status().isOk());
-    mvc.perform(get("/receitas")).andExpect(jsonPath("$[0].id").value(receita));
+    mvc.perform(get("/receitas")).andExpect(jsonPath("$[*].id").value(hasItem(receita)));
     mvc.perform(auth(patch("/receitas/" + receita).contentType("application/json")
       .content("{\"nome\":\"Outro nome\"}"), outroToken)).andExpect(status().isForbidden());
+  }
+
+  @Test
+  void imagemDaReceitaPodeSerEnviadaETemMesmaVisibilidadeDaReceita() throws Exception {
+    byte[] png = Base64.getDecoder().decode(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aSakAAAAASUVORK5CYII=");
+    var arquivo = new MockMultipartFile("arquivo", "foto.png", "image/png", png);
+    var dados = new MockMultipartFile("receita", "", "application/json", ("""
+      {"userId":%d,"publica":false,"nome":"Receita com foto","preparo":"Misture"}
+      """).formatted(user.getId()).getBytes(java.nio.charset.StandardCharsets.UTF_8));
+    var criacao = mvc.perform(multipart("/receitas").file(dados).file(arquivo).header("Authorization", "Bearer " + token))
+      .andExpect(status().isCreated()).andReturn();
+    int id = JsonPath.read(criacao.getResponse().getContentAsString(), "$.id");
+    entityManager.flush();
+    String caminho = "/receitas/" + id;
+    String imagem = caminho + "/imagem";
+    mvc.perform(auth(get(caminho))).andExpect(jsonPath("$.imagem").value(imagem));
+    mvc.perform(auth(get(imagem), outroToken)).andExpect(status().isForbidden());
+    mvc.perform(auth(get(imagem))).andExpect(status().isOk())
+      .andExpect(content().contentType("image/png")).andExpect(content().bytes(png));
+
+    var patch = new MockMultipartFile("receita", "", "application/json", "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8));
+    mvc.perform(multipart(HttpMethod.PATCH, caminho).file(patch).file(arquivo).header("Authorization", "Bearer " + token))
+      .andExpect(status().isNoContent());
+    mvc.perform(auth(patch(caminho).contentType("application/json").content("{\"publica\":true}")))
+      .andExpect(status().isNoContent());
+    entityManager.flush();
+    mvc.perform(get(imagem)).andExpect(status().isOk()).andExpect(content().bytes(png));
+    mvc.perform(auth(patch(caminho).contentType("application/json").content("{\"imagem\":\"\"}")))
+      .andExpect(status().isNoContent());
+    mvc.perform(get(imagem)).andExpect(status().isNotFound());
   }
 
   @Test
@@ -303,7 +377,7 @@ class CozinhaIntegrationTest {
     mvc.perform(get("/receitas/" + receita)).andExpect(status().isOk())
       .andExpect(jsonPath("$.publica").value(true))
       .andExpect(jsonPath("$.status").doesNotExist());
-    mvc.perform(get("/receitas")).andExpect(jsonPath("$[0].id").value(receita));
+    mvc.perform(get("/receitas")).andExpect(jsonPath("$[*].id").value(hasItem(receita)));
     mvc.perform(auth(get("/receitas/" + receita + "/favoritos/status")
       .param("userId", user.getId().toString()))).andExpect(jsonPath("$.favorita").value(false));
     mvc.perform(auth(get("/users/" + user.getId() + "/receitas")))

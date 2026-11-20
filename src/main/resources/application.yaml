@@ -1,4 +1,7 @@
 spring:
+  config:
+    import: "optional:file:./backend/.env.local[.properties],optional:file:./.env.local[.properties]"
+
   application:
     name: backend
 
@@ -10,14 +13,21 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate.type.json_format_mapper: jackson3
     show-sql: false
     open-in-view: false
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
     properties:
       mail:
         smtp:
@@ -45,4 +55,4 @@ jwt:
 
 security:
   jwt:
-    enabled: false
+    enabled: ${SECURITY_JWT_ENABLED:true}

@@ -26,6 +26,15 @@ public class EstoqueItemController {
     return estoqueItemService.cadastrar(request);
   }
 
+  @SomenteProprietarioCasa
+  @PostMapping("/casa/{casaId}/adicionar")
+  public EstoqueItemResponse adicionarQuantidade(
+    @PathVariable Integer casaId,
+    @RequestBody EstoqueItemRequest request
+  ) {
+    return estoqueItemService.adicionarQuantidade(casaId, request);
+  }
+
   @SomenteProprietarioEstoque
   @GetMapping("/{id}")
   public EstoqueItemResponse buscarPorId(@PathVariable Integer id) {

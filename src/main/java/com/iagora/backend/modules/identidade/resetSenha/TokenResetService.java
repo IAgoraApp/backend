@@ -1,6 +1,9 @@
 package com.iagora.backend.modules.identidade.resetSenha;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.identidade.autenticacao.User;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.LockModeType;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -16,9 +19,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class TokenResetService {
 
   private final TokenResetRepository tokenResetRepository;
+  private final EntityManager entityManager;
 
-  public TokenResetService(TokenResetRepository tokenResetRepository) {
+  public TokenResetService(TokenResetRepository tokenResetRepository, EntityManager entityManager) {
     this.tokenResetRepository = tokenResetRepository;
+    this.entityManager = entityManager;
   }
 
   private String gerarToken() {
@@ -43,9 +48,15 @@ public class TokenResetService {
 
   @Transactional
   public String criarToken(Integer userId) {
+    if (entityManager.find(User.class, userId, LockModeType.PESSIMISTIC_WRITE) == null) {
+      throw new RegraNegocioException("Conta indisponível", HttpStatus.NOT_FOUND);
+    }
     tokenResetRepository
       .findByUserId(userId)
-      .ifPresent(tokenResetRepository::delete);
+      .ifPresent(atual -> {
+        tokenResetRepository.delete(atual);
+        tokenResetRepository.flush();
+      });
 
     String token = gerarToken();
     String tokenHash = gerarHash(token);
@@ -59,7 +70,11 @@ public class TokenResetService {
     return token;
   }
 
+  @Transactional
   public TokenReset validarToken(String token) {
+    if (token == null || !token.matches("[A-Za-z0-9_-]{43}")) {
+      throw new RegraNegocioException("Token inválido ou expirado", HttpStatus.BAD_REQUEST);
+    }
     String tokenHash = gerarHash(token);
 
     TokenReset tokenReset = tokenResetRepository

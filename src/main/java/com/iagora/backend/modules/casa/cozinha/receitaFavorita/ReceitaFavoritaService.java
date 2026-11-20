@@ -55,7 +55,7 @@ public class ReceitaFavoritaService {
       .map(receita -> new ReceitaResponse(receita.getId(),
         receita.getUser() == null ? null : receita.getUser().getId(),
         receita.getPublica(), receita.getNome(), receita.getDescricao(),
-        receita.getTipo(), receita.getPreparo()))
+        receita.getTipo(), receita.getPreparo(), receita.getImagem(), "publicada"))
       .toList();
   }
 
