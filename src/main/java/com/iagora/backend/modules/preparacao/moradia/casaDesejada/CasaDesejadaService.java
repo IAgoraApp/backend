@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.preparacao.moradia.casaDesejada;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.endereco.EnderecoService;
 import com.iagora.backend.modules.identidade.autenticacao.UserRepository;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -11,10 +12,12 @@ import org.springframework.stereotype.Service;
 public class CasaDesejadaService {
     private final CasaDesejadaRepository repository;
     private final UserRepository userRepository;
+    private final EnderecoService enderecos;
 
-    public CasaDesejadaService(CasaDesejadaRepository repository, UserRepository userRepository) {
+    public CasaDesejadaService(CasaDesejadaRepository repository, UserRepository userRepository, EnderecoService enderecos) {
         this.repository = repository;
         this.userRepository = userRepository;
+        this.enderecos = enderecos;
     }
 
     public Integer proprietarioId(CasaDesejada item) {
@@ -63,7 +66,10 @@ public class CasaDesejadaService {
     }
 
     private void aplicar(CasaDesejada item, CasaDesejadaRequest request, Integer userId) {
-        if (request.enderecoId() != null) {
+        if (request.endereco() != null) {
+            item.setEnderecoId(enderecos.salvarResidencia(item.getEnderecoId(), userId, request.endereco()));
+        } else if (request.enderecoId() != null && !request.enderecoId().equals(item.getEnderecoId())) {
+            enderecos.verificarProprietario(request.enderecoId(), userId);
             item.setEnderecoId(request.enderecoId());
         }
         if (request.titulo() != null) {
@@ -126,7 +132,8 @@ public class CasaDesejadaService {
             item.getTipo(),
             item.getValor(),
             item.getValorTipo(),
-            item.getMobilia()
+            item.getMobilia(),
+            enderecos.buscarSeExistir(item.getEnderecoId())
         );
     }
 }

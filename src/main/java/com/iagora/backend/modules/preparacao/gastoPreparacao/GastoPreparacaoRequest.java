@@ -7,5 +7,6 @@ public record GastoPreparacaoRequest(
     BigDecimal valor,
     String frequencia,
     String destino,
-    Integer userId
+    Integer userId,
+    String categoria
 ) {}

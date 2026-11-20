@@ -1,6 +1,7 @@
 package com.iagora.backend.modules.marketplace.servicoContratado;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.endereco.EnderecoService;
 import com.iagora.backend.modules.identidade.perfil.PerfilRepository;
 import com.iagora.backend.modules.marketplace.propostaAtendimento.PropostaAtendimentoRepository;
 import com.iagora.backend.modules.marketplace.servico.ServicoService;
@@ -19,15 +20,17 @@ public class ServicoContratadoService {
     private final PerfilRepository perfilRepository;
     private final ServicoService servicoService;
     private final EntityManager entityManager;
+    private final EnderecoService enderecos;
     private final PropostaAtendimentoRepository propostaRepository;
 
     public ServicoContratadoService(ServicoContratadoRepository repository, PerfilRepository perfilRepository,
-                                    ServicoService servicoService, EntityManager entityManager, PropostaAtendimentoRepository propostaRepository) {
+                                    ServicoService servicoService, EntityManager entityManager, PropostaAtendimentoRepository propostaRepository, EnderecoService enderecos) {
         this.repository = repository;
         this.perfilRepository = perfilRepository;
         this.servicoService = servicoService;
         this.entityManager = entityManager;
         this.propostaRepository = propostaRepository;
+        this.enderecos = enderecos;
     }
 
     public ServicoContratado buscar(Integer id) {
@@ -155,7 +158,11 @@ public class ServicoContratadoService {
     }
 
     private void aplicar(ServicoContratado item, ServicoContratadoRequest request) {
-        if (request.enderecoId() != null) {
+        int usuario = item.getPerfil().getUser().getId();
+        if (request.endereco() != null) {
+            item.setEnderecoId(enderecos.cadastrar(request.endereco(), usuario).id());
+        } else if (request.enderecoId() != null && !request.enderecoId().equals(item.getEnderecoId())) {
+            enderecos.verificarProprietario(request.enderecoId(), usuario);
             item.setEnderecoId(request.enderecoId());
         }
         if (request.descricao() != null) {
@@ -186,7 +193,8 @@ public class ServicoContratadoService {
             item.getValor(),
             item.getStatus(),
             item.getDataContratacao(),
-            item.getDataConclusao()
+            item.getDataConclusao(),
+            enderecos.buscarSeExistir(item.getEnderecoId())
         );
     }
 }

@@ -23,8 +23,8 @@ public class AvaliacaoServicoController {
     }
 
     @GetMapping("/servicos/{servicoId}/avaliacoes")
-    public List<AvaliacaoServicoResponse> listar(@PathVariable Integer servicoId) {
-        return service.listar(servicoId);
+    public List<AvaliacaoServicoResponse> listar(@PathVariable Integer servicoId, Authentication authentication) {
+        return service.listar(servicoId, usuario(authentication));
     }
 
     @GetMapping("/avaliacoes/{id}")

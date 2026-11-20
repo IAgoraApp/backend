@@ -31,7 +31,12 @@ public class ProdutoService {
   }
 
   public ProdutoResponse cadastrar(ProdutoRequest request) {
+    return cadastrar(request, null);
+  }
+
+  public ProdutoResponse cadastrar(ProdutoRequest request, Integer userId) {
     Produto produto = new Produto();
+    produto.setUserId(userId);
     produto.setNome(request.nome());
     produto.setMarca(request.marca());
     produto.setTamanho(request.tamanho());
@@ -88,6 +93,10 @@ public class ProdutoService {
       throw new RegraNegocioException("Produto está sendo utilizado", HttpStatus.CONFLICT);
     }
     produtoRepository.delete(produto);
+  }
+
+  public boolean pertenceAoUsuario(Integer id, Integer userId) {
+    return userId.equals(buscar(id).getUserId());
   }
 
   private Produto buscar(Integer id) {

@@ -36,7 +36,7 @@ public class SecurityConfig {
         }
         auth
           .requestMatchers(HttpMethod.GET,
-            "/receitas", "/receitas/{id}",
+            "/receitas", "/receitas/{id}", "/receitas/{id}/imagem",
             "/receitas/{receitaId}/itens", "/receitas/{receitaId}/itens/{id}"
           )
           .permitAll()

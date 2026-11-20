@@ -181,6 +181,34 @@ public class RecorrenciaFinanceiraService {
         }
     }
 
+    @Transactional
+    public int gerarMes(Integer id, GerarMesRequest request, Integer usuario) {
+        var item = buscarDoUsuario(id, usuario);
+        entityManager.refresh(item, LockModeType.PESSIMISTIC_WRITE);
+        if (!item.getAtiva()) {
+            throw new RegraNegocioException("Ative a recorrência para gerar lançamentos", HttpStatus.CONFLICT);
+        }
+        if (request.mes() == null || request.categoriaId() == null) {
+            throw new RegraNegocioException("Informe o mês e a categoria", HttpStatus.BAD_REQUEST);
+        }
+        var categoria = categoriaRepository.findById(request.categoriaId())
+            .orElseThrow(() -> new RegraNegocioException("Categoria não encontrada", HttpStatus.NOT_FOUND));
+        if (!usuario.equals(categoria.getUser().getId())) {
+            throw new RegraNegocioException("Categoria indisponível para esta conta", HttpStatus.FORBIDDEN);
+        }
+        entityManager.lock(categoria, LockModeType.PESSIMISTIC_WRITE);
+        int quantidade = 0;
+        for (int dia = 1; dia <= request.mes().lengthOfMonth(); dia++) {
+            LocalDate data = request.mes().atDay(dia);
+            if (!data.isBefore(item.getInicioEm()) && (item.getFimEm() == null || !data.isAfter(item.getFimEm()))
+                && ocorreEm(item, data) && !transacaoRepository.existsByRecorrencia_IdAndCompetencia(id, data)) {
+                registrar(item, categoria, data);
+                quantidade++;
+            }
+        }
+        return quantidade;
+    }
+
     private void gerar(RecorrenciaFinanceira item, LocalDate hoje) {
         if (!item.getAtiva()) {
             return;
@@ -201,19 +229,23 @@ public class RecorrenciaFinanceiraService {
                     categoria = categoriaPadrao(item);
                     entityManager.lock(categoria, LockModeType.PESSIMISTIC_WRITE);
                 }
-                var lancamento = new TransacaoFinanceira();
-                lancamento.setUser(item.getUser());
-                lancamento.setCategoria(categoria);
-                lancamento.setRecorrencia(item);
-                lancamento.setDescricao(item.getDescricao());
-                lancamento.setTipo(item.getTipo());
-                lancamento.setValor(item.getValorPrevisto());
-                lancamento.setCompetencia(data);
-                lancamento.setVencimento(data);
-                transacaoRepository.save(lancamento);
+                registrar(item, categoria, data);
             }
         }
         item.setProcessadaAte(fim);
+    }
+
+    private void registrar(RecorrenciaFinanceira item, CategoriaFinancas categoria, LocalDate data) {
+        var lancamento = new TransacaoFinanceira();
+        lancamento.setUser(item.getUser());
+        lancamento.setCategoria(categoria);
+        lancamento.setRecorrencia(item);
+        lancamento.setDescricao(item.getDescricao());
+        lancamento.setTipo(item.getTipo());
+        lancamento.setValor(item.getValorPrevisto());
+        lancamento.setCompetencia(data);
+        lancamento.setVencimento(data);
+        transacaoRepository.save(lancamento);
     }
 
     private CategoriaFinancas categoriaPadrao(RecorrenciaFinanceira item) {

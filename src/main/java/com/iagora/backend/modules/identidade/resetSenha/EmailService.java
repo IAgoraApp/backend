@@ -1,5 +1,7 @@
 package com.iagora.backend.modules.identidade.resetSenha;
 
+import com.iagora.backend.exception.RegraNegocioException;
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -15,6 +17,12 @@ public class EmailService {
 
   public EmailService(JavaMailSender mailSender) {
     this.mailSender = mailSender;
+  }
+
+  public void verificarConfiguracao() {
+    if (remetente == null || remetente.isBlank()) {
+      throw new RegraNegocioException("A recuperação por e-mail está indisponível", HttpStatus.SERVICE_UNAVAILABLE);
+    }
   }
 
   public void enviarEmail(

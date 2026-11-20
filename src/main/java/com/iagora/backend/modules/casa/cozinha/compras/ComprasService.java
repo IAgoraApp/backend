@@ -3,6 +3,7 @@ package com.iagora.backend.modules.casa.cozinha.compras;
 import com.iagora.backend.exception.RegraNegocioException;
 import com.iagora.backend.modules.casa.casa.CasaRepository;
 import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemRepository;
+import com.iagora.backend.modules.casa.cozinha.compraItem.CompraItemService;
 
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -15,12 +16,14 @@ public class ComprasService {
   private final ComprasRepository comprasRepository;
   private final CasaRepository casaRepository;
   private final CompraItemRepository compraItemRepository;
+  private final CompraItemService itens;
 
   public ComprasService(ComprasRepository comprasRepository, CasaRepository casaRepository,
-    CompraItemRepository compraItemRepository) {
+    CompraItemRepository compraItemRepository, CompraItemService itens) {
     this.comprasRepository = comprasRepository;
     this.casaRepository = casaRepository;
     this.compraItemRepository = compraItemRepository;
+    this.itens = itens;
   }
 
   @Transactional
@@ -34,7 +37,14 @@ public class ComprasService {
       new RegraNegocioException("Casa não encontrada", HttpStatus.NOT_FOUND)
     ));
     compras.setNome(request.nome());
-    return resposta(comprasRepository.save(compras));
+    compras = comprasRepository.save(compras);
+    if (request.itens() != null) {
+      if (request.itens().size() > 100 || request.itens().stream().anyMatch(java.util.Objects::isNull)) {
+        throw new RegraNegocioException("Informe até 100 itens válidos", HttpStatus.BAD_REQUEST);
+      }
+      for (var item : request.itens()) itens.cadastrar(compras.getId(), item);
+    }
+    return resposta(compras);
   }
 
   @Transactional

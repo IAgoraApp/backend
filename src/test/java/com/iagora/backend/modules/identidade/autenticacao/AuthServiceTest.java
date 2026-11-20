@@ -33,7 +33,7 @@ class AuthServiceTest {
     User user = new User("user@example.com", "hash", 1);
     when(userRepository.save(any(User.class))).thenReturn(user);
 
-    authService.cadastrar(new CadastroRequest("user@example.com", "senha", 1));
+    authService.cadastrar(new CadastroRequest("user@example.com", "senha-teste", 1));
 
     verify(perfilService).criar(user);
     verify(casaService).criar(user);
@@ -43,7 +43,7 @@ class AuthServiceTest {
   void cadastrarOutroTipoNaoCriaCasa() {
     when(userRepository.save(any(User.class))).thenReturn(new User("empresa@example.com", "hash", 2));
 
-    authService.cadastrar(new CadastroRequest("empresa@example.com", "senha", 2));
+    authService.cadastrar(new CadastroRequest("empresa@example.com", "senha-teste", 2));
 
     verifyNoInteractions(perfilService, casaService, mock(ReceitaService.class));
   }

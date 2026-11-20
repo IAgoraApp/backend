@@ -6,5 +6,10 @@ public record TarefaRequest(
     Integer categoriaId,
     String nome,
     String descricao,
-    LocalDateTime prazo
-) {}
+    LocalDateTime prazo,
+    Integer lembreteMinutos
+) {
+    public TarefaRequest(Integer categoriaId, String nome, String descricao, LocalDateTime prazo) {
+        this(categoriaId, nome, descricao, prazo, null);
+    }
+}

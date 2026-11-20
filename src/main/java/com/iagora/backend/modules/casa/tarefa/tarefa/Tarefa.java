@@ -28,7 +28,18 @@ public class Tarefa {
     @Column(name = "prazo")
     private LocalDateTime prazo;
 
+    @Column(name = "lembrete_minutos")
+    private Integer lembreteMinutos;
+
     public Tarefa() {}
+
+    public Integer getLembreteMinutos() {
+        return lembreteMinutos;
+    }
+
+    public void setLembreteMinutos(Integer lembreteMinutos) {
+        this.lembreteMinutos = lembreteMinutos;
+    }
 
     public Integer getId() {
         return id;

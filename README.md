@@ -27,7 +27,10 @@ Execute `./mvnw test` com Java 25. Os testes de integração usam H2 em modo MyS
 
 | Variável de ambiente | Finalidade |
 | --- | --- |
-| `SECURITY_JWT_ENABLED=true` | Habilita a autenticação Bearer usada pelos novos módulos. |
+| `SECURITY_JWT_ENABLED=true` | Habilita a autenticação Bearer. É o padrão da aplicação. |
+| `IAGORA_CORS_ORIGENS` | Origens CORS separadas por vírgula. |
+| `IAGORA_FRONTEND_URL` | Origem do frontend usada nos links de recuperação de senha. |
+| `SPRING_PROFILES_ACTIVE=demo` e `IAGORA_DEMO_ENABLED=true` | Habilitam a carga explícita do catálogo no banco de demonstração. |
 | `IAGORA_ADMINISTRACAO_USUARIOS` | IDs de contas administrativas existentes, separados por vírgula. Sem valor, as operações administrativas ficam restritas. |
 | `IAGORA_PAGAMENTOS_TESTE=true` | Habilita a criação e a confirmação de cobranças simuladas. O padrão é desabilitado. |
 | `IAGORA_PAGAMENTOS_WEBHOOK_SEGREDO` | Chave de pelo menos 32 bytes codificada em Base64, usada pelo webhook de teste. |
@@ -37,3 +40,6 @@ Os uploads de empresa e serviço recebem um campo multipart `arquivo`, com até 
 O webhook de teste recebe um JSON com `transacaoExternaId`, `status` (`pago` ou `cancelado`) e `valor`. Envie a data Unix em segundos no cabeçalho `X-IAgora-Timestamp`. O cabeçalho `X-IAgora-Assinatura` recebe o HMAC-SHA256 de `timestamp.corpo` em Base64. A assinatura usa os bytes exatos do corpo e é válida por cinco minutos.
 
 A rota de recuperação de senha é `POST /user/forgot-password`.
+
+A configuração local, o inventário Swagger e o provisionamento de contas demo
+estão no [relatório de integração](../INTEGRACAO_FULLSTACK.md).

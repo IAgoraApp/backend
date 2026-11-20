@@ -56,8 +56,8 @@ public class AvaliacaoServicoService {
     }
 
     @Transactional
-    public List<AvaliacaoServicoResponse> listar(Integer servicoId) {
-        servicoService.buscarVisivel(servicoId);
+    public List<AvaliacaoServicoResponse> listar(Integer servicoId, Integer userId) {
+        servicoService.buscarAcessivel(servicoId, userId);
         return repository.findByContratado_Servico_IdOrderByIdDesc(servicoId).stream().map(this::resposta).toList();
     }
 

@@ -1,5 +1,6 @@
 package com.iagora.backend.modules.casa.casa;
 
+import com.iagora.backend.modules.endereco.EnderecoResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietarioCasa;
@@ -37,6 +38,18 @@ public class CasaController {
     @PathVariable Integer id,
     @RequestBody CasaRequest request
   ) {
-    casaService.atualizar(id, request);
+    casaService.atualizarVinculo(id, request);
+  }
+  @SomenteProprietarioCasa
+  @GetMapping("/{id}/endereco")
+  public EnderecoResponse consultarEndereco(@PathVariable Integer id) {
+    return casaService.consultarEndereco(id);
+  }
+
+  @SomenteProprietarioCasa
+  @PatchMapping("/{id}/residencia")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public void editarResidencia(@PathVariable Integer id, @RequestBody ResidenciaRequest request) {
+    casaService.editarResidencia(id, request);
   }
 }

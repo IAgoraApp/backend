@@ -1,6 +1,12 @@
 package com.iagora.backend.modules.preparacao.jornada.jornada;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.identidade.autenticacao.User;
+import com.iagora.backend.modules.preparacao.jornada.etapaJornada.EtapaJornadaService;
+import com.iagora.backend.modules.preparacao.jornada.tarefaJornada.TarefaJornadaService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.LockModeType;
+import jakarta.transaction.Transactional;
 import com.iagora.backend.security.MethodSecurityConfig.SomenteProprietario;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
@@ -14,14 +20,47 @@ public class JornadaController {
 
     private final JornadaService service;
 
-    public JornadaController(JornadaService service) {
+    private final EtapaJornadaService etapas;
+    private final TarefaJornadaService tarefas;
+    private final EntityManager entityManager;
+
+    public JornadaController(JornadaService service, EtapaJornadaService etapas,
+            TarefaJornadaService tarefas, EntityManager entityManager) {
         this.service = service;
+        this.etapas = etapas;
+        this.tarefas = tarefas;
+        this.entityManager = entityManager;
     }
 
     @PostMapping("/jornadas")
     @ResponseStatus(HttpStatus.CREATED)
     public JornadaResponse cadastrar(@RequestBody JornadaRequest request, Authentication authentication) {
         return service.cadastrar(request, usuario(authentication));
+    }
+
+    @PostMapping("/jornadas/guia")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Transactional
+    public JornadaResponse criarGuia(@RequestBody GuiaJornadaRequest request, Authentication authentication) {
+        if (request.etapas() == null || request.etapas().isEmpty() || request.etapas().size() > 30
+            || request.etapas().stream().anyMatch(item -> item == null || item.etapa() == null
+                || item.tarefas() == null || item.tarefas().size() > 30 || item.tarefas().stream().anyMatch(java.util.Objects::isNull))) {
+            throw new RegraNegocioException("Informe etapas e tarefas válidas para a jornada", HttpStatus.BAD_REQUEST);
+        }
+        Integer usuario = usuario(authentication);
+        if (entityManager.find(User.class, usuario, LockModeType.PESSIMISTIC_WRITE) == null) {
+            throw new RegraNegocioException("Usuário não encontrado", HttpStatus.NOT_FOUND);
+        }
+        var existente = service.listarPorUsuario(usuario).stream()
+            .filter(item -> java.util.Objects.equals(item.nome(), request.nome())
+                && java.util.Objects.equals(item.descricao(), request.descricao())).findFirst();
+        if (existente.isPresent()) return existente.get();
+        JornadaResponse guia = service.cadastrar(new JornadaRequest(request.nome(), request.descricao(), null), usuario);
+        for (var item : request.etapas()) {
+            var etapa = etapas.cadastrar(guia.id(), item.etapa(), usuario);
+            for (var tarefa : item.tarefas()) tarefas.cadastrar(etapa.id(), tarefa, usuario);
+        }
+        return guia;
     }
 
     @GetMapping("/jornadas/{id}")

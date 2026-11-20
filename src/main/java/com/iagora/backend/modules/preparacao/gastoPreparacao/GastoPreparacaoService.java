@@ -102,6 +102,13 @@ public class GastoPreparacaoService {
             }
             item.setDestino(request.destino().strip());
         }
+        if (request.categoria() != null) {
+            String categoria = request.categoria().strip();
+            if (categoria.length() > 50) {
+                throw new RegraNegocioException("Categoria inválida", HttpStatus.BAD_REQUEST);
+            }
+            item.setCategoria(categoria.isEmpty() ? null : categoria);
+        }
         if (item.getDestino() == null) {
             throw new RegraNegocioException("Campo destino obrigatório", HttpStatus.BAD_REQUEST);
         }
@@ -114,7 +121,8 @@ public class GastoPreparacaoService {
             item.getNome(),
             item.getValor(),
             item.getFrequencia(),
-            item.getDestino()
+            item.getDestino(),
+            item.getCategoria()
         );
     }
 }

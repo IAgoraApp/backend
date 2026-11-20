@@ -7,5 +7,6 @@ public record TarefaResponse(
     Integer categoriaId,
     String nome,
     String descricao,
-    LocalDateTime prazo
+    LocalDateTime prazo,
+    Integer lembreteMinutos
 ) {}

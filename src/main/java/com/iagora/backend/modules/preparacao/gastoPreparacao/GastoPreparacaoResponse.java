@@ -8,5 +8,6 @@ public record GastoPreparacaoResponse(
     String nome,
     BigDecimal valor,
     String frequencia,
-    String destino
+    String destino,
+    String categoria
 ) {}

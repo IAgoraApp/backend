@@ -7,5 +7,7 @@ public record ReceitaResponse(
     String nome,
     String descricao,
     String tipo,
-    String preparo
+    String preparo,
+    String imagem,
+    String statusPublicacao
 ) {}

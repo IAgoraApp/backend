@@ -79,11 +79,15 @@ public class ServicoService {
 
     @Transactional
     public ServicoResponse detalhar(Integer id, Integer userId) {
+        return resposta(buscarAcessivel(id, userId));
+    }
+
+    public Servico buscarAcessivel(Integer id, Integer userId) {
         var item = buscar(id);
         if (!item.getEmpresa().getUser().getId().equals(userId) && !visivel(item, LocalDateTime.now())) {
             throw new RegraNegocioException("Serviço não encontrado no catálogo", HttpStatus.NOT_FOUND);
         }
-        return resposta(item);
+        return item;
     }
 
     @Transactional
@@ -219,6 +223,7 @@ public class ServicoService {
                 throw new RegraNegocioException("Campo tipoPreco inválido", HttpStatus.BAD_REQUEST);
             }
             item.setTipoPreco(request.tipoPreco().strip());
+            if ("orcamento".equals(item.getTipoPreco())) item.setPreco(null);
         }
         if (item.getTipoPreco() == null) {
             throw new RegraNegocioException("Campo tipoPreco obrigatório", HttpStatus.BAD_REQUEST);

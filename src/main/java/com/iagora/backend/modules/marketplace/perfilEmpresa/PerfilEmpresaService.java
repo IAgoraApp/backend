@@ -1,6 +1,9 @@
 package com.iagora.backend.modules.marketplace.perfilEmpresa;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.endereco.EnderecoRequest;
+import com.iagora.backend.modules.endereco.EnderecoResponse;
+import com.iagora.backend.modules.endereco.EnderecoService;
 import com.iagora.backend.modules.identidade.autenticacao.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
@@ -14,10 +17,12 @@ import org.springframework.stereotype.Service;
 public class PerfilEmpresaService {
     private final PerfilEmpresaRepository repository;
     private final EntityManager entityManager;
+    private final EnderecoService enderecos;
 
-    public PerfilEmpresaService(PerfilEmpresaRepository repository, EntityManager entityManager) {
+    public PerfilEmpresaService(PerfilEmpresaRepository repository, EntityManager entityManager, EnderecoService enderecos) {
         this.repository = repository;
         this.entityManager = entityManager;
+        this.enderecos = enderecos;
     }
 
     public PerfilEmpresa buscar(Integer id) {
@@ -64,6 +69,18 @@ public class PerfilEmpresaService {
             item.setStatusValidacao("rascunho");
         }
         aplicar(item, request);
+    }
+
+    @Transactional
+    public EnderecoResponse consultarEndereco(Integer usuario) {
+        return enderecos.buscarSeExistir(buscarDoUsuario(usuario).getEnderecoId());
+    }
+
+    @Transactional
+    public void editarEndereco(Integer usuario, EnderecoRequest endereco) {
+        var empresa = buscarDoUsuario(usuario);
+        entityManager.refresh(empresa, LockModeType.PESSIMISTIC_WRITE);
+        empresa.setEnderecoId(enderecos.salvarResidencia(empresa.getEnderecoId(), usuario, endereco));
     }
 
     @Transactional
@@ -115,7 +132,8 @@ public class PerfilEmpresaService {
     }
 
     private void aplicar(PerfilEmpresa item, PerfilEmpresaRequest request) {
-        if (request.enderecoId() != null) {
+        if (request.enderecoId() != null && !request.enderecoId().equals(item.getEnderecoId())) {
+            enderecos.verificarProprietario(request.enderecoId(), item.getUser().getId());
             item.setEnderecoId(request.enderecoId());
         }
         if (request.nome() != null) {

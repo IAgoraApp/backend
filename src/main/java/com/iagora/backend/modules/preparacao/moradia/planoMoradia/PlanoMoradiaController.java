@@ -24,6 +24,12 @@ public class PlanoMoradiaController {
         return service.cadastrar(request, usuario(authentication));
     }
 
+    @PutMapping("/planos-moradia/custos-mensais")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void salvarCustosMensais(@RequestBody CustosMensaisRequest request, Authentication authentication) {
+        service.salvarCustosMensais(request, usuario(authentication));
+    }
+
     @GetMapping("/planos-moradia/{id}")
     public PlanoMoradiaResponse buscarPorId(@PathVariable Integer id, Authentication authentication) {
         return service.buscarPorId(id, usuario(authentication));

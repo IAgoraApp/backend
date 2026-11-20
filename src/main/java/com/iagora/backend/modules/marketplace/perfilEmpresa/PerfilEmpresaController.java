@@ -1,6 +1,8 @@
 package com.iagora.backend.modules.marketplace.perfilEmpresa;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.endereco.EnderecoRequest;
+import com.iagora.backend.modules.endereco.EnderecoResponse;
 import com.iagora.backend.security.AdministracaoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
@@ -34,6 +36,17 @@ public class PerfilEmpresaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@RequestBody PerfilEmpresaRequest request, Authentication authentication) {
         service.atualizar(request, usuario(authentication));
+    }
+
+    @GetMapping("/empresas/meu-perfil/endereco")
+    public EnderecoResponse consultarEndereco(Authentication authentication) {
+        return service.consultarEndereco(usuario(authentication));
+    }
+
+    @PatchMapping("/empresas/meu-perfil/endereco")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void editarEndereco(@RequestBody EnderecoRequest endereco, Authentication authentication) {
+        service.editarEndereco(usuario(authentication), endereco);
     }
 
     @PostMapping("/empresas/meu-perfil/enviar-validacao")

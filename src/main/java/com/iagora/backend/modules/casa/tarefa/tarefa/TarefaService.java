@@ -89,6 +89,13 @@ public class TarefaService {
         if (request.descricao() != null) {
             item.setDescricao(request.descricao().strip());
         }
+        if (request.lembreteMinutos() != null) {
+            int minutos = request.lembreteMinutos();
+            if (!List.of(-1, 0, 5, 15, 30, 60, 1440).contains(minutos)) {
+                throw new RegraNegocioException("Antecedência do lembrete inválida", HttpStatus.BAD_REQUEST);
+            }
+            item.setLembreteMinutos(minutos == -1 ? null : minutos);
+        }
         if (request.prazo() != null) {
             item.setPrazo(request.prazo());
         }
@@ -100,7 +107,8 @@ public class TarefaService {
             item.getCategoria().getId(),
             item.getNome(),
             item.getDescricao(),
-            item.getPrazo()
+            item.getPrazo(),
+            item.getLembreteMinutos()
         );
     }
 }

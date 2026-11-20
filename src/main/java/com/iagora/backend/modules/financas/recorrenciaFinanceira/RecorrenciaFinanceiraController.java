@@ -53,6 +53,12 @@ public class RecorrenciaFinanceiraController {
         service.desativar(id, usuario(authentication));
     }
 
+    @PostMapping("/recorrencias-financeiras/{id}/gerar-mes")
+    public java.util.Map<String, Integer> gerarMes(@PathVariable Integer id,
+            @RequestBody GerarMesRequest request, Authentication authentication) {
+        return java.util.Map.of("quantidade", service.gerarMes(id, request, usuario(authentication)));
+    }
+
     @DeleteMapping("/recorrencias-financeiras/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void apagar(@PathVariable Integer id, Authentication authentication) {

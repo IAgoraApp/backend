@@ -8,6 +8,8 @@ import com.iagora.backend.modules.preparacao.gastoPreparacao.GastoPreparacaoRepo
 import com.iagora.backend.modules.preparacao.moradia.casaDesejada.CasaDesejadaService;
 import com.iagora.backend.modules.preparacao.moradia.custoMoradia.CustoMoradia;
 import com.iagora.backend.modules.preparacao.moradia.custoMoradia.CustoMoradiaRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.LockModeType;
 import jakarta.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,16 +25,18 @@ public class PlanoMoradiaService {
     private final PlanoMoradiaRepository repository;
     private final UserRepository userRepository;
     private final CasaDesejadaService casaDesejadaService;
+    private final EntityManager entityManager;
 
     public PlanoMoradiaService(DinheiroPreparacaoService dinheiroService, GastoPreparacaoRepository gastoRepository,
                                CustoMoradiaRepository custoRepository, PlanoMoradiaRepository repository,
-                               UserRepository userRepository, CasaDesejadaService casaDesejadaService) {
+                               UserRepository userRepository, CasaDesejadaService casaDesejadaService, EntityManager entityManager) {
         this.dinheiroService = dinheiroService;
         this.gastoRepository = gastoRepository;
         this.custoRepository = custoRepository;
         this.repository = repository;
         this.userRepository = userRepository;
         this.casaDesejadaService = casaDesejadaService;
+        this.entityManager = entityManager;
     }
 
     public Integer proprietarioId(PlanoMoradia item) {
@@ -57,6 +61,54 @@ public class PlanoMoradiaService {
         item.setUser(userRepository.findById(userId).orElseThrow(() -> new RegraNegocioException("Registro não encontrado", HttpStatus.NOT_FOUND)));
         aplicar(item, request, userId);
         return resposta(repository.save(item));
+    }
+
+    @Transactional
+    public void salvarCustosMensais(CustosMensaisRequest request, Integer userId) {
+        if (request.casaDesejadaId() == null || request.custos() == null || request.custos().size() > 60) {
+            throw new RegraNegocioException("Informe o imóvel e até 60 custos", HttpStatus.BAD_REQUEST);
+        }
+        var imovel = casaDesejadaService.buscarDoUsuario(request.casaDesejadaId(), userId);
+        entityManager.lock(imovel.getUser(), LockModeType.PESSIMISTIC_WRITE);
+        PlanoMoradia plano = request.planoId() == null
+            ? repository.findByCasaDesejada_Id(imovel.getId()).orElseGet(() -> {
+                var novo = new PlanoMoradia();
+                novo.setUser(imovel.getUser());
+                novo.setNome(imovel.getTitulo());
+                novo.setCasaDesejada(imovel);
+                return repository.save(novo);
+            })
+            : buscarDoUsuario(request.planoId(), userId);
+        if (plano.getCasaDesejada() != null && !imovel.getId().equals(plano.getCasaDesejada().getId())) {
+            throw new RegraNegocioException("O plano pertence a outro imóvel", HttpStatus.BAD_REQUEST);
+        }
+        var existentes = custoRepository.findByPlano_IdOrderByIdAsc(plano.getId());
+        var chaves = new java.util.HashSet<List<String>>();
+        for (var custo : request.custos()) {
+            if (custo == null || custo.nome() == null || custo.nome().isBlank() || custo.nome().length() > 150
+                || custo.categoria() == null || custo.categoria().isBlank() || custo.categoria().length() > 50
+                || !chaves.add(List.of(custo.categoria(), custo.nome()))) {
+                throw new RegraNegocioException("Custo mensal inválido ou duplicado", HttpStatus.BAD_REQUEST);
+            }
+            var correspondentes = existentes.stream().filter(item ->
+                "mensal".equals(item.getTipo()) && custo.nome().equals(item.getNome())
+                    && custo.categoria().equals(item.getCategoria())).toList();
+            var valor = custo.valor();
+            if (valor == null) {
+                custoRepository.deleteAll(correspondentes);
+                continue;
+            }
+            if (valor.signum() < 0 || valor.scale() > 2 || valor.precision() - valor.scale() > 10) {
+                throw new RegraNegocioException("Valor de custo inválido", HttpStatus.BAD_REQUEST);
+            }
+            var registro = correspondentes.stream().findFirst().orElseGet(CustoMoradia::new);
+            registro.setPlano(plano);
+            registro.setTipo("mensal");
+            registro.setNome(custo.nome());
+            registro.setCategoria(custo.categoria());
+            registro.setValor(valor);
+            custoRepository.save(registro);
+        }
     }
 
     @Transactional

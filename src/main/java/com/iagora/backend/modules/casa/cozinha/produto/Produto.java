@@ -11,6 +11,9 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "user_id")
+    private Integer userId;
+
     @Column(nullable = false)
     private String nome;
 
@@ -30,6 +33,14 @@ public class Produto {
 
     public Integer getId() {
         return id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getNome() {

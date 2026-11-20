@@ -1,5 +1,6 @@
 package com.iagora.backend.modules.marketplace.servicoContratado;
 
+import com.iagora.backend.modules.endereco.EnderecoResponse;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -13,5 +14,6 @@ public record ServicoContratadoResponse(
     BigDecimal valor,
     String status,
     LocalDateTime dataContratacao,
-    LocalDateTime dataConclusao
+    LocalDateTime dataConclusao,
+    EnderecoResponse endereco
 ) {}

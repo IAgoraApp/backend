@@ -1,6 +1,10 @@
 package com.iagora.backend.modules.marketplace.servicoContratado;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.marketplace.chatServico.ChatServicoRequest;
+import com.iagora.backend.modules.marketplace.chatServico.ChatServicoResponse;
+import com.iagora.backend.modules.marketplace.chatServico.ChatServicoService;
+import jakarta.transaction.Transactional;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -12,14 +16,27 @@ import org.springframework.web.bind.annotation.*;
 public class ServicoContratadoController {
     private final ServicoContratadoService service;
 
-    public ServicoContratadoController(ServicoContratadoService service) {
+    private final ChatServicoService chats;
+
+    public ServicoContratadoController(ServicoContratadoService service, ChatServicoService chats) {
         this.service = service;
+        this.chats = chats;
     }
 
     @PostMapping("/servicos/{servicoId}/contratar")
     @ResponseStatus(HttpStatus.CREATED)
     public ServicoContratadoResponse contratar(@PathVariable Integer servicoId, @RequestBody ServicoContratadoRequest request, Authentication authentication) {
         return service.contratar(servicoId, request, usuario(authentication));
+    }
+
+    @PostMapping("/servicos/{servicoId}/contratar-com-conversa")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Transactional
+    public ChatServicoResponse contratarComConversa(@PathVariable Integer servicoId,
+            @RequestBody ServicoContratadoRequest request, Authentication authentication) {
+        int usuario = usuario(authentication);
+        int contratacao = service.contratar(servicoId, request, usuario).id();
+        return chats.cadastrar(new ChatServicoRequest(null, contratacao), usuario);
     }
 
     @GetMapping("/contratacoes")

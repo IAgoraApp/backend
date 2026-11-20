@@ -3,6 +3,7 @@ package com.iagora.backend.modules.identidade.autenticacao;
 import com.iagora.backend.exception.RegraNegocioException;
 import jakarta.transaction.Transactional;
 import java.util.Set;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -36,7 +37,7 @@ public class LoginGoogleService {
   }
 
   @Transactional
-  public LoginResponse logar(String credencial, String senha) {
+  public LoginResponse logar(String credencial, String senha, Integer tipo) {
     if (clientId.isBlank()) {
       throw new RegraNegocioException(
         "O acesso com Google está indisponível.", HttpStatus.SERVICE_UNAVAILABLE
@@ -62,23 +63,29 @@ public class LoginGoogleService {
       throw credencialInvalida();
     }
 
-    User usuario = usuarios.findByGoogleSubject(sujeito)
-      .orElseGet(() -> vincularContaExistente(identidade, senha));
-    return auth.iniciarSessao(usuario);
-  }
+    var vinculado = usuarios.findByGoogleSubject(sujeito);
+    if (vinculado.isPresent()) return auth.iniciarSessao(vinculado.get());
 
-  private User vincularContaExistente(Jwt identidade, String senha) {
     String email = identidade.getClaimAsString("email");
     if (email == null || !Boolean.TRUE.equals(identidade.getClaimAsBoolean("email_verified"))) {
       throw credencialInvalida();
     }
 
-    User usuario = usuarios.findByEmailIgnoreCase(email)
-      .orElseThrow(() -> new RegraNegocioException(
-        "Crie sua conta IAgora com este e-mail antes de entrar com Google.", HttpStatus.UNAUTHORIZED
-      ));
+    var existente = usuarios.findByEmailIgnoreCase(email);
+    if (existente.isPresent()) {
+      return auth.iniciarSessao(vincularContaExistente(existente.get(), sujeito, senha));
+    }
+
+    var cadastro = auth.cadastrar(new CadastroRequest(email, UUID.randomUUID().toString(), tipo == null ? 1 : tipo));
+    User criado = usuarios.findById(cadastro.id()).orElseThrow();
+    criado.setGoogleSubject(sujeito);
+    var sessao = auth.iniciarSessao(usuarios.save(criado));
+    return new LoginResponse(sessao.id(), sessao.email(), sessao.tipo(), sessao.token(), true);
+  }
+
+  private User vincularContaExistente(User usuario, String sujeito, String senha) {
     if (usuario.getGoogleSubject() != null &&
-        !usuario.getGoogleSubject().equals(identidade.getSubject())) throw credencialInvalida();
+        !usuario.getGoogleSubject().equals(sujeito)) throw credencialInvalida();
     if (usuario.getGoogleSubject() != null) return usuario;
     if (senha == null || senha.isBlank()) {
       throw new RegraNegocioException(
@@ -91,7 +98,7 @@ public class LoginGoogleService {
         "Senha inválida.", HttpStatus.UNAUTHORIZED
       );
     }
-    usuario.setGoogleSubject(identidade.getSubject());
+    usuario.setGoogleSubject(sujeito);
     return usuarios.save(usuario);
   }
 

@@ -1,6 +1,11 @@
 package com.iagora.backend.modules.identidade.perfil;
 
 import com.iagora.backend.exception.RegraNegocioException;
+import com.iagora.backend.modules.endereco.EnderecoRequest;
+import com.iagora.backend.modules.endereco.EnderecoResponse;
+import com.iagora.backend.modules.endereco.EnderecoService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.LockModeType;
 import com.iagora.backend.modules.identidade.autenticacao.User;
 import jakarta.transaction.Transactional;
 import java.util.UUID;
@@ -11,9 +16,13 @@ import org.springframework.stereotype.Service;
 public class PerfilService {
 
   private final PerfilRepository perfilRepository;
+  private final EnderecoService enderecos;
+  private final EntityManager entityManager;
 
-  public PerfilService(PerfilRepository perfilRepository) {
+  public PerfilService(PerfilRepository perfilRepository, EnderecoService enderecos, EntityManager entityManager) {
     this.perfilRepository = perfilRepository;
+    this.enderecos = enderecos;
+    this.entityManager = entityManager;
   }
 
   public void criar(User user) {
@@ -66,14 +75,7 @@ public class PerfilService {
 
   @Transactional
   public void atualizar(Integer id, PerfilRequest request) {
-    Perfil perfil = perfilRepository
-      .findById(id)
-      .orElseThrow(() ->
-        new RegraNegocioException(
-          "Perfil não encontrado",
-          HttpStatus.NOT_FOUND
-        )
-      );
+    Perfil perfil = buscar(id);
 
     if (request.nome() != null) {
       if (request.nome().isBlank() || request.nome().length() > 150) {
@@ -108,10 +110,44 @@ public class PerfilService {
           "Endereço deve possuir um ID válido", HttpStatus.BAD_REQUEST
         );
       }
+      if (!request.enderecoId().equals(perfil.getEnderecoId())) {
+        enderecos.verificarProprietario(request.enderecoId(), perfil.getUser().getId());
+      }
       perfil.setEnderecoId(request.enderecoId());
     }
 
     perfilRepository.save(perfil);
+  }
+
+  @Transactional
+  public EnderecoResponse consultarEndereco(Integer id) {
+    return enderecos.buscarSeExistir(buscar(id).getEnderecoId());
+  }
+
+  @Transactional
+  public void salvarEndereco(Integer id, EnderecoRequest endereco) {
+    Perfil perfil = buscar(id);
+    entityManager.refresh(perfil, LockModeType.PESSIMISTIC_WRITE);
+    perfil.setEnderecoId(enderecos.salvarResidencia(perfil.getEnderecoId(), perfil.getUser().getId(), endereco));
+  }
+
+  @Transactional
+  public void removerEndereco(Integer id) {
+    Perfil perfil = buscar(id);
+    entityManager.refresh(perfil, LockModeType.PESSIMISTIC_WRITE);
+    perfil.setEnderecoId(null);
+  }
+
+  private Perfil buscar(Integer id) {
+    Perfil perfil = perfilRepository
+      .findById(id)
+      .orElseThrow(() ->
+        new RegraNegocioException(
+          "Perfil não encontrado",
+          HttpStatus.NOT_FOUND
+        )
+      );
+    return perfil;
   }
 
   @Transactional

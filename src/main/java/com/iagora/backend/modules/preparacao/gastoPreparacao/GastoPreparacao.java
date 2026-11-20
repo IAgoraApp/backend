@@ -31,7 +31,18 @@ public class GastoPreparacao {
     @Column(name = "destino", nullable = false, length = 20)
     private String destino;
 
+    @Column(name = "categoria", length = 50)
+    private String categoria;
+
     public GastoPreparacao() {}
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getId() {
         return id;

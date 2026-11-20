@@ -1,5 +1,6 @@
 package com.iagora.backend.modules.preparacao.moradia.casaDesejada;
 
+import com.iagora.backend.modules.endereco.EnderecoRequest;
 import java.math.BigDecimal;
 
 public record CasaDesejadaRequest(
@@ -10,5 +11,6 @@ public record CasaDesejadaRequest(
     BigDecimal valor,
     String valorTipo,
     String mobilia,
-    Integer userId
+    Integer userId,
+    EnderecoRequest endereco
 ) {}
